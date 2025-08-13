@@ -19,7 +19,7 @@ DOCTYPE html! >
             text-align: right;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #8B4513 0%, #DAA520 100%); /* Brown to GoldenRod gradient */
             min-height: 100vh;
             color: #2c3e50;
         }
@@ -27,16 +27,16 @@ DOCTYPE html! >
         .container {
             max-width: 700px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 223, 150, 0.95); /* Gold background */
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(218, 165, 32, 0.3);
+            border: 1px solid rgba(218, 165, 32, 0.5); /* Gold border */
         }
         
         h1 {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #8B4513, #DAA520); /* Brown to GoldenRod gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -49,7 +49,7 @@ DOCTYPE html! >
         }
         
         h2 {
-            color: #4a5568;
+            color: #8B4513; /* SaddleBrown */
             text-align: center;
             font-size: 1.4rem;
             font-weight: 600;
@@ -65,7 +65,7 @@ DOCTYPE html! >
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #8B4513, #DAA520); /* Brown to GoldenRod gradient */
             border-radius: 2px;
         }
         
@@ -86,19 +86,20 @@ DOCTYPE html! >
             width: 100%;
             padding: 12px 16px;
             margin-bottom: 15px;
-            border: 2px solid #e2e8f0;
+            border: 2px solid #DAA520; /* GoldenRod */
             border-radius: 12px;
             font-size: 1rem;
             direction: rtl;
-            background: white;
+            background: linear-gradient(135deg, #f7e9c3, #e6c767); /* Gold gradient */
             transition: all 0.3s ease;
             font-family: 'Cairo', sans-serif;
+            color: #8B4513; /* SaddleBrown */
         }
         
         select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #DAA520; /* GoldenRod */
+            box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.3);
             transform: translateY(-1px);
         }
         

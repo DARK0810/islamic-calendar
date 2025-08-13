@@ -6,16 +6,29 @@
     <title>حاسبة فلكية شرعية للتقويم الهجري العالمي</title>
     <meta name="description" content="حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق">
     <meta name="keywords" content="تقويم هجري، حاسبة فلكية، تقويم إسلامي، قمر جديد">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Amiri', 'Cairo', sans-serif;
             direction: rtl;
             text-align: center;
-            background: linear-gradient(135deg, #1a2a57 0%, #0d5c63 100%); /* Dark navy blue to emerald green gradient */
+            background: linear-gradient(135deg, #1a2a57 0%, #0d5c63 100%);
             min-height: 100vh;
             color: #2c3e50;
             padding: 20px;
             position: relative;
+            line-height: 1.8;
+        }
+        
+        body.ltr {
+            direction: ltr;
+            text-align: left;
         }
         
         body::before {
@@ -45,21 +58,78 @@
             pointer-events: none;
             z-index: -1;
         }
-        
-        .welcome-container {
-            max-width: 800px;
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            background: linear-gradient(45deg, #B8860B, #8B4513);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(184, 134, 11, 0.3);
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.5);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #B8860B, #8B4513);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+            z-index: 1000;
+            display: none;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        .main-container {
+            max-width: 1200px;
             margin: auto;
-            background: rgba(173, 216, 230, 0.85); /* Light blue background with transparency */
+            background: rgba(173, 216, 230, 0.85);
             backdrop-filter: blur(15px);
             padding: 40px;
             border-radius: 25px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border: 2px solid #B8860B; /* Dark golden brown border */
+            border: 2px solid #B8860B;
             position: relative;
             overflow: hidden;
         }
         
-        .welcome-container::before {
+        .main-container::before {
             content: '';
             position: absolute;
             top: 0;
@@ -71,43 +141,85 @@
             opacity: 0.15;
             pointer-events: none;
         }
-        
-        .welcome-container::after {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,0 L40,20 L20,40 L0,20 Z" fill="%23B8860B" opacity="0.2"/></svg>');
-            pointer-events: none;
+
+        .header {
+            background: linear-gradient(45deg, #B8860B, #8B4513);
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+            border: 1px solid rgba(184, 134, 11, 0.5);
+            position: relative;
+            overflow: hidden;
         }
         
-        h1 {
-            color: #B8860B; /* Dark golden brown color */
-            text-align: center;
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+        }
+        
+        .header h1 {
+            font-family: 'Amiri', serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            line-height: 1.4;
-            font-family: 'Amiri', sans-serif;
             letter-spacing: 0.5px;
         }
-        
+
         .subtitle {
             font-size: 1.2rem;
-            color: #FFFFFF; /* White color */
-            margin-bottom: 30px;
-            line-height: 1.6;
+            margin-bottom: 20px;
             font-weight: 600;
+        }
 
-            letter-spacing: 0.5px;
+        .navigation-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-section-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            font-size: 0.9rem;
         }
         
+        .nav-section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .launch-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
         .launch-button {
             display: inline-block;
             padding: 15px 30px;
-            background: linear-gradient(45deg, #B8860B, #8B4513); /* Dark golden brown to saddle brown gradient */
+            background: linear-gradient(45deg, #B8860B, #8B4513);
             color: #FFFFFF;
             text-decoration: none;
             border-radius: 12px;
@@ -115,119 +227,616 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
-            margin: 10px;
             border: 1px solid rgba(184, 134, 11, 0.5);
             position: relative;
             overflow: hidden;
             z-index: 1;
-
-            letter-spacing: 0.5px;
-        }
-        
-        .launch-button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-            opacity: 0;
-            transform: scale(0.5);
-            transition: transform 0.5s, opacity 0.5s;
-            z-index: -1;
-        }
-        
-        .launch-button:hover::after {
-            opacity: 1;
-            transform: scale(1);
         }
         
         .launch-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .feature {
-            background: linear-gradient(135deg, #e0f7fa, #80deea); /* Light turquoise gradient */
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #B8860B; /* Gold */
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0,0 L40,0 L40,40 Z" fill="%23FFD700" opacity="0.3"/></svg>');
-            opacity: 0.5;
-        }
-        
-        .feature h3 {
-            color: #B8860B; /* Gold color */
-            margin-bottom: 10px;
 
+        .content-section {
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 30px 0;
+            color: #003366;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+
+        .content-section h2 {
+            color: #B8860B;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Amiri', serif;
+            border-bottom: 3px solid #B8860B;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #8B4513;
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
             font-family: 'Amiri', serif;
         }
-        
+
+        .content-section p {
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .verse {
+            background: linear-gradient(120deg, rgba(184, 134, 11, 0.2) 0%, rgba(139, 69, 19, 0.2) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-right: 5px solid #B8860B;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #8B4513;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(59, 130, 246, 0.2) 0%, rgba(30, 58, 138, 0.2) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-right: 5px solid #3b82f6;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .dedication {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(184, 134, 11, 0.2));
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #B8860B;
+            margin: 30px 0;
+            color: #8B4513;
+            font-weight: 600;
+        }
+
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 215, 0, 0.5); /* Gold border */
-            color: #FFFFFF; /* White color */
+            border-top: 1px solid rgba(255, 215, 0, 0.5);
+            color: #FFFFFF;
             font-size: 0.9rem;
             font-weight: 500;
+        }
 
+        .language-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(184, 134, 11, 0.5);
+        }
+
+        .language-section h4 {
+            color: #B8860B;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: 'Amiri', serif;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+                font-size: 1rem;
+            }
+
+            .navigation-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .launch-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .language-switcher {
+                position: relative;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="welcome-container">
-        <h1>حاسبة فلكية شرعية للتقويم الهجري العالمي</h1>
-        <p class="subtitle">إعداد الباحث الأستاذ ظافر حلاق</p>
-        
-        <a href="assets/hasibefalakiyeh.html" class="launch-button">🌙 تشغيل الحاسبة</a>
-        <a href="about.html" class="launch-button">📖 الإهداء</a>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>🔬 حسابات فلكية دقيقة</h3>
-                <p>تعتمد على بيانات فلكية موثوقة لحساب بدايات الشهور الهجرية</p>
-            </div>
-            
-            <div class="feature">
-                <h3>📅 تقويم شامل</h3>
-                <p>يغطي سنوات متعددة من 1445 إلى 1456 هجرية</p>
-            </div>
-            
-            <div class="feature">
-                <h3>🌍 توقيت مكة المكرمة</h3>
-                <p>جميع الأوقات محسوبة بتوقيت مكة المكرمة (UTC+3)</p>
-            </div>
-            
-            <div class="feature">
-                <h3>📱 تصميم متجاوب</h3>
-                <p>يعمل على جميع الأجهزة والشاشات بكفاءة عالية</p>
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('ar')">العربية</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+        <button class="lang-btn" onclick="switchLanguage('tr')">Türkçe</button>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <div class="main-container">
+        <div class="header">
+            <h1 id="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي</h1>
+            <p class="subtitle" id="main-subtitle">إعداد الباحث الأستاذ ظافر حلاق</p>
+        </div>
+
+        <div class="navigation-menu">
+            <a href="#welcome" class="nav-section-btn" id="nav-welcome">شاشة الترحيب</a>
+            <a href="#about" class="nav-section-btn" id="nav-about">حول التطبيق</a>
+            <a href="#goal" class="nav-section-btn" id="nav-goal">هدفنا</a>
+            <a href="#overview" class="nav-section-btn" id="nav-overview">لمحة عامة</a>
+            <a href="#dedication" class="nav-section-btn" id="nav-dedication">إهداء</a>
+        </div>
+
+        <div class="launch-buttons">
+            <a href="assets/hasibefalakiyeh.html" class="launch-button">🌙 <span id="launch-calc">تشغيل الحاسبة</span></a>
+            <a href="about.html" class="launch-button">📖 <span id="launch-about">الإهداء</span></a>
+        </div>
+
+        <!-- Welcome Section -->
+        <div id="welcome" class="content-section">
+            <h2 id="welcome-title">شاشة الترحيب</h2>
+            <div class="verse" id="verse-text">يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ</div>
+            <h3 id="welcome-subtitle">حاسبة فلكية شرعية لأوائل الأشهر الهجرية للتقويم الهجري العالمي</h3>
+            <div id="welcome-content">
+                <p>- تعتمد مرجعية توقيت مكة المكرمة لاقتران القمر وغروب شمسها لأنها قبلة المسلمين في العالم.</p>
+                <p>- أسلوب علمي موثوق، مبتكر من قِبل الباحث الأستاذ ظافر حلاق.</p>
+                <p>- لا تسمح بوقوع ليالي التحري للهلال قبل الإقتران لجميع الأشهر لتجمع الأمة الإسلامية على هلال وتقويم واحد.</p>
+                <p>- لأن وقوع ليلة التحري قبل الإقتران يكون كمن يبحث عن جنين في بطن امرأة لم تحمل بعد وهذا غير معقول !!!</p>
+                <p>- خطوة نحو توحيد التقويم الهجري عالميًا.</p>
+                <p><strong>إعداد وابتكار: الباحث الأستاذ ظافر حلاق</strong></p>
             </div>
         </div>
-        
+
+        <!-- About Section -->
+        <div id="about" class="content-section">
+            <h2 id="about-title">حول التطبيق</h2>
+            <div id="about-content">
+                <p>- هو تطبيق مبتكر يُقدِّم تقويمًا هجريًا دقيقًا ترتكز حساباته على الإقتران الفلكي للقمر وفق توقيت مكة المكرمة وغروب شمسها كمرجعية مركزية لأنها قبلة المسلمين في العالم.</p>
+                <p>- القمر يدور كل شهر حول الأرض ويصل إلى الإقتران أي القمر الجديد (ولا أسمّيهِ ولادة الهلال لأنها خاطئة بل فترة حمل الهلال الذي يحتاج إلى ساعات طويلة حتى تتم ولادته) وهذا التطبيق لا يسمح بوقوع ليالي التحري للهلال قبل بداية دورة القمر الجديد حسب توقيت مكة المكرمة.</p>
+                <p>- هذا التطبيق لا يسمح بدخول الشهر إن كان توقيت الإقتران بعد غروب شمس مكة المكرمة ليلة الشك التي هي مساء يوم 29 ليلة الثلاثين.</p>
+                <p>- هذا التطبيق يضبط وقوع ليالي التحري للهلال بعد حصول الإقتران لأجل الرؤية الشرعية العملية لأنه يتوافق معها.</p>
+                <p>- حساباته تحدد أوائل الشهور الهجرية بدقة فلكية وشرعية.</p>
+                <p>- أسلوب علمي موثوق ومبتكر من قِبل الباحث الأستاذ ظافر حلاق.</p>
+                <p>- هذا التطبيق لا يسمح بدخول الشهر قبل يوم من موعده ويرفض كل رؤية تؤدي إلى خلل في منظومة الأشهر الهجرية التي وضعها النبي صلى الله عليه وسلم</p>
+                <p>- هذا التطبيق خطوة نحو توحيد التقويم الهجري عالميًا راجيا" من الله تعالى أن يتم اعتماده من الجميع.</p>
+                <p>- هذا التطبيق يعطينا الحد الأدنى لدخول الشهر الهجري عملا" بقول الجمهور بعدم اعتبار اختلاف المطالع.</p>
+                <p>- واجهة بسيطة وسهلة الاستخدام للمهتمين والباحثين والمؤسسات الدينية.</p>
+            </div>
+        </div>
+
+        <!-- Goal Section -->
+        <div id="goal" class="content-section">
+            <h2 id="goal-title">هدفنا</h2>
+            <div id="goal-content">
+                <p>خطوة نحو توحيد التقويم الهجري عالميًا.</p>
+                <p>جمع كلمة المسلمين على هلال موحد، ووقت عبادة دقيق، يجمع بين الحساب الفلكي والضابط الشرعي، انطلاقًا من مرجعية مكة المكرمة ليكون التقويم الهجري المعتمد في العالم بإذن المولى عز وجل.</p>
+                <p>راجين نشره على أوسع نطاق ومشاركته والسعي لإعتماده من قبل الجميع</p>
+                <p><strong>الباحث الأستاذ ظافر حلاق</strong></p>
+                <p>المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div id="overview" class="content-section">
+            <h2 id="overview-title">لمحة عامة</h2>
+            <div class="verse">قال الله تعالى : ( يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ )</div>
+            <div id="overview-content">
+                <p>أي أن دخول الشهر مرتبط بمواقيت محددة تتعلق بالأهلة شرح لنا النبي صلى الله عليه وسلم كيفية دخول الأشهر الهجرية بطريقة عظيمة رغم بساطتها ( الشهر لا يكون إلا 29 أو 30 يوما" - وليلة الثلاثين هي ليلة شك يتم من خلالها تحديد دخول الشهر أو إكمال العدة )</p>
+                <p>أي تغيير في هذا المعيار النبوي عند الحساب سيؤدي إلى خلل في منظومة الأشهر الهجرية وتغير في عدد أيامها !!</p>
+                
+                <h3>بالعودة إلى أهم التقاويم الهجرية في العالم التي تعتمد على الحساب لوجدنا :</h3>
+                <p><strong>1- تقويم أم القرى :</strong> لا يشترط في حساباته رؤية الهلال وفي ذلك إشكال شرعي !!! (إخوتنا في السعودية الحبيبة يقولون هو تقويم مدني وأن العبرة بتحري الهلال ولكننا نقول ما المانع أن يتم إعتماد تقويم آخر ليحقق الهدف المدني والشرعي بآن واحد )</p>
+                <p>وأيضا" تقويم أم القرى لا يشترط وقوع ليالي التحري بعد حصول الإقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!</p>
+                
+                <p><strong>2- التقويم التركي :</strong> تؤدي طريقة حسابه في بعض الأشهر إلى حرمان العالم الإسلامي بأكمله من رؤية الهلال !!!</p>
+                <p>كما لا يشترط وقوع ليالي التحري بعد حصول الإقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!</p>
+                <p>وإن كانت تركيا الحبيبة لا تتحرى الهلال عمليا" فعلى الأقل أن تعتمد على تقويم يكون الحساب فيه منضبط ومطابق للواقع وكأننا قمنا بالتحري ..</p>
+                
+                <div class="highlight">
+                    <h3>رؤيتنا :</h3>
+                    <p>- عند إضافة شرط وقوع ليالي التحري بعد حدوث الإقتران في مكة المكرمة على تقويم أم القرى والتقويم التركي نجد أنهما يعطيان النتائج متطابقة ومنضبطة.</p>
+                    <p>- يجب أن يكون الحساب مطابقا" للواقع الذي سيحصل لاحقا" في أي تقويم هجري وهذا ما عملت عليه في هذه الحاسبة الفلكية الشرعية للتقويم العالمي.</p>
+                    <p>- يجب أن يكون الحساب منضبطا" شرعا" وعقلا".</p>
+                    <p>- لا ينبغي إدخال الشهر دون رؤية محققة للهلال من عدد من الدول ..</p>
+                    <p>- لا يمكن تحري الهلال قبل وصول القمر إلى الإقتران المركزي في مكة المكرمة لأنه سيكون كمن يبحث عن جنين في بطن امرأة لم تحمل بعد !!!</p>
+                    <p>- يجب أن يتجاوز القمر الجديد خط الإقتران حتى يكون هناك احتمال لرؤية الهلال واحتمال لعدم رؤيته.</p>
+                    <p>- القضاء على ليلة الشك في الحسابات الحالية المعمول بها هو الذي أدى إلى دخول الشهر قبل يوم من موعده وحصول ليلة التحري للشهر التالي قبل الإقتران !!!</p>
+                    <p>- يجب رد أي رؤية تؤدي إلى وقوع ليلة التحري للشهر التالي قبل الإقتران وبذلك تكون للرؤيا حدود منضبطة لا يجوز تجاوزها ..</p>
+                    <p>- نرجو من كافة الدول في العالم إعتماد هذا التقويم الهجري ليكون التاريخ الهجري موحد في جميع الكرة الأرضية.</p>
+                    <p>- اللهم هيء لهذه الأمة علماء فلك وشرعيين ينصحون الدول باعتماد هذا التقويم الهجري واجعل له القبول بين الناس لتتحقق وحدة التقويم الهجري في العالم الذي أضحى كقرية صغيرة</p>
+                    <p>وآخر دعوانا أن الحمد لله رب العالمين.</p>
+                </div>
+                
+                <p><strong>الباحث الأستاذ ظافر حلاق</strong></p>
+                <p>المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
+            </div>
+        </div>
+
+        <!-- Dedication Section -->
+        <div id="dedication" class="content-section">
+            <h2 id="dedication-title">🌙 إهداء</h2>
+            <div class="dedication" id="dedication-content">
+                <p><strong>إلى المملكة العربية السعودية :</strong></p>
+                <p>أرض الوحي، ومركز الحرمين الشريفين، وقد اعتمد هذا التطبيق مكة المكرمة مرجعاً للتقويم الهجري في العالم</p>
+                
+                <p><strong>وإلى الجمهورية التركية :</strong></p>
+                <p>جسر الحضارة ونصرة المظلوم ، ومركز الإسهامات لجمع كلمة الأمة الأسلامية .</p>
+                
+                <p><strong>وإلى بلدي الحبيب سورية :</strong></p>
+                <p>وطن القلب والذاكرة، وموطن العراقة والعلم والعلماء ..</p>
+                
+                <p><strong>وإلى جمهورية مصر الحبيبة :</strong></p>
+                <p>موطن الأزهر الشريف، ومنارة العلم والاعتدال .</p>
+                
+                <p><strong>وإلى جميع دول العالم الإسلامي الساعية إلى وحدة التقويم الهجري وإلى مشايخي وأحبابي أُهدي هذا التطبيق :</strong></p>
+                <p>الذي تم وفق طريقة حسابية مبتكرة وفريدة مطابقة لما سيكون عليه الواقع ومنضبطة بالمعيار النبوي أعددتُها بعناية فائقة ، لتكون خطوة عملية نحو تقويم هجري موحد في العالم أجمع ينطلق من مكة المكرمة، قبلة المسلمين ، ويحافظ على ليلة الشك واحتمالَيْ رؤية الهلال من عدمه الذي كانت عليه الأمة منذ عهد النبي صلى الله عليه وسلم ويرفض كل رؤية تؤدي إلى دخول الشهر قبل يوم من موعده .. ليصل إلى كل دول العالم كتقويم هجري موحد راجيا" منهم اعتماده .</p>
+                
+                <p><strong>الباحث الأستاذ ظافر حلاق</strong></p>
+                <p>المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
+                <p>اللهم اجعل فيه النفع والقبول، واجعله سببا" لتوحيد الأمة في هلالها وتاريخها الهجري .</p>
+            </div>
+        </div>
+
         <div class="footer">
-            <p>© 2024 - حاسبة التقويم الهجري الفلكية</p>
-            <p>تم تطويرها بعناية لخدمة المجتمع الإسلامي</p>
+            <p>© 2025 - حاسبة التقويم الهجري الفلكية</p>
+            <p id="footer-text">تم تطويرها بعناية لخدمة المجتمع الإسلامي</p>
         </div>
     </div>
+
+    <script>
+        const translations = {
+            ar: {
+                'main-title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي',
+                'main-subtitle': 'إعداد الباحث الأستاذ ظافر حلاق',
+                'nav-welcome': 'شاشة الترحيب',
+                'nav-about': 'حول التطبيق',
+                'nav-goal': 'هدفنا',
+                'nav-overview': 'لمحة عامة',
+                'nav-dedication': 'إهداء',
+                'launch-calc': 'تشغيل الحاسبة',
+                'launch-about': 'الإهداء',
+                'welcome-title': 'شاشة الترحيب',
+                'verse-text': 'يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ',
+                'welcome-subtitle': 'حاسبة فلكية شرعية لأوائل الأشهر الهجرية للتقويم الهجري العالمي',
+                'about-title': 'حول التطبيق',
+                'goal-title': 'هدفنا',
+                'overview-title': 'لمحة عامة',
+                'dedication-title': '🌙 إهداء',
+                'footer-text': 'تم تطويرها بعناية لخدمة المجتمع الإسلامي'
+            },
+            en: {
+                'main-title': 'Sharia-Compliant Astronomical Calculator for the Global Hijri Calendar',
+                'main-subtitle': 'Prepared by Researcher and Professor Zafer Hallak',
+                'nav-welcome': 'Welcome Screen',
+                'nav-about': 'About the Application',
+                'nav-goal': 'Our Goal',
+                'nav-overview': 'Overview',
+                'nav-dedication': 'Dedication',
+                'launch-calc': 'Launch Calculator',
+                'launch-about': 'Dedication',
+                'welcome-title': 'Welcome Screen',
+                'verse-text': '"They ask you about the new moons. Say, \'They are timings for people and for the Hajj.\'"',
+                'welcome-subtitle': 'A Sharia-compliant astronomical calculator for the beginnings of Hijri months for the Unified Global Islamic Calendar',
+                'about-title': 'About the Application',
+                'goal-title': 'Our Goal',
+                'overview-title': 'Overview',
+                'dedication-title': '🌙 Dedication',
+                'footer-text': 'Developed with care to serve the Islamic community'
+            },
+            tr: {
+                'main-title': 'Küresel Hicri Takvim için Şer\'i Astronomik Hesaplayıcı',
+                'main-subtitle': 'Araştırmacı ve Profesör Zafer Hallaq tarafından hazırlanmıştır',
+                'nav-welcome': 'Karşılama Ekranı',
+                'nav-about': 'Uygulama Hakkında',
+                'nav-goal': 'Hedefimiz',
+                'nav-overview': 'Genel Bakış',
+                'nav-dedication': 'İthaf',
+                'launch-calc': 'Hesaplayıcıyı Başlat',
+                'launch-about': 'İthaf',
+                'welcome-title': 'Karşılama Ekranı',
+                'verse-text': '"Sana hilalleri soruyorlar. De ki: Onlar, insanlar ve Hac için vakit ölçüleridir."',
+                'welcome-subtitle': 'Küresel Hicri Takvim için ayların başlangıcını hesaplayan Şer\'i bir astronomik hesaplayıcı',
+                'about-title': 'Uygulama Hakkında',
+                'goal-title': 'Hedefimiz',
+                'overview-title': 'Genel Bakış',
+                'dedication-title': '🌙 İthaf',
+                'footer-text': 'İslam toplumuna hizmet etmek için özenle geliştirilmiştir'
+            }
+        };
+
+        const contentTranslations = {
+            en: {
+                'welcome-content': `
+                    <p>- It adopts the time reference of Makkah for the moon's conjunction and sunset, as Makkah is the Qibla for Muslims worldwide.</p>
+                    <p>- A reliable and innovative scientific method developed by the researcher and professor, Zafer Hallak.</p>
+                    <p>- It does not allow for moon-sighting nights to occur before the conjunction for any month, to unite the Muslim Ummah on a single crescent and a single calendar.</p>
+                    <p>- This is because having a moon-sighting night before the conjunction is like searching for a fetus in the womb of a woman who has not yet conceived, which is illogical!</p>
+                    <p>- A step towards unifying the Hijri calendar globally.</p>
+                    <p><strong>Prepared and innovated by: Researcher and Professor Zafer Hallak</strong></p>
+                `,
+                'about-content': `
+                    <p>This is an innovative application that provides an accurate Hijri calendar. Its calculations are based on the astronomical conjunction of the moon according to the time of Makkah and its sunset as a central reference, since it is the Qibla for Muslims worldwide.</p>
+                    <p>Each month, the moon orbits the earth and reaches conjunction—the "new moon." (I do not call it the "birth of the crescent" because that is incorrect; it is a period of gestation that requires many hours before the crescent is actually born.) This application does not allow for crescent-sighting nights to occur before the start of the new lunar cycle, as determined by the time of Makkah.</p>
+                    <p>The application does not allow the month to begin if the conjunction occurs after sunset in Makkah on the "night of doubt," which is the evening of the 29th (the night leading into the 30th).</p>
+                    <p>This application ensures that crescent-sighting nights happen after the conjunction, which is consistent with practical and Sharia-compliant sighting.</p>
+                    <p>Its calculations determine the beginnings of the Hijri months with both astronomical and Sharia-compliant precision.</p>
+                    <p>It is a reliable and innovative scientific method developed by the researcher and professor, Zafer Hallak.</p>
+                    <p>This application does not allow a month to begin a day before its due date and rejects any sighting that would disrupt the system of Hijri months established by the Prophet, peace and blessings be upon him.</p>
+                    <p>This application is a step toward unifying the Hijri calendar globally, and I pray to Allah Almighty that it will be adopted by all.</p>
+                    <p>The application provides the minimum start date for the Hijri month, in accordance with the majority opinion that the variation in moonrise locations should not be considered.</p>
+                    <p>It features a simple and user-friendly interface for researchers, interested individuals, and religious institutions.</p>
+                `,
+                'goal-content': `
+                    <p>A step towards unifying the Hijri calendar globally.</p>
+                    <p>Our aim is to unite the Muslim community on a single crescent and a precise time for worship, combining astronomical calculation with Sharia-compliant regulation. This is based on the reference point of Makkah to become the globally adopted Hijri calendar, with the grace of Allah Almighty.</p>
+                    <p>We hope for it to be widely published, shared, and adopted by everyone.</p>
+                    <p><strong>Researcher and Professor Zafer Hallak</strong></p>
+                    <p>Developer and innovator of the astronomical calculation method used in this application.</p>
+                `,
+                'dedication-content': `
+                    <p><strong>To the Kingdom of Saudi Arabia:</strong></p>
+                    <p>The land of divine revelation and the center of the Two Holy Mosques. This application adopts Makkah as the reference point for the world's Hijri calendar.</p>
+                    
+                    <p><strong>To the Republic of Türkiye:</strong></p>
+                    <p>The bridge of civilization, a champion of the oppressed, and a hub for efforts to unite the Islamic Ummah.</p>
+                    
+                    <p><strong>To my beloved homeland, Syria:</strong></p>
+                    <p>The country of my heart and memories, and the cradle of heritage, knowledge, and scholars.</p>
+                    
+                    <p><strong>To the beloved Arab Republic of Egypt:</strong></p>
+                    <p>The home of Al-Azhar Al-Sharif and a beacon of knowledge and moderation.</p>
+                    
+                    <p><strong>And to all the countries of the Islamic world striving for a unified Hijri calendar, as well as to my sheikhs and loved ones, I dedicate this application:</strong></p>
+                    <p>This application was developed using a unique and innovative computational method that precisely matches what will happen in reality and adheres to the Prophetic standard. I prepared it with great care to be a practical step toward a unified Hijri calendar for the entire world. It originates from Makkah, the Qibla of Muslims, and preserves the "night of doubt" and the possibility of seeing the crescent or not, which was the practice of the Ummah since the time of the Prophet, peace and blessings be upon him. It rejects any sighting that leads to the start of a new month one day before its due date. My hope is that it will reach every country in the world as a unified Hijri calendar, and I pray that they will adopt it.</p>
+                    
+                    <p><strong>Researcher and Professor Zafer Hallak</strong></p>
+                    <p>Developer and innovator of the astronomical calculation method used in this application.</p>
+                    <p>O Allah, grant this work benefit and acceptance, and make it a reason for uniting the Ummah in its crescent and its Hijri history.</p>
+                `
+            },
+            tr: {
+                'welcome-content': `
+                    <p>- Ay'ın kavuşumu ve güneşin batışı için Mekke zamanını referans alır, çünkü Mekke dünya üzerindeki tüm Müslümanların kıblesidir.</p>
+                    <p>- Araştırmacı ve profesör Zafer Hallaq tarafından geliştirilen, güvenilir ve yenilikçi bir bilimsel yöntemdir.</p>
+                    <p>- Tüm aylar için hilal arama gecelerinin kavuşumdan önce gerçekleşmesine izin vermez, böylece İslam ümmetini tek bir hilal ve tek bir takvim üzerinde birleştirmeyi amaçlar.</p>
+                    <p>- Zira hilal arama gecesinin kavuşumdan önce olması, sanki hamile kalmamış bir kadının karnında cenin aramaya benzer ki, bu mantıksızdır!</p>
+                    <p>- Küresel olarak Hicri takvimi birleştirme yolunda bir adımdır.</p>
+                    <p><strong>Hazırlayan ve Geliştiren: Araştırmacı ve Profesör Zafer Hallak</strong></p>
+                `,
+                'about-content': `
+                    <p>Bu, hesaplamaları, tüm Müslümanların kıblesi olması sebebiyle, Ay'ın astronomik kavuşumunu Mekke zamanına ve güneşin batışına göre merkezi bir referans olarak alan, yenilikçi ve doğru bir Hicri takvim uygulamasıdır.</p>
+                    <p>Ay her ay Dünya'nın etrafında döner ve kavuşum noktasına, yani yeni aya ulaşır. (Bu sürece "hilalin doğumu" demek yanlıştır, zira bu, doğumun gerçekleşmesi için uzun saatler gerektiren bir "gebelik" dönemidir.) Uygulama, Mekke zamanına göre yeni ay döngüsünün başlangıcından önce hilal arama gecelerinin gerçekleşmesine izin vermez.</p>
+                    <p>Kavuşum zamanı, şüpheli gece olarak kabul edilen 29. günün akşamı, yani 30. gece, Mekke'de güneşin batışından sonraysa, bu uygulama ayın başlamasına izin vermez.</p>
+                    <p>Bu uygulama, pratik ve şer'i hilal gözlemiyle uyumlu olduğu için hilal arama gecelerini kavuşumdan sonraya ayarlar.</p>
+                    <p>Hesaplamaları, Hicri ayların başlangıcını hem astronomik hem de şer'i hassasiyetle belirler.</p>
+                    <p>Araştırmacı ve Profesör Zafer Hallaq tarafından geliştirilmiş, güvenilir ve yenilikçi bir bilimsel yöntem kullanır.</p>
+                    <p>Bu uygulama, ayın vaktinden bir gün önce başlamasına izin vermez ve Peygamber Efendimizin (s.a.v.) kurduğu Hicri aylar sisteminde bir bozulmaya yol açan her türlü hilal tespitini reddeder.</p>
+                    <p>Bu uygulama, küresel olarak Hicri takvimi birleştirmeye yönelik bir adımdır ve Allah Teâlâ'dan herkes tarafından kabul görmesini dileriz.</p>
+                    <p>Ay'ın doğuş yerlerinin farklılığının dikkate alınmaması yönündeki çoğunluk görüşüne uygun olarak, Hicri ayın başlangıcı için asgari tarihi verir.</p>
+                    <p>İlgili kişiler, araştırmacılar ve dini kurumlar için basit ve kullanımı kolay bir arayüze sahiptir.</p>
+                `,
+                'goal-content': `
+                    <p>Hicri takvimi küresel olarak birleştirme yolunda bir adım.</p>
+                    <p>Amacımız, Müslümanların kıblesi olan Mekke'yi referans alarak, astronomik hesaplamalar ile şer'i kuralları birleştiren, tek bir hilal ve doğru bir ibadet vakti üzerinde tüm Müslümanları bir araya getirmektir. Böylece, Allah'ın izniyle, bu Hicri takvimin dünya genelinde kabul görmesini sağlamayı hedefliyoruz.</p>
+                    <p>Bu uygulamanın en geniş kitlelere ulaşması, paylaşılması ve herkes tarafından benimsenmesi umuduyla...</p>
+                    <p><strong>Araştırmacı ve Profesör Zafer Hallak</strong></p>
+                    <p>Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi</p>
+                `,
+                'dedication-content': `
+                    <p><strong>Suudi Arabistan Krallığı'na:</strong></p>
+                    <p>Vahiy diyarı, iki kutsal caminin merkezi... Bu uygulama, dünyadaki Hicri takvim için Mekke'yi referans olarak kabul etmiştir.</p>
+                    
+                    <p><strong>Türkiye Cumhuriyeti'ne:</strong></p>
+                    <p>Medeniyet köprüsü, mazlumun yardımcısı ve İslam ümmetinin birliği için katkıların merkezi.</p>
+                    
+                    <p><strong>Sevgili vatanım Suriye'ye:</strong></p>
+                    <p>Kalbin ve hafızanın vatanı, köklü geçmişin, bilimin ve alimlerin yuvası...</p>
+                    
+                    <p><strong>Sevgili Mısır Cumhuriyeti'ne:</strong></p>
+                    <p>Al-Azhar Al-Sharif'in yurdu, ilim ve itidalin feneri.</p>
+                    
+                    <p><strong>Hicri takvimin birliği için çalışan tüm İslam ülkelerine, şeyhlerime ve sevdiklerime bu uygulamayı ithaf ediyorum:</strong></p>
+                    <p>Bu uygulama, Nebevi ölçülere uygun ve gerçekliğe birebir uyan, benzersiz ve yenilikçi bir hesaplama yöntemiyle geliştirilmiştir. Dünya genelinde birleşik bir Hicri takvim için pratik bir adım olması amacıyla büyük bir özenle hazırladım. Müslümanların kıblesi olan Mekke'den yola çıkarak, Peygamberimiz (s.a.v.) döneminden beri ümmetin uyguladığı şüpheli hilal gecesini ve hilalin görülme veya görülmeme ihtimalini korur. Ayın vaktinden bir gün önce başlamasına yol açan her türlü hilal tespitini reddeder... Tek bir Hicri takvim olarak tüm dünya ülkelerine ulaşmasını ve kabul görmesini umuyorum.</p>
+                    
+                    <p><strong>Araştırmacı ve Profesör Zafer Hallak</strong></p>
+                    <p>Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi</p>
+                    <p>Allah'ım, bu uygulamayı faydalı ve makbul kıl. Onu, ümmetin hilali ve Hicri takviminde birleşmesi için bir vesile eyle.</p>
+                `
+            }
+        };
+
+        let currentLanguage = 'ar';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update body direction
+            document.body.className = lang === 'ar' ? '' : 'ltr';
+            document.documentElement.lang = lang;
+            
+            // Update text content
+            Object.keys(translations[lang]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update content sections
+            if (contentTranslations[lang]) {
+                Object.keys(contentTranslations[lang]).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.innerHTML = contentTranslations[lang][key];
+                    }
+                });
+            }
+            
+            // Update overview content for non-Arabic languages
+            if (lang !== 'ar') {
+                updateOverviewContent(lang);
+            } else {
+                // Reset to original Arabic content
+                resetOverviewContent();
+            }
+        }
+
+        function updateOverviewContent(lang) {
+            const overviewContent = document.getElementById('overview-content');
+            if (lang === 'en') {
+                overviewContent.innerHTML = `
+                    <p>This means that the start of a month is linked to specific timings related to the new moons. The Prophet, peace be upon him, explained the magnificent yet simple way to determine the start of Hijri months: "A month is either 29 or 30 days, and the night of the 30th is a night of doubt, during which the beginning of the month is determined, or the count is completed."</p>
+                    <p>Any change to this prophetic standard in our calculations will lead to a defect in the system of Hijri months and a change in their number of days!</p>
+                    
+                    <h3>Returning to the most important Hijri calendars in the world that rely on calculation, we find:</h3>
+                    <p><strong>1- Umm Al-Qura Calendar:</strong> Its calculations do not require the sighting of the crescent, which is a Sharia-related issue! (Our dear brothers in Saudi Arabia say it is a civil calendar and that the basis is crescent-sighting, but we ask: what prevents the adoption of another calendar that achieves both civil and Sharia-compliant goals simultaneously?)</p>
+                    <p>Additionally, the Umm Al-Qura Calendar does not require that the nights of sighting occur after the conjunction. How can a crescent be practically sighted when the sighting night is before the conjunction?</p>
+                    
+                    <p><strong>2- Turkish Calendar:</strong> In some months, its calculation method prevents the entire Islamic world from seeing the crescent!</p>
+                    <p>It also does not require that the nights of sighting occur after the conjunction. How can a crescent be practically sighted when the sighting night is before the conjunction?</p>
+                    <p>Even if our beloved Turkey does not physically sight the crescent, it should at least adopt a calendar where the calculation is precise and consistent with reality, as if we had sighted it.</p>
+                    
+                    <div class="highlight">
+                        <h3>Our Vision:</h3>
+                        <p>- By adding the condition that the nights of sighting must occur after the conjunction in Makkah to the Umm Al-Qura and Turkish calendars, we find that they produce identical and precise results.</p>
+                        <p>- Any Hijri calendar must have calculations that correspond to the reality that will occur later. This is what I have worked on in this Sharia-compliant astronomical calculator for the Global Calendar.</p>
+                        <p>- The calculation must be sound from both a Sharia and a logical perspective.</p>
+                        <p>- The month should not be entered without a confirmed sighting of the crescent from a number of countries.</p>
+                        <p>- It is impossible to sight the crescent before the moon reaches the central conjunction in Makkah, as this would be like searching for a fetus in the womb of a woman who has not yet conceived!</p>
+                        <p>- The new moon must pass the conjunction line for there to be a possibility of sighting the crescent (or a possibility of not seeing it).</p>
+                        <p>- The elimination of the "night of doubt" in current calculation methods has led to the month starting a day before its due time and the sighting night for the next month occurring before the conjunction!</p>
+                        <p>- Any sighting that leads to the sighting night for the next month occurring before the conjunction must be rejected. This sets precise limits for sighting that cannot be exceeded.</p>
+                        <p>- We hope that all countries around the world will adopt this Hijri calendar so that the Hijri date can be unified across the entire globe.</p>
+                        <p>- O Allah, prepare for this Ummah astronomers and Sharia scholars who will advise nations to adopt this Hijri calendar, and grant it acceptance among the people so that the unification of the Hijri calendar can be achieved in a world that has become like a small village.</p>
+                        <p>And our final prayer is that all praise is due to Allah, the Lord of the worlds.</p>
+                    </div>
+                    
+                    <p><strong>Researcher and Professor Zafer Hallak</strong></p>
+                    <p>Developer and innovator of the astronomical calculation method used in this application.</p>
+                `;
+            } else if (lang === 'tr') {
+                overviewContent.innerHTML = `
+                    <p>Bu, ayın başlangıcının hilallerle ilgili belirli vakitlerle bağlantılı olduğu anlamına gelir. Peygamber Efendimiz (s.a.v.), Hicri ayların nasıl başlayacağını, sadeliğine rağmen yüce bir yöntemle bize açıklamıştır: "(Ay 29 veya 30 gündür - ve 30. gece, ayın başlayıp başlamadığının veya sayının tamamlandığının belirlendiği bir şüphe gecesidir.)" Bu Nebevi ölçüde yapılacak herhangi bir değişiklik, Hicri aylar sisteminde bir bozulmaya ve gün sayılarının değişmesine yol açacaktır!</p>
+                    
+                    <h3>Hesaba dayanan dünyadaki en önemli Hicri takvimlere baktığımızda şunları görürüz:</h3>
+                    <p><strong>1- Umm Al-Qura Takvimi:</strong> Hesaplamaları, hilalin görülmesini şart koşmaz ki bu şer'i bir sorundur! (Sevgili kardeşlerimiz Suudi Arabistan'da bunun sivil bir takvim olduğunu ve asıl olanın hilal araması olduğunu söylüyorlar, ancak biz hem sivil hem de şer'i amacı bir arada gerçekleştiren başka bir takvim benimsenmesine ne engel var diye soruyoruz.)</p>
+                    <p>Ayrıca Umm Al-Qura takvimi, arama gecelerinin kavuşumdan sonra gerçekleşmesini şart koşmaz. Peki, arama gecesi kavuşumdan önce olduğunda hilal fiilen nasıl aranabilir ki?</p>
+                    
+                    <p><strong>2- Türk Takvimi:</strong> Bu takvimin hesaplama yöntemi, bazı aylarda tüm İslam âlemini hilali görmekten mahrum bırakır!</p>
+                    <p>Yine bu takvim de arama gecelerinin kavuşumdan sonra gerçekleşmesini şart koşmaz. Peki, arama gecesi kavuşumdan önce olduğunda hilal fiilen nasıl aranabilir ki?</p>
+                    <p>Sevgili Türkiye fiili olarak hilal araması yapmasa bile, en azından hesabı gerçekliğe uygun ve sanki arama yapılmış gibi olan bir takvimi benimsemelidir.</p>
+                    
+                    <div class="highlight">
+                        <h3>Vizyonumuz:</h3>
+                        <p>- Umm Al-Qura ve Türk takvimlerine, Mekke'de kavuşum gerçekleştikten sonra arama gecelerinin olması şartını eklediğimizde, ikisinin de aynı ve doğru sonuçları verdiğini görüyoruz.</p>
+                        <p>- Herhangi bir Hicri takvimde hesabın, daha sonra gerçekleşecek olan gerçeğe uygun olması gerekir. Bu, Küresel Takvim için hazırladığım bu Şer'i Astronomik Hesaplayıcı üzerinde çalıştığım ana konudur.</p>
+                        <p>- Hesabın hem şer'an hem de aklen doğru olması gerekir.</p>
+                        <p>- Ayın, birkaç ülkede gerçekleşmiş kesin bir hilal rüyeti olmadan başlatılmaması gerekir.</p>
+                        <p>- Ayın Mekke'deki merkezi kavuşum noktasına ulaşmasından önce hilal aramak mümkün değildir, çünkü bu, henüz hamile kalmamış bir kadının karnında cenin aramaya benzer ki, bu mantıksızdır!</p>
+                        <p>- Hilalin görülme veya görülmeme ihtimalinin olması için yeni ayın kavuşum çizgisini geçmesi gerekir.</p>
+                        <p>- Mevcut hesaplamalarda şüpheli gecenin ortadan kaldırılması, ayın vaktinden bir gün önce başlamasına ve bir sonraki ayın arama gecesinin kavuşumdan önce gerçekleşmesine yol açmıştır!</p>
+                        <p>- Bir sonraki ayın arama gecesinin kavuşumdan önce olmasına yol açan her türlü hilal tespiti reddedilmelidir. Böylece rüyet için aşılamaması gereken kesin sınırlar belirlenmiş olur.</p>
+                        <p>- Dünyadaki tüm ülkelerden, Hicri tarihin tüm yeryüzünde birleşmesi için bu takvimi benimsemelerini rica ediyoruz.</p>
+                        <p>- Allah'ım, bu ümmet için, bu Hicri takvimi benimsemeleri için ülkelere tavsiyede bulunacak astronomi ve şeriat alimleri nasip et ve dünyanın küçük bir köy haline geldiği şu çağda Hicri takvimin birliğinin gerçekleşmesi için halk arasında kabul görmesini nasip et.</p>
+                        <p>Son duamız, âlemlerin Rabbi olan Allah'a hamdolsun.</p>
+                    </div>
+                    
+                    <p><strong>Araştırmacı ve Profesör Zafer Hallak</strong></p>
+                    <p>Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi</p>
+                `;
+            }
+        }
+
+        function resetOverviewContent() {
+            const overviewContent = document.getElementById('overview-content');
+            overviewContent.innerHTML = `
+                <p>أي أن دخول الشهر مرتبط بمواقيت محددة تتعلق بالأهلة شرح لنا النبي صلى الله عليه وسلم كيفية دخول الأشهر الهجرية بطريقة عظيمة رغم بساطتها ( الشهر لا يكون إلا 29 أو 30 يوما" - وليلة الثلاثين هي ليلة شك يتم من خلالها تحديد دخول الشهر أو إكمال العدة )</p>
+                <p>أي تغيير في هذا المعيار النبوي عند الحساب سيؤدي إلى خلل في منظومة الأشهر الهجرية وتغير في عدد أيامها !!</p>
+                
+                <h3>بالعودة إلى أهم التقاويم الهجرية في العالم التي تعتمد على الحساب لوجدنا :</h3>
+                <p><strong>1- تقويم أم القرى :</strong> لا يشترط في حساباته رؤية الهلال وفي ذلك إشكال شرعي !!! (إخوتنا في السعودية الحبيبة يقولون هو تقويم مدني وأن العبرة بتحري الهلال ولكننا نقول ما المانع أن يتم إعتماد تقويم آخر ليحقق الهدف المدني والشرعي بآن واحد )</p>
+                <p>وأيضا" تقويم أم القرى لا يشترط وقوع ليالي التحري بعد حصول الإقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!</p>
+                
+                <p><strong>2- التقويم التركي :</strong> تؤدي طريقة حسابه في بعض الأشهر إلى حرمان العالم الإسلامي بأكمله من رؤية الهلال !!!</p>
+                <p>كما لا يشترط وقوع ليالي التحري بعد حصول الإقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!</p>
+                <p>وإن كانت تركيا الحبيبة لا تتحرى الهلال عمليا" فعلى الأقل أن تعتمد على تقويم يكون الحساب فيه منضبط ومطابق للواقع وكأننا قمنا بالتحري ..</p>
+                
+                <div class="highlight">
+                    <h3>رؤيتنا :</h3>
+                    <p>- عند إضافة شرط وقوع ليالي التحري بعد حدوث الإقتران في مكة المكرمة على تقويم أم القرى والتقويم التركي نجد أنهما يعطيان النتائج متطابقة ومنضبطة.</p>
+                    <p>- يجب أن يكون الحساب مطابقا" للواقع الذي سيحصل لاحقا" في أي تقويم هجري وهذا ما عملت عليه في هذه الحاسبة الفلكية الشرعية للتقويم العالمي.</p>
+                    <p>- يجب أن يكون الحساب منضبطا" شرعا" وعقلا".</p>
+                    <p>- لا ينبغي إدخال الشهر دون رؤية محققة للهلال من عدد من الدول ..</p>
+                    <p>- لا يمكن تحري الهلال قبل وصول القمر إلى الإقتران المركزي في مكة المكرمة لأنه سيكون كمن يبحث عن جنين في بطن امرأة لم تحمل بعد !!!</p>
+                    <p>- يجب أن يتجاوز القمر الجديد خط الإقتران حتى يكون هناك احتمال لرؤية الهلال واحتمال لعدم رؤيته.</p>
+                    <p>- القضاء على ليلة الشك في الحسابات الحالية المعمول بها هو الذي أدى إلى دخول الشهر قبل يوم من موعده وحصول ليلة التحري للشهر التالي قبل الإقتران !!!</p>
+                    <p>- يجب رد أي رؤية تؤدي إلى وقوع ليلة التحري للشهر التالي قبل الإقتران وبذلك تكون للرؤيا حدود منضبطة لا يجوز تجاوزها ..</p>
+                    <p>- نرجو من كافة الدول في العالم إعتماد هذا التقويم الهجري ليكون التاريخ الهجري موحد في جميع الكرة الأرضية.</p>
+                    <p>- اللهم هيء لهذه الأمة علماء فلك وشرعيين ينصحون الدول باعتماد هذا التقويم الهجري واجعل له القبول بين الناس لتتحقق وحدة التقويم الهجري في العالم الذي أضحى كقرية صغيرة</p>
+                    <p>وآخر دعوانا أن الحمد لله رب العالمين.</p>
+                </div>
+                
+                <p><strong>الباحث الأستاذ ظافر حلاق</strong></p>
+                <p>المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
+            `;
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-section-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

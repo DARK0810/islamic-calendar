@@ -29,8 +29,8 @@ Run these commands in your terminal, replacing the placeholders with your actual
 # Remove any existing remote (if needed)
 git remote remove origin
 
-# Add the correct remote URL (replace with YOUR actual username and repository name)
-git remote add origin https://github.com/YOUR-ACTUAL-USERNAME/YOUR-REPO-NAME.git
+# Add the correct remote URL with your GitHub username and repository name
+git remote add origin https://github.com/DARK0810/islamic-calendar.git
 
 # Push your code to GitHub
 git push -u origin master
@@ -47,7 +47,7 @@ git push -u origin master
 ### 4. Access Your Website
 
 After a few minutes, your site will be available at:
-`https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/`
+`https://DARK0810.github.io/islamic-calendar/`
 
 ## Alternative Deployment Options
 

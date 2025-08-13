@@ -1,29 +1,29 @@
-# Islamic Calendar Web Application
+# حاسبة التقويم الهجري الفلكية
 
-## Overview
-This is a web-based Islamic Calendar calculator application that provides accurate astronomical calculations for determining the beginning of Islamic months. The application is designed with a modern Arabic interface and provides precise calculations based on reliable astronomical data.
+## نظرة عامة
+هذا تطبيق ويب لحساب التقويم الهجري الفلكي يوفر حسابات فلكية دقيقة لتحديد بداية الأشهر الإسلامية. تم تصميم التطبيق بواجهة عربية حديثة ويوفر حسابات دقيقة بناءً على بيانات فلكية موثوقة.
 
-## Features
-- Accurate astronomical calculations for Islamic months
-- Modern Arabic interface with enhanced typography
-- Comprehensive calendar covering multiple years (1445-1456 Hijri)
-- All times calculated according to Mecca time (UTC+3)
-- Responsive design that works on all devices
-- Glass-morphism UI with gradient colors
+## المميزات
+- حسابات فلكية دقيقة للأشهر الإسلامية
+- واجهة عربية حديثة مع تحسينات طباعية
+- تقويم شامل يغطي سنوات متعددة (1445-1456 هجري)
+- جميع الأوقات محسوبة وفقًا لتوقيت مكة المكرمة (UTC+3)
+- تصميم متجاوب يعمل على جميع الأجهزة
+- واجهة مستخدم زجاجية مع ألوان ذهبية بنية متدرجة
 
-## Pages
-- **Home Page**: Main landing page with links to the calculator and dedication
-- **Calculator**: The main astronomical calculator for Islamic calendar
-- **Dedication**: Information about the project's dedication
+## الصفحات
+- **الصفحة الرئيسية**: صفحة البداية الرئيسية مع روابط إلى الحاسبة والإهداء
+- **الحاسبة**: الحاسبة الفلكية الرئيسية للتقويم الإسلامي
+- **الإهداء**: معلومات حول إهداء المشروع
 
-## Technologies Used
+## التقنيات المستخدمة
 - HTML5
-- CSS3 (with modern styling techniques)
+- CSS3 (مع تقنيات تصميم حديثة)
 - JavaScript
-- Google Fonts (Amiri, Cairo)
+- خطوط Google (أميري، القاهرة)
 
-## Deployment
-This application is deployed using GitHub Pages and can be accessed at [https://[username].github.io/islamic-calendar/](https://[username].github.io/islamic-calendar/)
+## النشر
+سيتم نشر هذا التطبيق باستخدام GitHub Pages ويمكن الوصول إليه على [https://[username].github.io/islamic-calendar/](https://[username].github.io/islamic-calendar/)
 
-## Credits
-Developed by Professor Zafer Hallak
+## الاعتمادات
+تطوير الأستاذ ظافر حلاق

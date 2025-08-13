@@ -14,12 +14,12 @@ DOCTYPE html! >
         }
         
         body {
-            font-family: 'Cairo', 'Amiri', sans-serif;
+            font-family: 'Amiri', 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); /* Deep blue to bright blue gradient */
+            background: linear-gradient(135deg, #1a2a57 0%, #0d5c63 100%); /* Dark navy blue to emerald green gradient */
             min-height: 100vh;
             color: #2c3e50;
         }
@@ -27,16 +27,31 @@ DOCTYPE html! >
         .container {
             max-width: 700px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.95); /* White background with transparency */
+            background: rgba(173, 216, 230, 0.85); /* Light blue background with transparency */
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.3);
-            border: 1px solid rgba(59, 130, 246, 0.5); /* Blue border */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700; /* Gold border */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q30,10 40,20 T60,20 T80,20" stroke="%23FFD700" fill="none" stroke-width="0.5" opacity="0.3"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.1;
+            pointer-events: none;
         }
         
         h1 {
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6); /* Deep blue to bright blue gradient */
+            background: linear-gradient(45deg, #FFD700, #FFA500); /* Gold to orange gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -44,17 +59,20 @@ DOCTYPE html! >
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 30px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             line-height: 1.4;
+            font-family: 'Amiri', sans-serif;
         }
         
         h2 {
-            color: #1e3a8a; /* Deep blue */
+            color: #FFD700; /* Gold color */
             text-align: center;
             font-size: 1.4rem;
             font-weight: 600;
             margin: 25px 0 20px 0;
             position: relative;
+            font-family: 'Amiri', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         h2::after {
@@ -65,7 +83,7 @@ DOCTYPE html! >
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6); /* Deep blue to bright blue gradient */
+            background: linear-gradient(45deg, #FFD700, #FF8C00); /* Gold to dark orange gradient */
             border-radius: 2px;
         }
         
@@ -86,27 +104,28 @@ DOCTYPE html! >
             width: 100%;
             padding: 12px 16px;
             margin-bottom: 15px;
-            border: 2px solid #3b82f6; /* Bright blue */
+            border: 2px solid #FFD700; /* Gold */
             border-radius: 12px;
             font-size: 1rem;
             direction: rtl;
-            background: linear-gradient(135deg, #e0f2fe, #bfdbfe); /* Light blue gradient */
+            background: linear-gradient(135deg, #e0f7fa, #80deea); /* Light turquoise gradient */
             transition: all 0.3s ease;
             font-family: 'Cairo', sans-serif;
-            color: #1e3a8a; /* Deep blue */
+            color: #003366; /* Dark blue */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         select:focus {
             outline: none;
-            border-color: #3b82f6; /* Bright blue */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            border-color: #FFD700; /* Gold */
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
             transform: translateY(-1px);
         }
         
         button {
             width: 100%;
             padding: 15px 20px;
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
             color: white;
             cursor: pointer;
             border: none;
@@ -115,9 +134,10 @@ DOCTYPE html! >
             font-weight: 600;
             font-family: 'Cairo', sans-serif;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
             position: relative;
             overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         button::before {
@@ -127,7 +147,7 @@ DOCTYPE html! >
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s;
         }
         
@@ -137,7 +157,8 @@ DOCTYPE html! >
         
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
         }
         
         button:active {
@@ -147,20 +168,35 @@ DOCTYPE html! >
         .results {
             margin-top: 30px;
             padding: 25px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
             border-radius: 15px;
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .results::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M0,0 L60,0 L60,60 Z" fill="%23FFD700" opacity="0.2"/></svg>');
+            pointer-events: none;
         }
         
         .results p {
             margin-bottom: 15px;
             line-height: 1.8;
             padding: 12px 15px;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #FFD700;
             transition: transform 0.2s ease;
+            position: relative;
         }
         
         .results p:hover {
@@ -168,18 +204,21 @@ DOCTYPE html! >
         }
         
         .results p strong {
-            color: #1e3a8a;
+            color: #003366;
             font-weight: 700;
+            font-family: 'Amiri', sans-serif;
         }
         
         .results p:last-child {
             font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
             color: white;
-            border-left: 4px solid #1e3a8a;
+            border-left: 4px solid #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-family: 'Amiri', sans-serif;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
         }
         
         .results p:last-child strong {

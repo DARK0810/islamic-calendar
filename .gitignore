@@ -1,0 +1,10 @@
+# Ignore MIT App Inventor files
+islamc-calendar-app.aia
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore src and youngandroidproject directories (MIT App Inventor specific)
+src/
+youngandroidproject/

@@ -20,6 +20,35 @@
             min-height: 100vh;
             color: #2c3e50;
             padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100,0 L200,100 L100,200 L0,100 Z M100,20 L180,100 L100,180 L20,100 Z M100,40 L160,100 L100,160 L40,100 Z M0,0 L40,0 L40,40 Z M160,0 L200,0 L200,40 Z M0,160 L40,200 L0,200 Z M200,160 L200,200 L160,200 Z" stroke="%23B8860B" fill="none" stroke-width="0.5"/></svg>');
+            background-size: 200px 200px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,0 60,0 80,20 S120,40 140,20 S180,0 200,20 M20,60 C40,40 60,40 80,60 S120,80 140,60 S180,40 200,60" stroke="%23B8860B" fill="none" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
         }
         
         .container {
@@ -30,7 +59,7 @@
             padding: 40px;
             border-radius: 25px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border: 2px solid #FFD700; /* Gold border */
+            border: 2px solid #B8860B; /* Dark golden brown border */
             position: relative;
             overflow: hidden;
         }
@@ -42,22 +71,35 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,50 C20,40 40,40 40,50 C40,60 60,60 60,50 C60,40 80,40 80,50" stroke="%23FFD700" fill="none" stroke-width="0.5" opacity="0.3"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,20 L80,50 L50,80 L20,50 Z M50,25 L75,50 L50,75 L25,50 Z M0,0 L20,0 L20,20 Z M80,0 L100,0 L100,20 Z M0,80 L20,100 L0,100 Z M100,80 L100,100 L80,100 Z" stroke="%23B8860B" fill="none" stroke-width="0.5"/></svg>');
             background-size: 100px 100px;
-            opacity: 0.1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .container::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,0 L40,20 L20,40 L0,20 Z" fill="%23B8860B" opacity="0.2"/></svg>');
             pointer-events: none;
         }
         
         .header {
-            background: linear-gradient(45deg, #FFD700, #FF8C00); /* Gold to dark orange gradient */
-            color: white;
+            background: linear-gradient(45deg, #B8860B, #8B4513); /* Dark golden brown to saddle brown gradient */
+            color: #ffffff;
             padding: 30px;
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+            border: 1px solid rgba(184, 134, 11, 0.5);
             position: relative;
             overflow: hidden;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
         }
         
         .header::after {

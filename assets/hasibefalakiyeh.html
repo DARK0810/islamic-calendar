@@ -1,11 +1,11 @@
 
 
-DOCTYPE html! >
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</title>
+    <title data-translate="title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap');
         
@@ -88,6 +88,96 @@ DOCTYPE html! >
             height: 40px;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,0 L40,20 L20,40 L0,20 Z" fill="%23B8860B" opacity="0.2"/></svg>');
             pointer-events: none;
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            padding: 8px 15px;
+            background: rgba(184, 134, 11, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lang-btn:hover {
+            background: rgba(184, 134, 11, 1);
+            transform: translateY(-2px);
+        }
+        
+        .lang-btn.active {
+            background: #B8860B;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4);
+        }
+        
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 1000;
+        }
+        
+        .home-btn {
+            padding: 8px 20px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .home-btn:hover {
+            background: rgba(139, 69, 19, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+        }
+        
+        [dir="ltr"] {
+            direction: ltr;
+            text-align: center;
+        }
+        
+        [dir="ltr"] .language-selector {
+            left: auto;
+            right: 20px;
+        }
+        
+        [dir="ltr"] .container {
+            text-align: center;
+        }
+        
+        [dir="ltr"] h1 {
+            text-align: center;
+        }
+        
+        [dir="ltr"] .select-icon {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+        
+        [dir="ltr"] .select-icon:first-child {
+            margin-right: 0;
+        }
+        
+        [dir="ltr"] .select-icon:last-child {
+            margin-right: 0;
         }
         
         h1 {
@@ -207,10 +297,10 @@ DOCTYPE html! >
         .results {
             margin-top: 30px;
             padding: 25px;
-            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 15px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #B8860B;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -229,12 +319,13 @@ DOCTYPE html! >
         .results p {
             margin-bottom: 15px;
             line-height: 1.8;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #FFD700;
-            transition: transform 0.2s ease;
+            padding: 15px 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+            border-left: 5px solid #B8860B;
+            border-right: 1px solid rgba(184, 134, 11, 0.3);
+            transition: all 0.3s ease;
             position: relative;
         }
         
@@ -312,47 +403,159 @@ DOCTYPE html! >
         
         /* Responsive design */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .container {
-                margin: 10px;
+                margin: 10px auto;
                 padding: 20px;
                 border-radius: 15px;
+                max-width: 95%;
             }
             
             h1 {
                 font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+                margin: 20px 0 15px 0;
+            }
+            
+            .language-selector {
+                top: 10px;
+                left: 10px;
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .home-button {
+                top: 10px;
+                right: 10px;
+                transform: none;
+            }
+            
+            .home-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
             }
             
             .select-icon {
                 width: 100%;
                 margin-left: 0;
                 margin-bottom: 15px;
+                padding: 12px;
+                font-size: 1rem;
+            }
+            
+            select {
+                padding: 12px;
+                font-size: 1rem;
+                width: 100%;
+            }
+            
+            .result-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .month-result {
+                padding: 12px;
+                margin: 10px 0;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                margin: 5px auto;
+            }
+            
+            h1 {
+                font-size: 1.3rem;
+                line-height: 1.3;
+            }
+            
+            h2 {
+                font-size: 1.1rem;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 15px;
+                flex-direction: row;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .home-button {
+                position: relative;
+                top: auto;
+                right: auto;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .lang-btn, .home-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .select-icon {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            select {
+                padding: 10px;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <button class="lang-btn active" onclick="changeLanguage('ar')" data-lang="ar">العربية</button>
+        <button class="lang-btn" onclick="changeLanguage('en')" data-lang="en">English</button>
+        <button class="lang-btn" onclick="changeLanguage('tr')" data-lang="tr">Türkçe</button>
+    </div>
+    
+    <div class="home-button">
+        <button class="home-btn" onclick="window.location.href='../index.html'" data-translate="home-btn">الصفحة الرئيسية</button>
+    </div>
+    
     <div class="container">
-        <h1>حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</h1>
+        <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</h1>
         <div class="input-group">
             <div class="select-icon">
-                <label for="hijri-year">اختر السنة الهجرية:</label>
+                <label for="hijri-year" data-translate="select-year">اختر السنة الهجرية:</label>
                 <select id="hijri-year"></select>
             </div>
             <div class="select-icon">
-                <label for="hijri-month">اختر الشهر الهجري:</label>
+                <label for="hijri-month" data-translate="select-month">اختر الشهر الهجري:</label>
                 <select id="hijri-month"></select>
             </div>
         </div>
-        <button id="calculate-btn">احسب بداية الشهر</button>
+        <button id="calculate-btn" data-translate="calculate-btn">احسب بداية الشهر</button>
         <div class="results" id="results">
-            <h2>النتائج:</h2>
-            <p id="result-current-moon"><strong>القمر الجديد الحالي:</strong> <span id="current-moon-details">...</span></p>
-            <p id="result-next-moon"><strong>القمر الجديد التالي:</strong> <span id="next-moon-details">...</span></p>
-            <p id="result-sunset"><strong>وقت غروب الشمس للقمر التالي:</strong> <span id="sunset-details">...</span></p>
-            <p id="result-date-plus-29"><strong>تاريخ القمر الجديد الحالي + 29 يوم:</strong> <span id="date-plus-29-details">...</span></p>
-            <p id="result-difference"><strong>الفرق بين التاريخ المحسوب والقمر الجديد التالي:</strong> <span id="difference-details">...</span></p>
-            <p id="result-days-to-add"><strong>عدد الأيام التي ستضاف لحساب بداية الشهر:</strong> <span id="days-to-add-details">...</span></p>
-            <p id="result-final-date"><strong>أول يوم في الشهر الهجري المحدد:</strong> <span id="final-date-details">...</span></p>
+            <h2 data-translate="results-title">النتائج:</h2>
+            <p id="result-current-moon"><strong data-translate="current-moon">القمر الجديد الحالي:</strong> <span id="current-moon-details">...</span></p>
+            <p id="result-next-moon"><strong data-translate="next-moon">القمر الجديد التالي:</strong> <span id="next-moon-details">...</span></p>
+            <p id="result-sunset"><strong data-translate="sunset-time">وقت غروب الشمس للقمر التالي:</strong> <span id="sunset-details">...</span></p>
+            <p id="result-date-plus-29"><strong data-translate="date-plus-29">تاريخ القمر الجديد الحالي + 29 يوم:</strong> <span id="date-plus-29-details">...</span></p>
+            <p id="result-difference"><strong data-translate="difference">الفرق بين التاريخ المحسوب والقمر الجديد التالي:</strong> <span id="difference-details">...</span></p>
+            <p id="result-days-to-add"><strong data-translate="days-to-add">عدد الأيام التي ستضاف لحساب بداية الشهر:</strong> <span id="days-to-add-details">...</span></p>
+            <p id="result-final-date"><strong data-translate="final-date">أول يوم في الشهر الهجري المحدد:</strong> <span id="final-date-details">...</span></p>
         </div>
     </div>
     <script>
@@ -807,16 +1010,25 @@ DOCTYPE html! >
             return `${day}/${month}/${year}`;
         }
 
-        // Helper function to get day name in Arabic
+        // Helper function to get day name based on current language
         function getDayName(date) {
-            const days = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
-            return days[date.getDay()];
+            const currentLang = document.documentElement.lang || 'ar';
+            const days = {
+                ar: ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+                en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                tr: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
+            };
+            return days[currentLang][date.getDay()];
         }
 
         // Populate dropdowns with unique Hijri Years and Months from data
         function populateDropdowns() {
             const yearSelect = document.getElementById('hijri-year');
             const monthSelect = document.getElementById('hijri-month');
+            
+            // Save current selections
+            const selectedYear = yearSelect.value;
+            const selectedMonth = monthSelect.value;
 
             const years = new Set();
             const months = new Set();
@@ -831,7 +1043,8 @@ DOCTYPE html! >
                 }
             });
 
-            // Populate Year dropdown
+            // Clear and populate Year dropdown
+            yearSelect.innerHTML = '<option value="" data-translate="select-year">اختر السنة</option>';
             Array.from(years).sort().forEach(year => {
                 const option = document.createElement('option');
                 option.value = year;
@@ -839,16 +1052,39 @@ DOCTYPE html! >
                 yearSelect.appendChild(option);
             });
 
-            // Define a specific order for Hijri months
-            const orderedMonths = ["المحرم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"];
+            // Define Hijri months in multiple languages
+            const hijriMonths = {
+                ar: ["المحرم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"],
+                en: ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"],
+                tr: ["Muharrem", "Safer", "Rebiülevvel", "Rebiülahir", "Cemaziyelevvel", "Cemaziyelahir", "Recep", "Şaban", "Ramazan", "Şevval", "Zilkade", "Zilhicce"]
+            };
+            
+            const currentLang = document.documentElement.lang || 'ar';
+            const orderedMonths = hijriMonths.ar; // Always use Arabic for values
+            const displayMonths = hijriMonths[currentLang]; // Use current language for display
 
-            // Populate Month dropdown with all ordered months
-            orderedMonths.forEach(month => {
+            // Clear and populate Month dropdown with all ordered months
+            monthSelect.innerHTML = '<option value="" data-translate="select-month">اختر الشهر</option>';
+            orderedMonths.forEach((month, index) => {
                 const option = document.createElement('option');
                 option.value = month;
-                option.textContent = month;
+                option.textContent = displayMonths[index];
                 monthSelect.appendChild(option);
             });
+            
+            // Restore previous selections
+            if (selectedYear) yearSelect.value = selectedYear;
+            if (selectedMonth) monthSelect.value = selectedMonth;
+            
+            // Update placeholder text translations
+            const selectYearOption = yearSelect.querySelector('[data-translate="select-year"]');
+            const selectMonthOption = monthSelect.querySelector('[data-translate="select-month"]');
+            if (selectYearOption && translations[currentLang] && translations[currentLang]['select-year']) {
+                selectYearOption.textContent = translations[currentLang]['select-year'];
+            }
+            if (selectMonthOption && translations[currentLang] && translations[currentLang]['select-month']) {
+                selectMonthOption.textContent = translations[currentLang]['select-month'];
+            }
         }
 
         // Main calculation function
@@ -870,7 +1106,8 @@ DOCTYPE html! >
             const currentMoonIndex = moonData.findIndex(item => item.hijriMonthAfter === targetHijriString);
 
             if (currentMoonIndex === -1) {
-                currentMoonDetailsSpan.textContent = 'البيانات غير موجودة لهذا الشهر والسنة.';
+                const currentLang = document.documentElement.lang || 'ar';
+                currentMoonDetailsSpan.textContent = translations[currentLang]['no-data'];
                 nextMoonDetailsSpan.textContent = '...';
                 sunsetDetailsSpan.textContent = '...';
                 datePlus29DetailsSpan.textContent = '...';
@@ -886,8 +1123,9 @@ DOCTYPE html! >
             const nextMoonIndex = currentMoonIndex + 1;
 
             if (nextMoonIndex >= moonData.length) {
+                const currentLang = document.documentElement.lang || 'ar';
                 currentMoonDetailsSpan.textContent = `${currentMoon.gregorianDate} ${currentMoon.gregorianTime} (${currentMoon.hijriMonthAfter})`;
-                nextMoonDetailsSpan.textContent = 'لا توجد بيانات كافية للقمر الجديد التالي في قاعدة البيانات.';
+                nextMoonDetailsSpan.textContent = translations[currentLang]['insufficient-data'];
                 sunsetDetailsSpan.textContent = '...';
                 datePlus29DetailsSpan.textContent = '...';
                 differenceDetailsSpan.textContent = '...';
@@ -899,8 +1137,10 @@ DOCTYPE html! >
             const nextMoon = moonData[nextMoonIndex];
 
             // --- Display Initial Data ---
-            currentMoonDetailsSpan.textContent = `${currentMoon.gregorianDate} الساعة ${currentMoon.gregorianTime} (${currentMoon.hijriMonthAfter})`;
-            nextMoonDetailsSpan.textContent = `${nextMoon.gregorianDate} الساعة ${nextMoon.gregorianTime} (${nextMoon.hijriMonthAfter})`;
+            const currentLang = document.documentElement.lang || 'ar';
+            const atTimeText = translations[currentLang]['at-time'];
+            currentMoonDetailsSpan.textContent = `${currentMoon.gregorianDate} ${atTimeText} ${currentMoon.gregorianTime} (${currentMoon.hijriMonthAfter})`;
+            nextMoonDetailsSpan.textContent = `${nextMoon.gregorianDate} ${atTimeText} ${nextMoon.gregorianTime} (${nextMoon.hijriMonthAfter})`;
             sunsetDetailsSpan.textContent = nextMoon.sunsetTime;
 
             // --- Calculation Steps ---
@@ -917,7 +1157,8 @@ DOCTYPE html! >
             const differenceInTime = nextMoonDate.getTime() - datePlus29.getTime();
             const differenceInDays = Math.round(differenceInTime / oneDay);
 
-            differenceDetailsSpan.textContent = `${differenceInDays} يوم`;
+            const dayUnit = translations[currentLang]['day-unit'] || 'يوم';
+            differenceDetailsSpan.textContent = `${differenceInDays} ${dayUnit}`;
 
             // 3. تطبيق الشروط لحساب عدد الأيام التي ستضاف
             let daysToAdd = 0;
@@ -936,7 +1177,8 @@ DOCTYPE html! >
                 daysToAdd = 1;
             }
 
-            daysToAddDetailsSpan.textContent = `${daysToAdd} أيام`;
+            const daysUnit = translations[currentLang]['days-unit'];
+            daysToAddDetailsSpan.textContent = `${daysToAdd} ${daysUnit}`;
 
             // 4. حساب تاريخ أول الشهر الجديد
             const startOfMonthDate = new Date(currentMoonDate);
@@ -948,8 +1190,123 @@ DOCTYPE html! >
         // Event listener for the button
         document.getElementById('calculate-btn').addEventListener('click', calculateHijriStart);
 
-        // Populate dropdowns when the page loads
-        populateDropdowns();
+        // Populate dropdowns when the page loads - removed from here as it's called in DOMContentLoaded
+
+        // Translation system
+        const translations = {
+            ar: {
+                'title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق',
+                'main-title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق',
+                'select-year': 'اختر السنة',
+                'select-month': 'اختر الشهر',
+                'calculate-btn': 'احسب بداية الشهر',
+                'results-title': 'النتائج:',
+                'current-moon': 'القمر الجديد الحالي:',
+                'next-moon': 'القمر الجديد التالي:',
+                'sunset-time': 'وقت غروب الشمس للقمر التالي:',
+                'date-plus-29': 'تاريخ القمر الجديد الحالي + 29 يوم:',
+                'difference': 'الفرق بين التاريخ المحسوب والقمر الجديد التالي:',
+                'days-to-add': 'عدد الأيام التي ستضاف لحساب بداية الشهر:',
+                'final-date': 'أول يوم في الشهر الهجري المحدد:',
+                'months': ['المحرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'],
+                'days': ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+                'no-data': 'البيانات غير موجودة لهذا الشهر والسنة.',
+                'insufficient-data': 'لا توجد بيانات كافية للقمر الجديد التالي في قاعدة البيانات.',
+                'at-time': 'الساعة',
+                'days-unit': 'أيام',
+                'day-unit': 'يوم',
+                'home-btn': 'الصفحة الرئيسية'
+            },
+            en: {
+                'title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Professor Zafer Hallak',
+                'main-title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Professor Zafer Hallak',
+                'select-year': 'Select Year',
+                'select-month': 'Select Month',
+                'calculate-btn': 'Calculate Month Start',
+                'results-title': 'Results:',
+                'current-moon': 'Current New Moon:',
+                'next-moon': 'Next New Moon:',
+                'sunset-time': 'Sunset Time for Next Moon:',
+                'date-plus-29': 'Current New Moon Date + 29 Days:',
+                'difference': 'Difference Between Calculated Date and Next New Moon:',
+                'days-to-add': 'Number of Days to Add for Month Start Calculation:',
+                'final-date': 'First Day of the Selected Hijri Month:',
+                'months': ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Shaban', 'Ramadan', 'Shawwal', 'Dhul Qadah', 'Dhul Hijjah'],
+                'days': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                'no-data': 'Data not available for this month and year.',
+                'insufficient-data': 'Insufficient data for the next new moon in the database.',
+                'at-time': 'at',
+                'days-unit': 'days',
+                'day-unit': 'day',
+                'home-btn': 'Home Page'
+            },
+            tr: {
+                'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Profesör Zafer Hallak tarafından hazırlanmıştır',
+                'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Profesör Zafer Hallak tarafından hazırlanmıştır',
+                'select-year': 'Yıl Seçin',
+                'select-month': 'Ay Seçin',
+                'calculate-btn': 'Ay Başlangıcını Hesapla',
+                'results-title': 'Sonuçlar:',
+                'current-moon': 'Mevcut Yeni Ay:',
+                'next-moon': 'Sonraki Yeni Ay:',
+                'sunset-time': 'Sonraki Ay için Gün Batımı Zamanı:',
+                'date-plus-29': 'Mevcut Yeni Ay Tarihi + 29 Gün:',
+                'difference': 'Hesaplanan Tarih ile Sonraki Yeni Ay Arasındaki Fark:',
+                'days-to-add': 'Ay Başlangıcı Hesaplaması için Eklenecek Gün Sayısı:',
+                'final-date': 'Seçilen Hicri Ayın İlk Günü:',
+                'months': ['Muharrem', 'Safer', 'Rebiülevvel', 'Rebiülahir', 'Cemaziyelevvel', 'Cemaziyelahir', 'Recep', 'Şaban', 'Ramazan', 'Şevval', 'Zilkade', 'Zilhicce'],
+                'days': ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+                'no-data': 'Bu ay ve yıl için veri mevcut değil.',
+                'insufficient-data': 'Veritabanında sonraki yeni ay için yeterli veri yok.',
+                'at-time': 'saat',
+                'days-unit': 'gün',
+                'day-unit': 'gün',
+                'home-btn': 'Ana Sayfa'
+            }
+        };
+        
+        let currentLanguage = 'ar';
+        
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update document direction and language
+            document.documentElement.lang = lang;
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Re-populate dropdowns with translated month names
+            populateDropdowns();
+            
+            // Store language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferred-language') || 'ar';
+            populateDropdowns(); // Populate dropdowns first
+            changeLanguage(savedLang); // Then apply language
+        });
 
         // Optional: Run calculation for the first month/year automatically on load
         // calculateHijriStart();

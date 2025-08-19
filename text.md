@@ -19,7 +19,7 @@ Welcome Screen
 A Sharia-compliant astronomical calculator for the beginnings of Hijri months for the Unified Global Islamic Calendar
 - It adopts the time reference of Makkah for the moon's conjunction and sunset, as Makkah is the Qibla for Muslims worldwide.
 
-- A reliable and innovative scientific method developed by the researcher and professor, Zafer Hallak.
+- A reliable and innovative scientific method developed by the researcher Mr. Zafer Hallak.
 
 - It does not allow for moon-sighting nights to occur before the conjunction for any month, to unite the Muslim Ummah on a single crescent and a single calendar.
 
@@ -27,7 +27,7 @@ A Sharia-compliant astronomical calculator for the beginnings of Hijri months fo
 
 - A step towards unifying the Hijri calendar globally.
 
-Prepared and innovated by: Researcher and Professor Zafer Hallak
+Prepared and innovated by: Researcher Mr. Zafer Hallak
 ترجمة إلى اللغة التركية :
 "Sana hilalleri soruyorlar. De ki: Onlar, insanlar ve Hac için vakit ölçüleridir."
 Küresel Hicri Takvim için ayların başlangıcını hesaplayan Şer'i bir astronomik hesaplayıcı
@@ -41,9 +41,9 @@ Küresel Hicri Takvim için ayların başlangıcını hesaplayan Şer'i bir astr
 
 - Küresel olarak Hicri takvimi birleştirme yolunda bir adımdır.
 
-Hazırlayan ve Geliştiren: Araştırmacı ve Profesör Zafer Hallak
+Hazırlayan ve Geliştiren: Araştırmacı Sayın Zafer Hallak
 Hazırlayan ve Geliştiren:
-Araştırmacı ve Profesör Zafer Hallak
+Araştırmacı Sayın Zafer Hallak
 =================================================
 
 حول التطبيق :
@@ -75,7 +75,7 @@ Each month, the moon orbits the earth and reaches conjunction—the "new moon." 
 The application does not allow the month to begin if the conjunction occurs after sunset in Makkah on the "night of doubt," which is the evening of the 29th (the night leading into the 30th).
 This application ensures that crescent-sighting nights happen after the conjunction, which is consistent with practical and Sharia-compliant sighting.
 Its calculations determine the beginnings of the Hijri months with both astronomical and Sharia-compliant precision.
-It is a reliable and innovative scientific method developed by the researcher and professor, Zafer Hallak.
+It is a reliable and innovative scientific method developed by the researcher Mr. Zafer Hallak.
 This application does not allow a month to begin a day before its due date and rejects any sighting that would disrupt the system of Hijri months established by the Prophet, peace and blessings be upon him.
 This application is a step toward unifying the Hijri calendar globally, and I pray to Allah Almighty that it will be adopted by all.
 The application provides the minimum start date for the Hijri month, in accordance with the majority opinion that the variation in moonrise locations should not be considered.
@@ -114,7 +114,7 @@ A step towards unifying the Hijri calendar globally.
 Our aim is to unite the Muslim community on a single crescent and a precise time for worship, combining astronomical calculation with Sharia-compliant regulation. This is based on the reference point of Makkah to become the globally adopted Hijri calendar, with the grace of Allah Almighty.
 We hope for it to be widely published, shared, and adopted by everyone.
 
-Researcher and Professor Zafer Hallak
+Researcher Mr. Zafer Hallak
 Developer and innovator of the astronomical calculation method used in this application.
 
 ترجمة إلى اللغة التركية :
@@ -123,7 +123,7 @@ Hicri takvimi küresel olarak birleştirme yolunda bir adım.
 Amacımız, Müslümanların kıblesi olan Mekke'yi referans alarak, astronomik hesaplamalar ile şer'i kuralları birleştiren, tek bir hilal ve doğru bir ibadet vakti üzerinde tüm Müslümanları bir araya getirmektir. Böylece, Allah'ın izniyle, bu Hicri takvimin dünya genelinde kabul görmesini sağlamayı hedefliyoruz.
 Bu uygulamanın en geniş kitlelere ulaşması, paylaşılması ve herkes tarafından benimsenmesi umuduyla...
 
-Araştırmacı ve Profesör Zafer Hallak
+Araştırmacı Sayın Zafer Hallak
 Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi
 
 =============================================================
@@ -192,7 +192,7 @@ We hope that all countries around the world will adopt this Hijri calendar so th
 O Allah, prepare for this Ummah astronomers and Sharia scholars who will advise nations to adopt this Hijri calendar, and grant it acceptance among the people so that the unification of the Hijri calendar can be achieved in a world that has become like a small village.
 And our final prayer is that all praise is due to Allah, the Lord of the worlds.
 
-Researcher and Professor Zafer Hallak
+Researcher Mr. Zafer Hallak
 Developer and innovator of the astronomical calculation method used in this application.
 
 ترجمة إلى اللغة التركية :
@@ -217,7 +217,7 @@ Dünyadaki tüm ülkelerden, Hicri tarihin tüm yeryüzünde birleşmesi için b
 Allah'ım, bu ümmet için, bu Hicri takvimi benimsemeleri için ülkelere tavsiyede bulunacak astronomi ve şeriat alimleri nasip et ve dünyanın küçük bir köy haline geldiği şu çağda Hicri takvimin birliğinin gerçekleşmesi için halk arasında kabul görmesini nasip et.
 Son duamız, âlemlerin Rabbi olan Allah'a hamdolsun.
 
-Araştırmacı ve Profesör Zafer Hallak
+Araştırmacı Sayın Zafer Hallak
 Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi
 
 =============================================================
@@ -267,7 +267,7 @@ And to all the countries of the Islamic world striving for a unified Hijri calen
 This application was developed using a unique and innovative computational method that precisely matches what will happen in reality and adheres to the Prophetic standard. I prepared it with great care to be a practical step toward a unified Hijri calendar for the entire world.
 It originates from Makkah, the Qibla of Muslims, and preserves the "night of doubt" and the possibility of seeing the crescent or not, which was the practice of the Ummah since the time of the Prophet, peace and blessings be upon him. It rejects any sighting that leads to the start of a new month one day before its due date. My hope is that it will reach every country in the world as a unified Hijri calendar, and I pray that they will adopt it.
 
-Researcher and Professor Zafer Hallak
+Researcher Mr. Zafer Hallak
 Developer and innovator of the astronomical calculation method used in this application.
 
 O Allah, grant this work benefit and acceptance, and make it a reason for uniting the Ummah in its crescent and its Hijri history.
@@ -290,7 +290,7 @@ Al-Azhar Al-Sharif'in yurdu, ilim ve itidalin feneri.
 Hicri takvimin birliği için çalışan tüm İslam ülkelerine, şeyhlerime ve sevdiklerime bu uygulamayı ithaf ediyorum:
 Bu uygulama, Nebevi ölçülere uygun ve gerçekliğe birebir uyan, benzersiz ve yenilikçi bir hesaplama yöntemiyle geliştirilmiştir. Dünya genelinde birleşik bir Hicri takvim için pratik bir adım olması amacıyla büyük bir özenle hazırladım. Müslümanların kıblesi olan Mekke'den yola çıkarak, Peygamberimiz (s.a.v.) döneminden beri ümmetin uyguladığı şüpheli hilal gecesini ve hilalin görülme veya görülmeme ihtimalini korur. Ayın vaktinden bir gün önce başlamasına yol açan her türlü hilal tespitini reddeder... Tek bir Hicri takvim olarak tüm dünya ülkelerine ulaşmasını ve kabul görmesini umuyorum.
 
-Araştırmacı ve Profesör Zafer Hallak
+Araştırmacı Sayın Zafer Hallak
 Bu uygulamada kullanılan astronomik hesaplama yönteminin hazırlayıcısı ve mucidi
 
 Allah'ım, bu uygulamayı faydalı ve makbul kıl. Onu, ümmetin hilali ve Hicri takviminde birleşmesi için bir vesile eyle.

@@ -681,6 +681,29 @@
                 font-size: 1rem;
             }
         }
+        
+        /* Footer Styles */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.5);
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                margin-top: 20px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1393,7 +1416,10 @@
                 'at-time': 'الساعة',
                 'days-unit': 'أيام',
                 'day-unit': 'يوم',
-                'home-btn': 'الصفحة الرئيسية'
+                'home-btn': 'الصفحة الرئيسية',
+                'copyright': 'جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي',
+                'preparation': 'إعداد وابتكار: الباحث الأستاذ ظافر حلاق',
+                'development': 'برمجة وتطوير الموقع: المبرمج يامن حلاق'
             },
             en: {
                 'title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Mr. Zafer Hallak',
@@ -1416,7 +1442,10 @@
                 'at-time': 'at',
                 'days-unit': 'days',
                 'day-unit': 'day',
-                'home-btn': 'Home Page'
+                'home-btn': 'Home Page',
+                'copyright': 'All Rights Reserved © 2025 - Sharia-Compliant Astronomical Calculator for the Global Hijri Calendar',
+                'preparation': 'Preparation and Innovation: Researcher Mr. Zafer Hallak',
+                'development': 'Website Programming and Development: Developer Yamen Hallak'
             },
             tr: {
                 'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
@@ -1439,7 +1468,10 @@
                 'at-time': 'saat',
                 'days-unit': 'gün',
                 'day-unit': 'gün',
-                'home-btn': 'Ana Sayfa'
+                'home-btn': 'Ana Sayfa',
+                'copyright': 'Tüm Hakları Saklıdır © 2025 - Küresel Hicri Takvim için Şer\'i Astronomik Hesaplayıcı',
+                'preparation': 'Hazırlık ve İnovasyon: Araştırmacı Sayın Zafer Hallak',
+                'development': 'Web sitesinin programlama ve geliştirmesi: Yazılımcı Yamen Hallak'
             }
         };
         
@@ -1518,5 +1550,12 @@
             }
         });
     </script>
+    
+    <!-- Footer Section -->
+    <div class="footer">
+        <p data-translate="copyright">جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي</p>
+        <p data-translate="preparation">إعداد وابتكار: الباحث الأستاذ ظافر حلاق</p>
+        <p data-translate="development">برمجة وتطوير الموقع: المبرمج يامن حلاق</p>
+    </div>
 </body>
 </html>

@@ -82,28 +82,50 @@
             max-width: 800px;
             margin: 20px auto;
             background: linear-gradient(135deg, #914d11, #b37f0b);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .header-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
         
         .header-logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
             flex-shrink: 0;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .header-logo:hover {
+            transform: scale(1.05);
         }
         
         .header-text {
@@ -630,6 +652,21 @@
                 padding: 10px;
             }
             
+            .header-container {
+                margin: 10px auto;
+                padding: 25px 20px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .header-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
             .welcome-container {
                 padding: 20px;
                 margin: 10px auto;
@@ -1006,10 +1043,9 @@
                 'launch-calculator': '🌙 تشغيل الحاسبة',
                 'gift-button': '🎁 الإهداء',
 
-                'copyright': '© 2025 - حاسبة التقويم الهجري الفلكية',
-                'development': 'تم تطوير هذا المشروع بعناية لخدمة المجتمع الإسلامي',
-                'supervision': 'بإشراف الأستاذ ظافر حلاق',
-                'programming': 'وببرمجة يامن حلاق',
+                'copyright': 'جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي',
+                'preparation': 'إعداد وابتكار: الباحث الأستاذ ظافر حلاق',
+                'development': 'برمجة وتطوير الموقع: يامن حلاق',
                 'nav-welcome': 'شاشة الترحيب',
                 'nav-about': 'حول التطبيق',
                 'nav-goal': 'هدفنا',
@@ -1080,10 +1116,9 @@
                 'launch-calculator': '🌙 Launch Calculator',
                 'gift-button': '🎁 Dedication',
 
-                'copyright': '© 2025 - Astronomical Hijri Calendar Calculator',
-                'developed': 'Carefully developed to serve the Islamic community',
-                'supervision': 'Supervised by Mr. Zafer Hallak',
-                'programming': 'Programmed by Yamen Hallak',
+                'copyright': 'All Rights Reserved © 2025 - Sharia-Compliant Astronomical Calculator for the Global Hijri Calendar',
+                'preparation': 'Preparation and Innovation: Researcher Mr. Zafer Hallak',
+                'development': 'Website Programming and Development: Yamen Hallak',
                 'nav-welcome': 'Welcome Screen',
                 'nav-about': 'About the Application',
                 'nav-goal': 'Our Goal',
@@ -1154,10 +1189,9 @@
                 'launch-calculator': '🌙 Hesaplayıcıyı Başlat',
                 'gift-button': '🎁 İthaf',
 
-                'copyright': '© 2025 - Astronomik Hicri Takvim Hesaplayıcısı',
-                'developed': 'İslam topluluğuna hizmet için özenle geliştirilmiştir',
-                'supervision': 'Sayın Zafer Hallak gözetiminde',
-                'programming': 'Yamen Hallak tarafından programlanmıştır',
+                'copyright': 'Tüm Hakları Saklıdır © 2025 - Küresel Hicri Takvim için Şer\'i Astronomik Hesaplayıcı',
+                'preparation': 'Hazırlık ve İnovasyon: Araştırmacı Sayın Zafer Hallak',
+                'development': 'Web Sitesi Programlama ve Geliştirme: Yamen Hallak',
                 'nav-welcome': 'Hoş Geldiniz Ekranı',
                 'nav-about': 'Uygulama Hakkında',
                 'nav-goal': 'Hedefimiz',
@@ -1321,10 +1355,9 @@
     
     <!-- Footer Section -->
     <div class="footer">
-        <p data-translate="copyright">© 2025 - حاسبة التقويم الهجري الفلكية</p>
-        <p data-translate="developed">تم تطوير هذا المشروع بعناية لخدمة المجتمع الإسلامي</p>
-        <p data-translate="supervision">بإشراف الأستاذ ظافر حلاق</p>
-        <p data-translate="programming">وببرمجة يامن حلاق</p>
+        <p data-translate="copyright">جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي</p>
+        <p data-translate="preparation">إعداد وابتكار: الباحث الأستاذ ظافر حلاق</p>
+        <p data-translate="development">برمجة وتطوير الموقع: يامن حلاق</p>
     </div>
     
     <script>

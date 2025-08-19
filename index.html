@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="title">حاسبة فلكية شرعية للتقويم الهجري العالمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <meta name="description" content="حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق">
     <meta name="keywords" content="تقويم هجري، حاسبة فلكية، تقويم إسلامي، قمر جديد">
     <style>
         body {
-            font-family: 'Amiri', 'Cairo', sans-serif;
+            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Times New Roman', serif;
             direction: rtl;
             text-align: center;
             background: linear-gradient(135deg, #1a2a57 0%, #0d5c63 100%); /* Dark navy blue to emerald green gradient */
@@ -16,6 +17,36 @@
             color: #2c3e50;
             padding: 20px;
             position: relative;
+        }
+        
+        /* خطوط خاصة للنصوص التركية */
+        body[lang="tr"], 
+        body.tr,
+        [lang="tr"],
+        .turkish-text {
+            font-family: 'Noto Sans', 'Roboto', 'Arial', sans-serif !important;
+            font-weight: 400;
+            letter-spacing: 0;
+            font-size: 1em;
+            line-height: 1.5;
+            font-variant-ligatures: none;
+            text-rendering: optimizeLegibility;
+        }
+        
+        body[lang="tr"] h1,
+        body[lang="tr"] h2,
+        body[lang="tr"] h3,
+        body.tr h1,
+        body.tr h2,
+        body.tr h3,
+        [lang="tr"] h1,
+        [lang="tr"] h2,
+        [lang="tr"] h3 {
+            font-family: 'Noto Sans', 'Roboto', sans-serif !important;
+            font-weight: 600;
+            letter-spacing: 0;
+            font-variant-ligatures: none;
+            text-rendering: optimizeLegibility;
         }
         
         body::before {
@@ -44,6 +75,92 @@
             opacity: 0.1;
             pointer-events: none;
             z-index: -1;
+        }
+        
+        /* Header Container - Golden Box */
+        .header-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #914d11, #b37f0b);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header-text h1 {
+            margin: 20px 0 0 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .header-text h2 {
+            margin: 5px 0 0 0;
+            text-align: center;
+            width: 100%;
+            font-size: 1.8rem;
+        }
+        
+        .header-text p {
+            text-align: center;
+            margin: 5px 0;
+            width: 100%;
+        }
+        
+        .subtitle {
+            text-align: center !important;
+            width: 100%;
+        }
+        
+        /* Navigation Buttons Container */
+        .nav-buttons-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(173, 216, 230, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Action Buttons Container */
+        .action-buttons-container {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         .welcome-container {
@@ -84,15 +201,76 @@
         }
         
         h1 {
-            color: #B8860B; /* Dark golden brown color */
+            color: #FFFFFF; /* White color for header */
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
             line-height: 1.4;
-            font-family: 'Amiri', sans-serif;
+            font-family: 'Scheherazade New', 'Amiri', serif;
             letter-spacing: 0.5px;
         }
+        
+        .header-container h1 {
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        
+        .header-container .subtitle {
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+        
+        /* Navigation Button Styles */
+        .nav-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #4169E1, #1E90FF);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(65, 105, 225, 0.4);
+            background: linear-gradient(135deg, #1E90FF, #4169E1);
+        }
+        
+        /* Action Button Styles */
+        .action-button {
+            display: inline-block;
+            padding: 18px 35px;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .calculator-btn {
+            background: linear-gradient(135deg, #914d11, #b37f0b);
+            box-shadow: 0 6px 20px rgba(145, 77, 17, 0.4);
+        }
+        
+        .calculator-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(145, 77, 17, 0.5);
+        }
+        
+
         
         .subtitle {
             font-size: 1.2rem;
@@ -252,7 +430,7 @@
         
         .section h2 {
             color: #B8860B;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
             font-family: 'Amiri', sans-serif;
@@ -263,6 +441,15 @@
             margin-bottom: 15px;
             color: #2c3e50;
             font-size: 1.1rem;
+        }
+        
+        .section p[data-translate="welcome-desc"] {
+            color: #61350b;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 25px 0;
+            font-family: 'Scheherazade New', 'Amiri', serif;
         }
         
         .section ul {
@@ -313,17 +500,17 @@
         
         /* Verse and Prayer Boxes */
         .verse-box {
-            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
-            border: 2px solid #4caf50;
+            background: rgba(177, 125, 12, 0.3);
+            border: 2px solid #b17d0c;
             border-radius: 15px;
             padding: 20px;
             margin: 20px 0;
             text-align: center;
-            font-family: 'Amiri', serif;
+            font-family: 'Scheherazade New', 'Amiri', serif;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #2e7d32;
-            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+            color: #61350b;
+            box-shadow: 0 4px 12px rgba(177, 125, 12, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -370,43 +557,71 @@
         
         /* Section styling improvements */
         .section {
-            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #a1e7f0);
             border-radius: 20px;
             padding: 30px;
             margin: 30px auto;
             max-width: 800px;
             width: 90%;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #B8860B;
             position: relative;
             display: block;
+            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
+            overflow: hidden;
         }
         
-        .section:nth-child(even) {
-            background: linear-gradient(135deg, #fff8f0, #ffeee6);
-            border-left-color: #ff9800;
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100,0 L200,100 L100,200 L0,100 Z M100,20 L180,100 L100,180 L20,100 Z M100,40 L160,100 L100,160 L40,100 Z M0,0 L40,0 L40,40 Z M160,0 L200,0 L200,40 Z M0,160 L40,200 L0,200 Z M200,160 L200,200 L160,200 Z" stroke="%23955311" fill="none" stroke-width="0.5"/></svg>');
+            background-size: 80px 80px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
         }
         
-        .section:nth-child(odd) {
-            background: linear-gradient(135deg, #f0fff8, #e6ffe6);
-            border-left-color: #4caf50;
+        .section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,0 60,0 80,20 S120,40 140,20 S180,0 200,20 M20,60 C40,40 60,40 80,60 S120,80 140,60 S180,40 200,60" stroke="%23955311" fill="none" stroke-width="0.5"/></svg>');
+            background-size: 40px 40px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .section > * {
+            position: relative;
+            z-index: 2;
         }
         
         .section h2 {
-            color: #B8860B;
-            font-size: 2rem;
+            color: #955311;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
-            font-family: 'Amiri', serif;
+            font-family: 'Scheherazade New', 'Amiri', serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 15px;
         }
         
-        .section:nth-child(even) h2 {
-            color: #ff9800;
-        }
-        
-        .section:nth-child(odd) h2 {
-            color: #4caf50;
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background-color: #955311;
         }
         
         /* Mobile Responsive Design */
@@ -527,6 +742,110 @@
                 font-size: 0.8rem;
             }
         }
+        
+        /* Navigation Slider Styles */
+        .nav-slider {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #995910, #b8860b);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-slider.active {
+            right: 0;
+        }
+        
+        .slider-toggle {
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 60px;
+            background: #995910;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .slider-toggle:hover {
+            background: #b8860b;
+        }
+        
+        .slider-icon {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .slider-content {
+            padding: 60px 20px 20px 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .slider-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Scheherazade New', 'Amiri', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+        
+        .slider-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        .slider-link.calculator-link {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .slider-link.calculator-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-slider {
+                width: 250px;
+                right: -250px;
+            }
+            
+            .slider-toggle {
+                left: -45px;
+                width: 45px;
+                height: 50px;
+            }
+            
+            .slider-icon {
+                font-size: 1.2rem;
+            }
+            
+            .slider-link {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -536,32 +855,47 @@
         <button class="lang-btn" onclick="changeLanguage('tr')" data-lang="tr">Türkçe</button>
     </div>
     
-    <div class="welcome-container" id="top">
-        <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي</h1>
-        <p class="subtitle" data-translate="subtitle">إعداد الباحث الأستاذ ظافر حلاق</p>
-        
-        <a href="assets/hasibefalakiyeh.html" class="launch-button" data-translate="launch-calculator">🌙 تشغيل الحاسبة</a>
-        
-        <!-- Navigation Menu -->
-        <nav class="navigation">
-            <div class="nav-links">
-                <a href="#welcome" class="nav-link" data-translate="nav-welcome">شاشة الترحيب</a>
-                <a href="#about" class="nav-link" data-translate="nav-about">حول التطبيق</a>
-                <a href="#goal" class="nav-link" data-translate="nav-goal">هدفنا</a>
-                <a href="#overview" class="nav-link" data-translate="nav-overview">لمحة عامة</a>
-                <a href="#dedication" class="nav-link" data-translate="nav-dedication">إهداء</a>
-            </div>
-        </nav>
-        
-
-        
-        <div class="footer">
-            <p data-translate="copyright">© 2025 - حاسبة التقويم الهجري الفلكية</p>
-            <p data-translate="developed">تم تطوير هذا المشروع بعناية لخدمة المجتمع الإسلامي</p>
-            <p data-translate="supervision">بإشراف الأستاذ ظافر حلاق</p>
-            <p data-translate="programming">وببرمجة يامن حلاق</p>
+    <!-- Navigation Slider -->
+    <div class="nav-slider" id="navSlider">
+        <div class="slider-toggle" onclick="toggleSlider()">
+            <span class="slider-icon">☰</span>
+        </div>
+        <div class="slider-content">
+            <a href="#welcome" class="slider-link" data-translate="nav-welcome">شاشة الترحيب</a>
+            <a href="#about" class="slider-link" data-translate="nav-about">حول التطبيق</a>
+            <a href="#goal" class="slider-link" data-translate="nav-goal">هدفنا</a>
+            <a href="#overview" class="slider-link" data-translate="nav-overview">لمحة عامة</a>
+            <a href="#dedication" class="slider-link" data-translate="nav-dedication">إهداء</a>
+            <a href="assets/hasibefalakiyeh.html" class="slider-link calculator-link" data-translate="launch-calculator">🌙 تشغيل الحاسبة</a>
         </div>
     </div>
+    
+    <!-- Header Section -->
+    <div class="header-container">
+        <div class="header-content">
+            <img src="assets/Logo.webp" alt="Islamic Calendar Logo" class="header-logo">
+            <div class="header-text">
+                <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي</h1>
+                <p class="subtitle" data-translate="subtitle">إعداد الباحث الأستاذ ظافر حلاق</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons-container">
+        <a href="#welcome" class="nav-button" data-translate="nav-welcome">شاشة الترحيب</a>
+        <a href="#about" class="nav-button" data-translate="nav-about">حول التطبيق</a>
+        <a href="#goal" class="nav-button" data-translate="nav-goal">هدفنا</a>
+        <a href="#overview" class="nav-button" data-translate="nav-overview">لمحة عامة</a>
+        <a href="#dedication" class="nav-button" data-translate="nav-dedication">إهداء</a>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons-container">
+        <a href="assets/hasibefalakiyeh.html" class="action-button calculator-btn" data-translate="launch-calculator">🌙 تشغيل الحاسبة</a>
+    </div>
+    
+
     
     <!-- Welcome Section -->
     <section class="section" id="welcome">
@@ -670,6 +1004,7 @@
                 'main-title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي',
                 'subtitle': 'إعداد الباحث الأستاذ ظافر حلاق',
                 'launch-calculator': '🌙 تشغيل الحاسبة',
+                'gift-button': '🎁 الإهداء',
 
                 'copyright': '© 2025 - حاسبة التقويم الهجري الفلكية',
                 'development': 'تم تطوير هذا المشروع بعناية لخدمة المجتمع الإسلامي',
@@ -741,8 +1076,9 @@
             en: {
                 'title': 'Islamic Astronomical Hijri Calendar Calculator',
                 'main-title': 'Islamic Astronomical Hijri Calendar Calculator',
-                'subtitle': 'Prepared by Researcher Professor Zafer Hallak',
+                'subtitle': 'Prepared by Researcher Mr. Zafer Hallak',
                 'launch-calculator': '🌙 Launch Calculator',
+                'gift-button': '🎁 Dedication',
 
                 'copyright': '© 2025 - Astronomical Hijri Calendar Calculator',
                 'developed': 'Carefully developed to serve the Islamic community',
@@ -757,11 +1093,11 @@
                 'welcome-verse': 'They ask you about the new moons. Say: They are signs to mark fixed periods of time for mankind and for the pilgrimage.',
                 'welcome-desc': 'Astronomical Sharia calculator for the beginnings of Hijri months for the global Hijri calendar',
                 'welcome-point1': 'Adopts Mecca time reference for lunar conjunction and sunset as it is the Qibla of Muslims worldwide.',
-                'welcome-point2': 'A reliable scientific method, innovated by researcher Professor Zafer Hallak.',
+                'welcome-point2': 'A reliable scientific method, innovated by researcher Mr. Zafer Hallak.',
                 'welcome-point3': 'Does not allow crescent sighting nights to occur before conjunction for all months to unite the Islamic Ummah on one crescent and one calendar.',
                 'welcome-point4': 'Having a sighting night before conjunction is like searching for a fetus in the womb of a woman who has not yet conceived, which is unreasonable!!!',
                 'welcome-point5': 'A step towards unifying the Hijri calendar globally.',
-                'welcome-author': 'Prepared and innovated by: Researcher Professor Zafer Hallak',
+                'welcome-author': 'Prepared and innovated by: Researcher Mr. Zafer Hallak',
                 'about-title': 'About the Application',
                 'about-intro': 'An innovative application that provides an accurate Hijri calendar based on lunar conjunction calculations according to Mecca time and its sunset as a central reference because it is the Qibla of Muslims worldwide.',
                 'about-point1': 'The moon orbits the Earth every month and reaches the moment of conjunction (i.e., the new moon). I do not call this moment or the one immediately following it "crescent birth" because this expression is inaccurate, but rather the crescent pregnancy period that needs long hours until its birth is completed.',
@@ -769,7 +1105,7 @@
                 'about-point3': 'This application does not allow the month to begin if the conjunction time is after sunset in Mecca on the night of doubt, which is the evening of the 29th, the night of the 30th.',
                 'about-point4': 'This application regulates the occurrence of crescent sighting nights after conjunction for practical Sharia sighting because it aligns with it.',
                 'about-point5': 'Its calculations determine the beginnings of Hijri months with astronomical and Sharia precision.',
-                'about-point6': 'A reliable and innovative scientific method by researcher Professor Zafer Hallak.',
+                'about-point6': 'A reliable and innovative scientific method by researcher Mr. Zafer Hallak.',
                 'about-point7': 'Does not allow the month to begin a day early and rejects any sighting that leads to disruption in the Hijri month system established by Prophet Muhammad ﷺ',
                 'about-point8': 'It is a step towards unifying the Hijri calendar globally, hoping that Allah will make it adopted by everyone.',
                 'about-point9': 'This application gives us the minimum for entering the Hijri month, working with the majority opinion of not considering differences in horizons.',
@@ -778,7 +1114,7 @@
                 'goal-main': 'A step towards unifying the Hijri calendar globally.',
                 'goal-desc': 'Uniting Muslims on one crescent and precise worship time, combining astronomical calculation with Sharia control, starting from Mecca reference to be the adopted Hijri calendar worldwide, by Allah\'s permission.',
                 'goal-request': 'We hope to spread it widely, share it, and strive for its adoption by everyone',
-                'goal-author': 'Researcher Professor Zafer Hallak',
+                'goal-author': 'Researcher Mr. Zafer Hallak',
                 'goal-subtitle': 'The preparer and innovator of the astronomical calculation method adopted in this application',
                 'overview-title': 'Overview',
                 'overview-intro': 'When looking at the most important Hijri calendars in the world that rely on calculation, we find:',
@@ -807,15 +1143,16 @@
                 'dedication-egypt-desc': 'The homeland of Al-Azhar Al-Sharif, and the beacon of knowledge and moderation.',
                 'dedication-islamic-world': 'And to all countries of the Islamic world seeking Hijri calendar unity and to my sheikhs and beloved ones, I dedicate this application:',
                 'dedication-method': 'Which was prepared according to an innovative and unique calculation method that matches what the reality will be and is regulated by the Prophetic standard. I prepared it with utmost care to be a practical step towards a unified Hijri calendar in the entire world, starting from Mecca, the Qibla of Muslims, and preserving the night of doubt and the two possibilities of crescent sighting or not, which the Ummah has been upon since the time of the Prophet ﷺ, and rejects any sighting that leads to entering the month a day before its time.. to reach all countries of the world as a unified Hijri calendar, hoping they will adopt it.',
-                'dedication-author': 'Researcher Professor Zafer Hallak',
+                'dedication-author': 'Researcher Mr. Zafer Hallak',
                 'dedication-subtitle': 'The preparer and innovator of the astronomical calculation method adopted in this application',
                 'dedication-prayer': 'O Allah, make it beneficial and accepted, and make it a cause for uniting the Ummah in its crescent and Hijri calendar.'
             },
             tr: {
                 'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı',
                 'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı',
-                'subtitle': 'Araştırmacı Profesör Zafer Hallak tarafından hazırlanmıştır',
+                'subtitle': 'Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
                 'launch-calculator': '🌙 Hesaplayıcıyı Başlat',
+                'gift-button': '🎁 İthaf',
 
                 'copyright': '© 2025 - Astronomik Hicri Takvim Hesaplayıcısı',
                 'developed': 'İslam topluluğuna hizmet için özenle geliştirilmiştir',
@@ -826,34 +1163,34 @@
                 'nav-goal': 'Hedefimiz',
                 'nav-overview': 'Genel Bakış',
                 'nav-dedication': 'İthaf',
-                'welcome-title': 'Hoş Geldiniz Ekranı',
+                'welcome-title': 'HOŞ GELDİNİZ EKRANI',
                 'welcome-verse': 'Sana hilaller hakkında soruyorlar. De ki: Onlar insanlar ve hac için vakit belirleyici işaretlerdir.',
                 'welcome-desc': 'Küresel Hicri takvim için Hicri ayların başlangıçları için astronomik şer\'i hesaplayıcı',
                 'welcome-point1': 'Dünya çapında Müslümanların kıblesi olduğu için ay kavuşumu ve gün batımı için Mekke zaman referansını benimser.',
-                'welcome-point2': 'Araştırmacı Profesör Zafer Hallak tarafından yenilik getirilen güvenilir bilimsel yöntem.',
+                'welcome-point2': 'Araştırmacı Sayın Zafer Hallak tarafından yenilik getirilen güvenilir bilimsel yöntem.',
                 'welcome-point3': 'İslam Ümmetini tek hilal ve tek takvimde birleştirmek için tüm aylar için hilal görme gecelerinin kavuşumdan önce gerçekleşmesine izin vermez.',
                 'welcome-point4': 'Kavuşumdan önce görme gecesinin olması, henüz hamile kalmamış bir kadının karnında cenin aramak gibidir, bu mantıksızdır!!!',
                 'welcome-point5': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adım.',
-                'welcome-author': 'Hazırlayan ve yenilik getiren: Araştırmacı Profesör Zafer Hallak',
-                'about-title': 'Uygulama Hakkında',
+                'welcome-author': 'Hazırlayan ve yenilik getiren: Araştırmacı Sayın Zafer Hallak',
+                'about-title': 'UYGULAMA HAKKINDA',
                 'about-intro': 'Dünya çapında Müslümanların kıblesi olduğu için Mekke zamanı ve gün batımına göre ay kavuşumu hesaplamalarına dayanan doğru bir Hicri takvim sunan yenilikçi uygulama.',
                 'about-point1': 'Ay her ay Dünya\'nın etrafında döner ve kavuşum anına (yani yeni ay) ulaşır. Bu anı veya hemen sonrasını "hilal doğumu" olarak adlandırmıyorum çünkü bu ifade doğru değil, aksine doğumu tamamlanana kadar uzun saatlere ihtiyaç duyan hilal hamilelik dönemi.',
                 'about-point2': 'Bu uygulama, Mekke zamanına göre yeni ay döngüsünün başlamasından önce hilal görme gecelerinin gerçekleşmesine izin vermez.',
                 'about-point3': 'Bu uygulama, kavuşum zamanı 29. günün akşamı olan şüphe gecesinde Mekke\'de gün batımından sonra ise ayın başlamasına izin vermez.',
                 'about-point4': 'Bu uygulama, pratik şer\'i görme için kavuşumdan sonra hilal görme gecelerinin gerçekleşmesini düzenler çünkü bununla uyumludur.',
                 'about-point5': 'Hesaplamaları Hicri ayların başlangıçlarını astronomik ve şer\'i hassasiyetle belirler.',
-                'about-point6': 'Araştırmacı Profesör Zafer Hallak tarafından güvenilir ve yenilikçi bilimsel yöntem.',
+                'about-point6': 'Araştırmacı Sayın Zafer Hallak tarafından güvenilir ve yenilikçi bilimsel yöntem.',
                 'about-point7': 'Ayın bir gün erken başlamasına izin vermez ve Hz. Muhammed ﷺ tarafından kurulan Hicri ay sisteminde bozulmaya yol açan herhangi bir görmeyi reddeder',
                 'about-point8': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adımdır, Allah\'ın herkes tarafından benimsenmesini sağlamasını umarak.',
                 'about-point9': 'Bu uygulama bize ufuk farklılıklarını dikkate almama konusundaki çoğunluk görüşüyle çalışarak Hicri aya girişin minimumunu verir.',
                 'about-point10': 'Meraklılar, araştırmacılar ve dini kurumlar için uygun basit ve kullanımı kolay arayüz.',
-                'goal-title': 'Hedefimiz',
+                'goal-title': 'HEDEFİMİZ',
                 'goal-main': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adım.',
                 'goal-desc': 'Müslümanları tek hilal ve hassas ibadet zamanında birleştirmek, astronomik hesaplama ile şer\'i kontrolü birleştirerek, Allah\'ın izniyle dünya çapında benimsenecek Hicri takvim olmak için Mekke referansından başlayarak.',
                 'goal-request': 'Geniş çapta yayılmasını, paylaşılmasını ve herkes tarafından benimsenmesi için çaba gösterilmesini umuyoruz',
-                'goal-author': 'Araştırmacı Profesör Zafer Hallak',
+                'goal-author': 'Araştırmacı Sayın Zafer Hallak',
                 'goal-subtitle': 'Bu uygulamada benimsenen astronomik hesaplama yönteminin hazırlayıcısı ve yenilikçisi',
-                'overview-title': 'Genel Bakış',
+                'overview-title': 'GENEL BAKIŞ',
                 'overview-intro': 'Hesaplamaya dayanan dünyadaki en önemli Hicri takvimlere baktığımızda şunu görüyoruz:',
                 'overview-umm-alqura': '1- Ümmü\'l-Kura Takvimi: Hesaplamalarında hilal görmeyi gerektirmez, bu şer\'i bir sorundur!!! (Sevgili Suudi Arabistan kardeşlerimiz bunun sivil bir takvim olduğunu ve dikkate alınacak olanın hilal görme olduğunu söylüyorlar, ancak hem sivil hem de şer\'i hedefleri aynı anda gerçekleştiren başka bir takvim benimsemenin önündeki engelin ne olduğunu soruyoruz)',
                 'overview-umm-alqura2': 'Ayrıca Ümmü\'l-Kura takvimi görme gecelerinin kavuşumdan sonra gerçekleşmesini gerektirmez, peki görme gecesi kavuşumdan önce ise hilal pratik olarak nasıl görülebilir!!!',
@@ -868,7 +1205,7 @@
                 'overview-conclusion': 'Dünyadaki tüm ülkelerin bu Hicri takvimi benimsemesini umuyoruz ki Hicri tarih tüm Dünya\'da birleşik olsun.',
                 'overview-prayer': 'Allah\'ım, bu Ümmete ülkelere bu Hicri takvimi benimsemelerini tavsiye eden astronomi ve şeriat alimleri hazırla ve küçük bir köy haline gelen dünyada Hicri takvim birliğini gerçekleştirmek için insanlar arasında kabul görmesini sağla',
                 'overview-ending': 'Ve son duamız Alemlerin Rabbi Allah\'a hamd olsun.',
-                'dedication-title': '🌙 İthaf',
+                'dedication-title': '🌙 İTHAF',
                 'dedication-verse': 'Sana hilaller hakkında soruyorlar. De ki: Onlar insanlar ve hac için vakit belirleyici işaretlerdir.',
                 'dedication-saudi': 'Suudi Arabistan Krallığı\'na:',
                 'dedication-saudi-desc': 'Vahyin yurdu ve İki Kutsal Harem\'in merkezi, ve bu uygulama dünyada Hicri takvim için Mekke\'yi referans olarak benimsemiştir',
@@ -880,7 +1217,7 @@
                 'dedication-egypt-desc': 'Ezher-i Şerif\'in vatanı, ve bilim ile ılımlılığın feneri.',
                 'dedication-islamic-world': 'Ve Hicri takvim birliği arayan tüm İslam dünyası ülkelerine ve şeyhlerime ve sevdiklerime bu uygulamayı ithaf ediyorum:',
                 'dedication-method': 'Gerçekliğin olacağıyla eşleşen ve Peygamber standardıyla düzenlenen yenilikçi ve eşsiz hesaplama yöntemine göre hazırlandı. Müslümanların kıblesi Mekke\'den başlayarak tüm dünyada birleşik Hicri takvime yönelik pratik bir adım olması için büyük özenle hazırladım, şüphe gecesini ve Peygamber ﷺ zamanından beri Ümmetin üzerinde olduğu hilal görme veya görmeme iki ihtimalini koruyarak, ve ayın vaktinden bir gün önce girmesine yol açan herhangi bir görmeyi reddederek.. tüm dünya ülkelerine birleşik Hicri takvim olarak ulaşmak için, benimsemelerini umarak.',
-                'dedication-author': 'Araştırmacı Profesör Zafer Hallak',
+                'dedication-author': 'Araştırmacı Sayın Zafer Hallak',
                 'dedication-subtitle': 'Bu uygulamada benimsenen astronomik hesaplama yönteminin hazırlayıcısı ve yenilikçisi',
                 'dedication-prayer': 'Allah\'ım, faydalı ve makbul kıl, ve Ümmeti hilalinde ve Hicri takviminde birleştirmenin bir sebebi kıl.'
             }
@@ -902,6 +1239,10 @@
             // Update document direction and language
             document.documentElement.lang = lang;
             document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Add Turkish class for better font rendering
+            document.body.classList.remove('tr', 'ar', 'en');
+            document.body.classList.add(lang);
             
             // Update all translatable elements
             document.querySelectorAll('[data-translate]').forEach(element => {
@@ -956,6 +1297,61 @@
                     top: 0,
                     behavior: 'smooth'
                 });
+            });
+            
+            // Navigation buttons functionality
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Calculator button functionality is handled by the href attribute
+
+        });
+    </script>
+    
+    <!-- Footer Section -->
+    <div class="footer">
+        <p data-translate="copyright">© 2025 - حاسبة التقويم الهجري الفلكية</p>
+        <p data-translate="developed">تم تطوير هذا المشروع بعناية لخدمة المجتمع الإسلامي</p>
+        <p data-translate="supervision">بإشراف الأستاذ ظافر حلاق</p>
+        <p data-translate="programming">وببرمجة يامن حلاق</p>
+    </div>
+    
+    <script>
+        // Navigation Slider Functionality
+        function toggleSlider() {
+            const slider = document.getElementById('navSlider');
+            slider.classList.toggle('active');
+        }
+        
+        // Close slider when clicking on links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderLinks = document.querySelectorAll('.slider-link');
+            sliderLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const slider = document.getElementById('navSlider');
+                    slider.classList.remove('active');
+                });
+            });
+            
+            // Close slider when clicking outside
+            document.addEventListener('click', function(event) {
+                const slider = document.getElementById('navSlider');
+                const sliderToggle = document.querySelector('.slider-toggle');
+                
+                if (!slider.contains(event.target) && !sliderToggle.contains(event.target)) {
+                    slider.classList.remove('active');
+                }
             });
         });
     </script>

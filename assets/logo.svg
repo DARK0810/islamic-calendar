@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Outer circle - Golden brown -->
+  <circle cx="100" cy="100" r="90" fill="#B8860B" stroke="#8B4513" stroke-width="6"/>
+  
+  <!-- Inner circle - Blue background color -->
+  <circle cx="100" cy="100" r="70" fill="#4169E1"/>
+  
+  <!-- Crescent moon - White, repositioned and larger -->
+  <path d="M 65 50 A 30 30 0 1 1 65 150 A 40 40 0 1 0 65 50" fill="white" stroke="#f0f0f0" stroke-width="1"/>
+  
+  <!-- Star - White, repositioned and larger -->
+  <polygon points="135,75 142,92 160,92 146,104 153,121 135,109 117,121 124,104 110,92 128,92" fill="white" stroke="#f0f0f0" stroke-width="1"/>
+</svg>

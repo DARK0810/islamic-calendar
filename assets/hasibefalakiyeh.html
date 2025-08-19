@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
         
         * {
             box-sizing: border-box;
@@ -23,6 +23,36 @@
             min-height: 100vh;
             color: #2c3e50;
             position: relative;
+        }
+        
+        /* خطوط خاصة للنصوص التركية */
+        body[lang="tr"], 
+        body.tr,
+        [lang="tr"],
+        .turkish-text {
+            font-family: 'Noto Sans', 'Roboto', 'Arial', sans-serif !important;
+            font-weight: 400;
+            letter-spacing: 0;
+            font-size: 1em;
+            line-height: 1.5;
+            font-variant-ligatures: none;
+            text-rendering: optimizeLegibility;
+        }
+        
+        body[lang="tr"] h1,
+        body[lang="tr"] h2,
+        body[lang="tr"] h3,
+        body.tr h1,
+        body.tr h2,
+        body.tr h3,
+        [lang="tr"] h1,
+        [lang="tr"] h2,
+        [lang="tr"] h3 {
+            font-family: 'Noto Sans', 'Roboto', sans-serif !important;
+            font-weight: 600;
+            letter-spacing: 0;
+            font-variant-ligatures: none;
+            text-rendering: optimizeLegibility;
         }
         
         body::before {
@@ -194,7 +224,7 @@
         h2 {
             color: #B8860B; /* Dark golden brown color */
             text-align: center;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             font-weight: 600;
             margin: 25px 0 20px 0;
             position: relative;
@@ -287,7 +317,7 @@
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
-            background: linear-gradient(45deg, #FFA500, #FFD700);
+            background: linear-gradient(45deg, #B8860B, #B8860B);
         }
         
         button:active {
@@ -342,9 +372,9 @@
         .results p:last-child {
             font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            background: linear-gradient(45deg, #B8860B, #FF8C00);
             color: #FFFFFF;
-            border-left: 4px solid #FFD700;
+            border-left: 4px solid #B8860B;
 
             font-family: 'Amiri', sans-serif;
             text-align: center;
@@ -420,7 +450,7 @@
             }
             
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 margin: 20px 0 15px 0;
             }
             
@@ -485,7 +515,7 @@
             }
             
             h2 {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             
             .language-selector {
@@ -521,6 +551,134 @@
                 font-size: 0.9rem;
             }
         }
+        
+        #result-final-date {
+            color: #8e4913 !important;
+            font-weight: bold;
+        }
+        
+        #final-date-details {
+            color: white !important;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-content h1 {
+            margin: 20px 0 0 0;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        /* Navigation Slider Styles */
+        .nav-slider {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #995910, #b8860b);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-slider.active {
+            right: 0;
+        }
+        
+        .slider-toggle {
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 60px;
+            background: #995910;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .slider-toggle:hover {
+            background: #b8860b;
+        }
+        
+        .slider-icon {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .slider-content {
+            padding: 60px 20px 20px 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .slider-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Scheherazade New', 'Amiri', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+        
+        .slider-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-slider {
+                width: 250px;
+                right: -250px;
+            }
+            
+            .slider-toggle {
+                left: -45px;
+                width: 45px;
+                height: 50px;
+            }
+            
+            .slider-icon {
+                font-size: 1.2rem;
+            }
+            
+            .slider-link {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -530,12 +688,30 @@
         <button class="lang-btn" onclick="changeLanguage('tr')" data-lang="tr">Türkçe</button>
     </div>
     
+    <!-- Navigation Slider -->
+    <div class="nav-slider" id="navSlider">
+        <div class="slider-toggle" onclick="toggleSlider()">
+            <span class="slider-icon">☰</span>
+        </div>
+        <div class="slider-content">
+            <a href="../index.html" class="slider-link" data-translate="home-btn">الصفحة الرئيسية</a>
+            <a href="../index.html#welcome" class="slider-link" data-translate="nav-welcome">شاشة الترحيب</a>
+            <a href="../index.html#about" class="slider-link" data-translate="nav-about">حول التطبيق</a>
+            <a href="../index.html#goal" class="slider-link" data-translate="nav-goal">هدفنا</a>
+            <a href="../index.html#overview" class="slider-link" data-translate="nav-overview">لمحة عامة</a>
+            <a href="../index.html#dedication" class="slider-link" data-translate="nav-dedication">إهداء</a>
+        </div>
+    </div>
+    
     <div class="home-button">
         <button class="home-btn" onclick="window.location.href='../index.html'" data-translate="home-btn">الصفحة الرئيسية</button>
     </div>
     
     <div class="container">
-        <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</h1>
+        <div class="header-content">
+            <img src="Logo.webp" alt="Islamic Calendar Logo" class="header-logo">
+            <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</h1>
+        </div>
         <div class="input-group">
             <div class="select-icon">
                 <label for="hijri-year" data-translate="select-year">اختر السنة الهجرية:</label>
@@ -1218,8 +1394,8 @@
                 'home-btn': 'الصفحة الرئيسية'
             },
             en: {
-                'title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Professor Zafer Hallak',
-                'main-title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Professor Zafer Hallak',
+                'title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Mr. Zafer Hallak',
+                'main-title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Mr. Zafer Hallak',
                 'select-year': 'Select Year',
                 'select-month': 'Select Month',
                 'calculate-btn': 'Calculate Month Start',
@@ -1241,12 +1417,12 @@
                 'home-btn': 'Home Page'
             },
             tr: {
-                'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Profesör Zafer Hallak tarafından hazırlanmıştır',
-                'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Profesör Zafer Hallak tarafından hazırlanmıştır',
+                'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
+                'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
                 'select-year': 'Yıl Seçin',
                 'select-month': 'Ay Seçin',
                 'calculate-btn': 'Ay Başlangıcını Hesapla',
-                'results-title': 'Sonuçlar:',
+                'results-title': 'SONUÇLAR:',
                 'current-moon': 'Mevcut Yeni Ay:',
                 'next-moon': 'Sonraki Yeni Ay:',
                 'sunset-time': 'Sonraki Ay için Gün Batımı Zamanı:',
@@ -1282,6 +1458,10 @@
             document.documentElement.lang = lang;
             document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
+            // Add Turkish class for better font rendering
+            document.body.classList.remove('tr', 'ar', 'en');
+            document.body.classList.add(lang);
+            
             // Update all translatable elements
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
@@ -1310,6 +1490,31 @@
 
         // Optional: Run calculation for the first month/year automatically on load
         // calculateHijriStart();
+        
+        // Navigation Slider Functionality
+        function toggleSlider() {
+            const slider = document.getElementById('navSlider');
+            slider.classList.toggle('active');
+        }
+        
+        // Close slider when clicking on links
+        const sliderLinks = document.querySelectorAll('.slider-link');
+        sliderLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const slider = document.getElementById('navSlider');
+                slider.classList.remove('active');
+            });
+        });
+        
+        // Close slider when clicking outside
+        document.addEventListener('click', function(event) {
+            const slider = document.getElementById('navSlider');
+            const sliderToggle = document.querySelector('.slider-toggle');
+            
+            if (!slider.contains(event.target) && !sliderToggle.contains(event.target)) {
+                slider.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>

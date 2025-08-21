@@ -1500,13 +1500,27 @@
             slider.classList.toggle('active');
         }
         
-        // Close slider when clicking on links
+        // Close slider when clicking on links and add smooth scroll
         document.addEventListener('DOMContentLoaded', function() {
             const sliderLinks = document.querySelectorAll('.slider-link');
             sliderLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function(e) {
                     const slider = document.getElementById('navSlider');
                     slider.classList.remove('active');
+                    
+                    // Add smooth scroll for anchor links
+                    const href = this.getAttribute('href');
+                    if (href && href.includes('#') && !href.includes('.html')) {
+                        e.preventDefault();
+                        const targetId = href.split('#')[1];
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
                 });
             });
             

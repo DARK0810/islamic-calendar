@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.islamic-konoz.com/sac/index.html -->
+<!-- saved from url=(0061)https://www.islamic-konoz.com/sac/assets/hasibefalakiyeh.html -->
 <html lang="ar"><script id="allow-copy_script" src="chrome-extension://aefehdhdciieocakfobpaaolhipkcpgc/content_scripts/copy.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="title">حاسبة فلكية شرعية للتقويم الهجري العالمي</title>
+    <title data-translate="title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</title>
     <link rel="icon" type="image/webp" href="./assets/Logo.webp">
     <link rel="shortcut icon" type="image/webp" href="./assets/Logo.webp">
     <link rel="apple-touch-icon" href="./assets/Logo.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <meta name="description" content="حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق">
-    <meta name="keywords" content="تقويم هجري، حاسبة فلكية، تقويم إسلامي، قمر جديد">
     <style type="text/css" id="operaUserStyle"></style><style id="hb-stylesheet"></style><style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Times New Roman', serif;
+            font-family: 'Amiri', 'Cairo', sans-serif;
             direction: rtl;
-            text-align: center;
+            text-align: right;
+            margin: 0;
+            padding: 20px;
             background: linear-gradient(135deg, #1a2a57 0%, #0d5c63 100%); /* Dark navy blue to emerald green gradient */
             min-height: 100vh;
             color: #2c3e50;
-            padding: 20px;
             position: relative;
         }
         
@@ -80,126 +84,20 @@
             z-index: -1;
         }
         
-        /* Header Container - Golden Box */
-        .header-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: linear-gradient(135deg, #914d11, #b37f0b);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .header-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-        
-        .header-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .header-text {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .header-text h1 {
-            margin: 20px 0 0 0;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .header-text h2 {
-            margin: 5px 0 0 0;
-            text-align: center;
-            width: 100%;
-            font-size: 1.8rem;
-        }
-        
-        .header-text p {
-            text-align: center;
-            margin: 5px 0;
-            width: 100%;
-        }
-        
-        .subtitle {
-            text-align: center !important;
-            width: 100%;
-        }
-        
-        /* Navigation Buttons Container */
-        .nav-buttons-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: rgba(173, 216, 230, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        /* Action Buttons Container */
-        .action-buttons-container {
-            max-width: 800px;
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .welcome-container {
-            max-width: 800px;
+        .container {
+            max-width: 700px;
             margin: auto;
             background: rgba(173, 216, 230, 0.85); /* Light blue background with transparency */
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(184, 134, 11, 0.3);
             border: 2px solid #B8860B; /* Dark golden brown border */
             position: relative;
             overflow: hidden;
         }
         
-        .welcome-container::before {
+        .container::before {
             content: '';
             position: absolute;
             top: 0;
@@ -212,7 +110,7 @@
             pointer-events: none;
         }
         
-        .welcome-container::after {
+        .container::after {
             content: '';
             position: absolute;
             top: 10px;
@@ -221,143 +119,6 @@
             height: 40px;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,0 L40,20 L20,40 L0,20 Z" fill="%23B8860B" opacity="0.2"/></svg>');
             pointer-events: none;
-        }
-        
-        h1 {
-            color: #FFFFFF; /* White color for header */
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            font-family: 'Scheherazade New', 'Amiri', serif;
-            letter-spacing: 0.5px;
-        }
-        
-        .header-container h1 {
-            color: #FFFFFF;
-            margin-bottom: 10px;
-        }
-        
-        .header-container .subtitle {
-            color: #FFFFFF;
-            font-size: 1.2rem;
-            margin-bottom: 0;
-        }
-        
-        /* Navigation Button Styles */
-        .nav-button {
-            display: inline-block;
-            padding: 12px 20px;
-            background: linear-gradient(135deg, #4169E1, #1E90FF);
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .nav-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(65, 105, 225, 0.4);
-            background: linear-gradient(135deg, #1E90FF, #4169E1);
-        }
-        
-        /* Action Button Styles */
-        .action-button {
-            display: inline-block;
-            padding: 18px 35px;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 15px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            min-width: 200px;
-            text-align: center;
-        }
-        
-        .calculator-btn {
-            background: linear-gradient(135deg, #914d11, #b37f0b);
-            box-shadow: 0 6px 20px rgba(145, 77, 17, 0.4);
-        }
-        
-        .calculator-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(145, 77, 17, 0.5);
-        }
-        
-
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: #FFFFFF; /* White color */
-            margin-bottom: 30px;
-            line-height: 1.6;
-            font-weight: 600;
-
-            letter-spacing: 0.5px;
-        }
-        
-        .launch-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #B8860B, #8B4513); /* Dark golden brown to saddle brown gradient */
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
-            margin: 10px;
-            border: 1px solid rgba(184, 134, 11, 0.5);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-
-            letter-spacing: 0.5px;
-        }
-        
-        .launch-button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-            opacity: 0;
-            transform: scale(0.5);
-            transition: transform 0.5s, opacity 0.5s;
-            z-index: -1;
-        }
-        
-        .launch-button:hover::after {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        .launch-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 215, 0, 0.5); /* Gold border */
-            color: #FFFFFF; /* White color */
-            font-size: 0.9rem;
-            font-weight: 500;
         }
         
         .language-selector {
@@ -392,12 +153,35 @@
             box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4);
         }
         
-        [dir="ltr"] {
-            direction: ltr;
-            text-align: center;
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 1000;
         }
         
-        [dir="ltr"] .container {
+        .home-btn {
+            padding: 8px 20px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .home-btn:hover {
+            background: rgba(139, 69, 19, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+        }
+        
+        [dir="ltr"] {
+            direction: ltr;
             text-align: center;
         }
         
@@ -406,287 +190,269 @@
             right: 20px;
         }
         
-        /* Navigation Styles */
-        .navigation {
-            background: rgba(184, 134, 11, 0.9);
-            padding: 15px 0;
+        [dir="ltr"] .container {
+            text-align: center;
+        }
+        
+        [dir="ltr"] h1 {
+            text-align: center;
+        }
+        
+        [dir="ltr"] .select-icon {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+        
+        [dir="ltr"] .select-icon:first-child {
+            margin-right: 0;
+        }
+        
+        [dir="ltr"] .select-icon:last-child {
+            margin-right: 0;
+        }
+        
+        h1 {
+            color: #B8860B; /* Dark golden brown color */
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            line-height: 1.4;
+            font-family: 'Amiri', sans-serif;
+            letter-spacing: 0.5px;
         }
         
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+        h2 {
+            color: #B8860B; /* Dark golden brown color */
+            text-align: center;
+            font-size: 1.8rem;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.1);
+            margin: 25px 0 20px 0;
+            position: relative;
+            font-family: 'Amiri', sans-serif;
+
+            letter-spacing: 0.5px;
         }
         
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #B8860B, #8B4513); /* Dark golden brown to saddle brown gradient */
+            border-radius: 2px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 1rem;
+        }
+        
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+            border: 2px solid #B8860B; /* Dark golden brown */
+            border-radius: 12px;
+            font-size: 1rem;
+            direction: rtl;
+            background: linear-gradient(135deg, #e0f7fa, #80deea); /* Light turquoise gradient */
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            color: #003366; /* Dark blue */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #B8860B; /* Dark golden brown */
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px 20px;
+            background: linear-gradient(45deg, #B8860B, #8B4513);
+            color: #FFFFFF;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            position: relative;
+            overflow: hidden;
+
+            letter-spacing: 0.5px;
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+            background: linear-gradient(45deg, #B8860B, #B8860B);
         }
         
-        /* Section Styles */
-        .section {
-            max-width: 800px;
-            margin: 40px auto;
-            background: rgba(173, 216, 230, 0.85);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .results {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
             border: 2px solid #B8860B;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.2);
             position: relative;
             overflow: hidden;
         }
         
-        .section h2 {
-            color: #B8860B;
-            font-size: 2.5rem;
-            margin: 0 0 20px 0;
-            text-align: center;
+        .results::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M0,0 L60,0 L60,60 Z" fill="%23FFD700" opacity="0.2"/></svg>');
+            pointer-events: none;
+        }
+        
+        .results p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            padding: 15px 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+            border-left: 5px solid #B8860B;
+            border-right: 1px solid rgba(184, 134, 11, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .results p:hover {
+            transform: translateX(-3px);
+        }
+        
+        .results p strong {
+            color: #003366;
+            font-weight: 700;
             font-family: 'Amiri', sans-serif;
         }
         
-        .section p {
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: #2c3e50;
-            font-size: 1.1rem;
-        }
-        
-        .section p[data-translate="welcome-desc"] {
-            color: #61350b;
+        .results p:last-child {
             font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #B8860B, #FF8C00);
+            color: #FFFFFF;
+            border-left: 4px solid #B8860B;
+
+            font-family: 'Amiri', sans-serif;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+            letter-spacing: 0.8px;
+        }
+        
+        .results p:last-child strong {
+            color: #ffffff;
+        }
+        
+        .select-icon {
+            display: inline-block;
+            margin-left: 15px;
+            vertical-align: top;
+            width: calc(50% - 7.5px);
+        }
+        
+        .select-icon:first-child {
+            margin-left: 0;
+        }
+        
+        .select-icon label {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
             font-weight: 600;
-            text-align: center;
-            margin: 25px 0;
-            font-family: 'Scheherazade New', 'Amiri', serif;
         }
         
-        .section ul {
-            text-align: right;
-            margin: 20px 0;
+        .select-icon select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1rem;
         }
         
-        .section li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            color: #2c3e50;
+        .input-group::after {
+            content: "";
+            display: table;
+            clear: both;
         }
         
-        /* Scroll to top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(45deg, #B8860B, #8B4513);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
+        /* Animation for results */
+        .results {
+            animation: fadeInUp 0.6s ease-out;
         }
         
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .scroll-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
-        }
-        
-        [dir="ltr"] .scroll-to-top {
-            right: auto;
-            left: 30px;
-        }
-        
-        /* Verse and Prayer Boxes */
-        .verse-box {
-            background: rgba(177, 125, 12, 0.3);
-            border: 2px solid #b17d0c;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            font-family: 'Scheherazade New', 'Amiri', serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #61350b;
-            box-shadow: 0 4px 12px rgba(177, 125, 12, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .verse-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #4caf50, #81c784);
-            opacity: 0.3;
-            border-radius: 0 15px 0 50px;
-        }
-        
-        .prayer-box {
-            background: linear-gradient(135deg, #fff3e0, #ffcc02);
-            border: 2px solid #ff9800;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            font-family: 'Amiri', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #e65100;
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .prayer-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #ff9800, #ffb74d);
-            opacity: 0.3;
-            border-radius: 15px 0 50px 0;
-        }
-        
-        /* Section styling improvements */
-        .section {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #a1e7f0);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px auto;
-            max-width: 800px;
-            width: 90%;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: block;
-            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
-            overflow: hidden;
-        }
-        
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100,0 L200,100 L100,200 L0,100 Z M100,20 L180,100 L100,180 L20,100 Z M100,40 L160,100 L100,160 L40,100 Z M0,0 L40,0 L40,40 Z M160,0 L200,0 L200,40 Z M0,160 L40,200 L0,200 Z M200,160 L200,200 L160,200 Z" stroke="%23955311" fill="none" stroke-width="0.5"/></svg>');
-            background-size: 80px 80px;
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,0 60,0 80,20 S120,40 140,20 S180,0 200,20 M20,60 C40,40 60,40 80,60 S120,80 140,60 S180,40 200,60" stroke="%23955311" fill="none" stroke-width="0.5"/></svg>');
-            background-size: 40px 40px;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .section > * {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section h2 {
-            color: #955311;
-            font-size: 2.5rem;
-            margin: 0 0 20px 0;
-            text-align: center;
-            font-family: 'Scheherazade New', 'Amiri', serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 20px;
-            right: 20px;
-            height: 2px;
-            background-color: #955311;
-        }
-        
-        /* Mobile Responsive Design */
+        /* Responsive design */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
             
-            .header-container {
+            .container {
                 margin: 10px auto;
-                padding: 25px 20px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .header-logo {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .welcome-container {
                 padding: 20px;
-                margin: 10px auto;
+                border-radius: 15px;
+                max-width: 95%;
             }
             
             h1 {
-                font-size: 1.8rem;
-                line-height: 1.3;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
+                font-size: 1.5rem;
                 margin-bottom: 20px;
             }
             
-            .launch-button {
-                padding: 12px 20px;
-                font-size: 1.1rem;
-                margin: 8px;
+            h2 {
+                font-size: 1.5rem;
+                margin: 20px 0 15px 0;
             }
             
             .language-selector {
@@ -701,64 +467,56 @@
                 font-size: 0.8rem;
             }
             
-            .navigation {
-                padding: 10px 0;
-                margin-bottom: 20px;
+            .home-button {
+                top: 10px;
+                right: 10px;
+                transform: none;
             }
             
-            .nav-links {
-                gap: 10px;
-            }
-            
-            .nav-link {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
-            
-            .section {
-                padding: 20px;
-                margin: 20px auto;
-                width: 95%;
-            }
-            
-            .section h2 {
-                font-size: 1.5rem;
-            }
-            
-            .verse-box {
-                padding: 15px;
-                font-size: 1.1rem;
-                margin: 15px 0;
-            }
-            
-            .prayer-box {
-                padding: 15px;
-                font-size: 1rem;
-                margin: 15px 0;
-            }
-            
-            .footer {
-                margin-top: 20px;
+            .home-btn {
+                padding: 6px 15px;
                 font-size: 0.8rem;
+            }
+            
+            .select-icon {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 15px;
+                padding: 12px;
+                font-size: 1rem;
+            }
+            
+            select {
+                padding: 12px;
+                font-size: 1rem;
+                width: 100%;
+            }
+            
+            .result-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .month-result {
+                padding: 12px;
+                margin: 10px 0;
+                font-size: 0.9rem;
             }
         }
         
         @media (max-width: 480px) {
-            .welcome-container {
+            .container {
                 padding: 15px;
+                margin: 5px auto;
             }
             
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+                line-height: 1.3;
             }
             
-            .subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .launch-button {
-                padding: 10px 15px;
-                font-size: 1rem;
+            h2 {
+                font-size: 1.3rem;
             }
             
             .language-selector {
@@ -768,17 +526,66 @@
                 margin-bottom: 15px;
                 flex-direction: row;
                 justify-content: center;
+                gap: 8px;
             }
             
-            .section {
-                padding: 15px;
-                width: 98%;
+            .home-button {
+                position: relative;
+                top: auto;
+                right: auto;
+                text-align: center;
+                margin-bottom: 15px;
             }
             
-            .nav-link {
-                padding: 6px 8px;
-                font-size: 0.8rem;
+            .lang-btn, .home-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
             }
+            
+            .select-icon {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            select {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        #result-final-date {
+            color: #8e4913 !important;
+            font-weight: bold;
+        }
+        
+        #final-date-details {
+            color: white !important;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            flex-shrink: 0;
+        }
+        
+        .header-content h1 {
+            margin: 20px 0 0 0;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            width: 100%;
         }
         
         /* Navigation Slider Styles */
@@ -790,7 +597,7 @@
             height: 100vh;
             background: linear-gradient(135deg, #995910, #b8860b);
             transition: right 0.3s ease;
-            z-index: 1000;
+            z-index: 9999;
             box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
         }
         
@@ -850,17 +657,7 @@
             transform: translateX(-5px);
         }
         
-        .slider-link.calculator-link {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        
-        .slider-link.calculator-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: white;
-        }
+
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -885,76 +682,26 @@
             }
         }
         
-        /* Contact Section Styles */
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
+        /* Footer Styles */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.5);
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            font-weight: 500;
             text-align: center;
-            min-width: 200px;
         }
         
-        .contact-item h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .contact-link {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 5px;
-            background: rgba(52, 152, 219, 0.1);
-        }
-        
-        .contact-link:hover {
-            color: #2980b9;
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .social-link {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 5px;
-            background: rgba(52, 152, 219, 0.1);
-        }
-        
-        .social-link:hover {
-            color: #2980b9;
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .contact-note {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-top: 20px;
-            font-size: 1rem;
+        .footer p {
+            margin: 5px 0;
+            line-height: 1.4;
         }
         
         @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .contact-item {
-                min-width: auto;
+            .footer {
+                margin-top: 20px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -972,379 +719,787 @@
             <span class="slider-icon">☰</span>
         </div>
         <div class="slider-content">
-            <a href="#welcome" class="slider-link" data-translate="nav-welcome">شاشة الترحيب</a>
-            <a href="#about" class="slider-link" data-translate="nav-about">حول التطبيق</a>
-            <a href="#goal" class="slider-link" data-translate="nav-goal">هدفنا</a>
-            <a href="#overview" class="slider-link" data-translate="nav-overview">لمحة عامة</a>
-            <a href="#dedication" class="slider-link" data-translate="nav-dedication">إهداء</a>
-            <a href="#contact" class="slider-link" data-translate="nav-contact">التواصل</a>
-            <a href="صفحة الحاسبة.html" class="slider-link calculator-link" data-translate="launch-calculator">🌙 تشغيل الحاسبة</a>
+            <a href="../index.html" class="slider-link" data-translate="home-btn">الصفحة الرئيسية</a>
+            <a href="../index.html#welcome" class="slider-link" data-translate="nav-welcome">شاشة الترحيب</a>
+            <a href="../index.html#about" class="slider-link" data-translate="nav-about">حول التطبيق</a>
+            <a href="../index.html#goal" class="slider-link" data-translate="nav-goal">هدفنا</a>
+            <a href="../index.html#overview" class="slider-link" data-translate="nav-overview">لمحة عامة</a>
+            <a href="../index.html#dedication" class="slider-link" data-translate="nav-dedication">إهداء</a>
+            <a href="../index.html#contact" class="slider-link" data-translate="nav-contact">التواصل</a>
         </div>
     </div>
     
-    <!-- Header Section -->
-    <div class="header-container">
+    <div class="home-button">
+        <button class="home-btn" onclick="window.location.href=&#39;../index.html&#39;" data-translate="home-btn">الصفحة الرئيسية</button>
+    </div>
+    
+    <div class="container">
         <div class="header-content">
             <img src="./assets/Logo.webp" alt="Islamic Calendar Logo" class="header-logo">
-            <div class="header-text">
-                <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي</h1>
-                <p class="subtitle" data-translate="subtitle">إعداد الباحث الأستاذ ظافر حلاق</p>
+            <h1 data-translate="main-title">حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق</h1>
+        </div>
+        <div class="input-group">
+            <div class="select-icon">
+                <label for="hijri-year" data-translate="select-year">اختر السنة</label>
+                <select id="hijri-year"><option value="" data-translate="select-year">اختر السنة</option><option value="1445">1445</option><option value="1446">1446</option><option value="1447">1447</option><option value="1448">1448</option><option value="1449">1449</option><option value="1450">1450</option><option value="1451">1451</option><option value="1452">1452</option><option value="1453">1453</option><option value="1454">1454</option><option value="1455">1455</option><option value="1456">1456</option><option value="1457">1457</option><option value="1458">1458</option><option value="1459">1459</option><option value="1460">1460</option><option value="1461">1461</option><option value="1462">1462</option><option value="1463">1463</option><option value="1464">1464</option><option value="1465">1465</option><option value="1466">1466</option><option value="1467">1467</option><option value="1468">1468</option><option value="1469">1469</option><option value="1470">1470</option><option value="1471">1471</option><option value="1472">1472</option><option value="1473">1473</option><option value="1474">1474</option><option value="1475">1475</option><option value="1476">1476</option><option value="1477">1477</option><option value="1478">1478</option><option value="1479">1479</option><option value="1480">1480</option></select>
+            </div>
+            <div class="select-icon">
+                <label for="hijri-month" data-translate="select-month">اختر الشهر</label>
+                <select id="hijri-month"><option value="" data-translate="select-month">اختر الشهر</option><option value="المحرم">المحرم</option><option value="صفر">صفر</option><option value="ربيع الأول">ربيع الأول</option><option value="ربيع الثاني">ربيع الثاني</option><option value="جمادى الأولى">جمادى الأولى</option><option value="جمادى الآخرة">جمادى الآخرة</option><option value="رجب">رجب</option><option value="شعبان">شعبان</option><option value="رمضان">رمضان</option><option value="شوال">شوال</option><option value="ذو القعدة">ذو القعدة</option><option value="ذو الحجة">ذو الحجة</option></select>
             </div>
         </div>
-    </div>
-    
-    <!-- Navigation Buttons -->
-    <div class="nav-buttons-container">
-        <a href="#welcome" class="nav-button" data-translate="nav-welcome">شاشة الترحيب</a>
-        <a href="#about" class="nav-button" data-translate="nav-about">حول التطبيق</a>
-        <a href="#goal" class="nav-button" data-translate="nav-goal">هدفنا</a>
-        <a href="#overview" class="nav-button" data-translate="nav-overview">لمحة عامة</a>
-        <a href="#dedication" class="nav-button" data-translate="nav-dedication">إهداء</a>
-        <a href="#contact" class="nav-button" data-translate="nav-contact">التواصل</a>
-    </div>
-    
-    <!-- Action Buttons -->
-    <div class="action-buttons-container">
-        <a href="صفحة الحاسبة.html" class="action-button calculator-btn" data-translate="launch-calculator">🌙 تشغيل الحاسبة</a>
-    </div>
-    
-
-    
-    <!-- Welcome Section -->
-    <section class="section" id="welcome">
-        <h2 data-translate="welcome-title">شاشة الترحيب</h2>
-        
-        <div class="verse-box">
-            <p data-translate="welcome-verse">يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ</p>
+        <button id="calculate-btn" data-translate="calculate-btn">احسب بداية الشهر</button>
+        <div class="results" id="results">
+            <h2 data-translate="results-title">النتائج:</h2>
+            <p id="result-current-moon"><strong data-translate="current-moon">القمر الجديد الحالي:</strong> <span id="current-moon-details">...</span></p>
+            <p id="result-next-moon"><strong data-translate="next-moon">القمر الجديد التالي:</strong> <span id="next-moon-details">...</span></p>
+            <p id="result-sunset"><strong data-translate="sunset-time">وقت غروب الشمس للقمر التالي:</strong> <span id="sunset-details">...</span></p>
+            <p id="result-date-plus-29"><strong data-translate="date-plus-29">تاريخ القمر الجديد الحالي + 29 يوم:</strong> <span id="date-plus-29-details">...</span></p>
+            <p id="result-difference"><strong data-translate="difference">الفرق بين التاريخ المحسوب والقمر الجديد التالي:</strong> <span id="difference-details">...</span></p>
+            <p id="result-days-to-add"><strong data-translate="days-to-add">عدد الأيام التي ستضاف لحساب بداية الشهر:</strong> <span id="days-to-add-details">...</span></p>
+            <p id="result-final-date"><strong data-translate="final-date">أول يوم في الشهر الهجري المحدد:</strong> <span id="final-date-details">...</span></p>
         </div>
-        <p data-translate="welcome-desc">حاسبة فلكية شرعية لأوائل الأشهر الهجرية للتقويم الهجري العالمي</p>
-        <ul>
-            <li data-translate="welcome-point1">تعتمد مرجعية توقيت مكة المكرمة لاقتران القمر وغروب شمسها لأنها قبلة المسلمين في العالم.</li>
-            <li data-translate="welcome-point2">أسلوب علمي موثوق، مبتكر من قِبل الباحث الأستاذ ظافر حلاق.</li>
-            <li data-translate="welcome-point3">لا تسمح بوقوع ليالي التحري للهلال قبل الاقتران لجميع الأشهر لتجمع الأمة الإسلامية على هلال وتقويم واحد.</li>
-            <li data-translate="welcome-point4">إن وقوع ليلة التحري قبل الاقتران يكون كمن يبحث عن جنين في بطن امرأة لم تحمل بعد وهذا غير معقول !!!</li>
-            <li data-translate="welcome-point5">خطوة نحو توحيد التقويم الهجري عالميًا.</li>
-        </ul>
-        <p data-translate="welcome-author">إعداد وابتكار: الباحث الأستاذ ظافر حلاق</p>
-    </section>
-    
-    <!-- About Section -->
-    <section class="section" id="about">
-        <h2 data-translate="about-title">حول التطبيق</h2>
-        <p data-translate="about-intro">تطبيق مبتكر يُقدِّم تقويمًا هجريًا دقيقًا ترتكز حساباته على الاقتران الفلكي للقمر وفق توقيت مكة المكرمة وغروب شمسها كمرجعية مركزية لأنها قبلة المسلمين في العالم.</p>
-        <ul>
-            <li data-translate="about-point1">يدور القمر حول الأرض كل شهر ويصل إلى لحظة الاقتران (أي القمر الجديد) ولا أسمّي هذه اللحظة أو التي تليها مباشرة "ولادة الهلال" لأن هذا التعبير غير دقيق بل فترة حمل الهلال الذي يحتاج إلى ساعات طويلة حتى تتم ولادته)</li>
-            <li data-translate="about-point2">هذا التطبيق لا يسمح بوقوع ليالي التحري للهلال قبل بدء دورة القمر الجديدة وفق توقيت مكة المكرمة.</li>
-            <li data-translate="about-point3">هذا التطبيق لا يسمح بدخول الشهر إن كان توقيت الاقتران بعد غروب شمس مكة المكرمة ليلة الشك التي هي مساء يوم 29 ليلة الثلاثين.</li>
-            <li data-translate="about-point4">هذا التطبيق يضبط وقوع ليالي التحري للهلال بعد حصول الاقتران لأجل الرؤية الشرعية العملية لأنه يتوافق معها.</li>
-            <li data-translate="about-point5">تحدد حساباته أوائل الشهور الهجرية بدقة فلكية وشرعية.</li>
-            <li data-translate="about-point6">أسلوب علمي موثوق ومبتكر من قِبل الباحث الأستاذ ظافر حلاق.</li>
-            <li data-translate="about-point7">لا يسمح بدخول الشهر قبل يوم من موعده ويرفض كل رؤية تؤدي إلى خلل في منظومة الأشهر الهجرية التي وضعها النبي ﷺ</li>
-            <li data-translate="about-point8">يعد خطوة نحو توحيد التقويم الهجري عالميًا راجيا" من الله تعالى أن يتم اعتماده من الجميع.</li>
-            <li data-translate="about-point9">هذا التطبيق يعطينا الحد الأدنى لدخول الشهر الهجري عملا" بقول الجمهور بعدم اعتبار اختلاف المطالع.</li>
-            <li data-translate="about-point10">واجهة بسيطة وسهلة الاستخدام تناسب المهتمين والباحثين والمؤسسات الدينية.</li>
-        </ul>
-    </section>
-    
-    <!-- Goal Section -->
-    <section class="section" id="goal">
-        <h2 data-translate="goal-title">هدفنا</h2>
-        <p data-translate="goal-main">خطوة نحو توحيد التقويم الهجري عالميًا.</p>
-        <p data-translate="goal-desc">جمع كلمة المسلمين على هلال واحد، ووقت عبادة دقيق، يجمع بين الحساب الفلكي والضابط الشرعي، انطلاقًا من مرجعية مكة المكرمة ليكون التقويم الهجري المعتمد في العالم بإذن المولى عز وجل.</p>
-        <p data-translate="goal-request">نرجو نشره على أوسع نطاق ومشاركته والسعي لاعتماده من قبل الجميع</p>
-        <p data-translate="goal-author">الباحث الأستاذ ظافر حلاق</p>
-        <p data-translate="goal-subtitle">المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
-    </section>
-    
-    <!-- Overview Section -->
-    <section class="section" id="overview">
-        <h2 data-translate="overview-title">لمحة عامة</h2>
-        <p data-translate="overview-intro">عند النظر إلى أهم التقاويم الهجرية في العالم التي تعتمد على الحساب، نجد:</p>
-        <p data-translate="overview-umm-alqura">1- تقويم أم القرى: لا يشترط في حساباته رؤية الهلال وفي ذلك إشكال شرعي !!! (إذ يقول إخوتنا في المملكة العربية السعودية الحبيبة إنه تقويم مدني وأن العبرة بتحري الهلال ولكننا نسأل ما المانع من اعتماد تقويم آخر يحقق الهدف المدني والشرعي بآن واحد)</p>
-        <p data-translate="overview-umm-alqura2">كما أن تقويم أم القرى لا يشترط وقوع ليالي التحري بعد حصول الاقتران فكيف يمكن تحري الهلال عمليا إذا كانت ليلة التحري قبل الاقتران !!!</p>
-        <p data-translate="overview-turkish">2- التقويم التركي: تؤدي طريقة حسابه في بعض الأشهر إلى حرمان العالم الإسلامي بأكمله من رؤية الهلال !!!</p>
-        <p data-translate="overview-turkish2">كما لا يشترط وقوع ليالي التحري بعد حصول الاقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!</p>
-        <p data-translate="overview-vision">رؤيتنا:</p>
-        <ul>
-            <li data-translate="overview-point1">عند إضافة شرط وقوع ليالي التحري بعد حدوث الاقتران في مكة المكرمة على تقويم أم القرى والتقويم التركي نجد أن النتائج تصبح متطابقة ومنضبطة.</li>
-            <li data-translate="overview-point2">يجب أن يكون الحساب مطابقا" للواقع الذي سيحدث فعليا" في أي تقويم هجري وهذا ما ركزت عليه في هذه الحاسبة الفلكية الشرعية للتقويم العالمي.</li>
-            <li data-translate="overview-point3">يجب أن يكون الحساب منضبطا" شرعا" وعقلا".</li>
-            <li data-translate="overview-point4">لا ينبغي إدخال الشهر دون رؤية محققة للهلال من عدد من الدول ..</li>
-            <li data-translate="overview-point5">لا يمكن تحري الهلال قبل وصول القمر إلى الاقتران المركزي في مكة المكرمة لأن ذلك كمن يبحث عن جنين في بطن امرأة لم تحمل بعد !!!</li>
-        </ul>
-        <p data-translate="overview-conclusion">نرجو من جميع الدول في العالم إعتماد هذا التقويم الهجري ليكون التاريخ الهجري موحد في جميع الكرة الأرضية.</p>
-        <p data-translate="overview-prayer">اللهم هيء لهذه الأمة علماء فلك وشرعيين ينصحون الدول باعتماد هذا التقويم الهجري واجعل له القبول بين الناس لتتحقق وحدة التقويم الهجري في العالم الذي أصبح كقرية صغيرة</p>
-        <p data-translate="overview-ending">وآخر دعوانا أن الحمد لله رب العالمين.</p>
-    </section>
-    
-    <!-- Dedication Section -->
-    <section class="section" id="dedication">
-        <h2 data-translate="dedication-title">🌙 إهداء</h2>
-        
-        <p data-translate="dedication-saudi">إلى المملكة العربية السعودية:</p>
-        <p data-translate="dedication-saudi-desc">أرض الوحي، ومركز الحرمين الشريفين، وقد اعتمد هذا التطبيق مكة المكرمة مرجعاً للتقويم الهجري في العالم</p>
-        
-        <p data-translate="dedication-turkey">وإلى الجمهورية التركية:</p>
-        <p data-translate="dedication-turkey-desc">جسر الحضارة ونصرة المظلوم، ومركز الإسهامات لجمع كلمة الأمة الإسلامية.</p>
-        
-        <p data-translate="dedication-syria">وإلى بلدي الحبيب سورية:</p>
-        <p data-translate="dedication-syria-desc">وطن القلب والفرح بنصر الله تعالى، وموطن العراقة والعلم والعلماء..</p>
-        
-        <p data-translate="dedication-egypt">وإلى جمهورية مصر الحبيبة:</p>
-        <p data-translate="dedication-egypt-desc">موطن الأزهر الشريف، ومنارة العلم والاعتدال.</p>
-        
-        <p data-translate="dedication-islamic-world">وإلى جميع دول العالم الإسلامي الساعية إلى وحدة التقويم الهجري وإلى مشايخي وأحبابي أُهدي هذا التطبيق:</p>
-        
-        <p data-translate="dedication-method">الذي أعد وفق طريقة حسابية مبتكرة وفريدة مطابقة لما سيكون عليه الواقع ومنضبطة بالمعيار النبوي أعددتُها بعناية فائقة، لتكون خطوة عملية نحو تقويم هجري موحد في العالم أجمع ينطلق من مكة المكرمة، قبلة المسلمين، ويحافظ على ليلة الشك واحتمالَيْ رؤية الهلال من عدمه الذي كانت عليه الأمة منذ عهد النبي ﷺ ويرفض كل رؤية تؤدي إلى دخول الشهر قبل يوم من موعده.. ليصل إلى كل دول العالم كتقويم هجري موحد راجياً منهم اعتماده.</p>
-        
-        <p data-translate="dedication-author">الباحث الأستاذ ظافر حلاق</p>
-        <p data-translate="dedication-subtitle">المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق</p>
-        
-        <div class="prayer-box">
-            <p data-translate="dedication-prayer">اللهم اجعل فيه النفع والقبول، واجعله سبباً لتوحيد الأمة في هلالها وتاريخها الهجري.</p>
-        </div>
-    </section>
-    
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
-        ↑
-    </button>
-    
+    </div>
     <script>
+        // Data provided by the user, formatted as a JavaScript array of objects
+        // Time is in Mecca Time (UTC+3)
+        const moonData = [
+            { gregorianDate: '2023-07-17', gregorianTime: '21:32', sunsetTime: '19:07', hijriMonthAfter: 'المحرم 1445' },
+            { gregorianDate: '2023-08-16', gregorianTime: '12:38', sunsetTime: '18:52', hijriMonthAfter: 'صفر 1445' },
+            { gregorianDate: '2023-09-15', gregorianTime: '04:40', sunsetTime: '18:25', hijriMonthAfter: 'ربيع الأول 1445' },
+            { gregorianDate: '2023-10-14', gregorianTime: '20:55', sunsetTime: '17:59', hijriMonthAfter: 'ربيع الثاني 1445' },
+            { gregorianDate: '2023-11-13', gregorianTime: '12:27', sunsetTime: '17:41', hijriMonthAfter: 'جمادى الأولى 1445' },
+            { gregorianDate: '2023-12-13', gregorianTime: '02:32', sunsetTime: '17:41', hijriMonthAfter: 'جمادى الآخرة 1445' },
+            { gregorianDate: '2024-01-11', gregorianTime: '14:57', sunsetTime: '17:58', hijriMonthAfter: 'رجب 1445' },
+            { gregorianDate: '2024-02-10', gregorianTime: '01:59', sunsetTime: '18:17', hijriMonthAfter: 'شعبان 1445' },
+            { gregorianDate: '2024-03-10', gregorianTime: '12:00', sunsetTime: '18:30', hijriMonthAfter: 'رمضان 1445' },
+            { gregorianDate: '2024-04-08', gregorianTime: '21:21', sunsetTime: '18:39', hijriMonthAfter: 'شوال 1445' },
+            { gregorianDate: '2024-05-08', gregorianTime: '06:22', sunsetTime: '18:50', hijriMonthAfter: 'ذو القعدة 1445' },
+            { gregorianDate: '2024-06-06', gregorianTime: '15:38', sunsetTime: '19:03', hijriMonthAfter: 'ذو الحجة 1445' },
+            { gregorianDate: '2024-07-06', gregorianTime: '01:57', sunsetTime: '19:08', hijriMonthAfter: 'المحرم 1446' },
+            { gregorianDate: '2024-08-04', gregorianTime: '14:13', sunsetTime: '18:59', hijriMonthAfter: 'صفر 1446' },
+            { gregorianDate: '2024-09-03', gregorianTime: '04:55', sunsetTime: '18:36', hijriMonthAfter: 'ربيع الأول 1446' },
+            { gregorianDate: '2024-10-02', gregorianTime: '21:49', sunsetTime: '18:08', hijriMonthAfter: 'ربيع الثاني 1446' },
+            { gregorianDate: '2024-11-01', gregorianTime: '15:47', sunsetTime: '17:46', hijriMonthAfter: 'جمادى الأولى 1446' },
+            { gregorianDate: '2024-12-01', gregorianTime: '09:21', sunsetTime: '17:39', hijriMonthAfter: 'جمادى الآخرة 1446' },
+            { gregorianDate: '2024-12-31', gregorianTime: '01:27', sunsetTime: '17:51', hijriMonthAfter: 'رجب 1446' },
+            { gregorianDate: '2025-01-29', gregorianTime: '15:36', sunsetTime: '18:10', hijriMonthAfter: 'شعبان 1446' },
+            { gregorianDate: '2025-02-28', gregorianTime: '03:45', sunsetTime: '18:26', hijriMonthAfter: 'رمضان 1446' },
+            { gregorianDate: '2025-03-29', gregorianTime: '13:58', sunsetTime: '18:36', hijriMonthAfter: 'شوال 1446' },
+            { gregorianDate: '2025-04-27', gregorianTime: '22:31', sunsetTime: '18:46', hijriMonthAfter: 'ذو القعدة 1446' },
+            { gregorianDate: '2025-05-27', gregorianTime: '06:02', sunsetTime: '18:58', hijriMonthAfter: 'ذو الحجة 1446' },
+            { gregorianDate: '2025-06-25', gregorianTime: '13:32', sunsetTime: '19:08', hijriMonthAfter: 'المحرم 1447' },
+            { gregorianDate: '2025-07-24', gregorianTime: '22:11', sunsetTime: '19:05', hijriMonthAfter: 'صفر 1447' },
+            { gregorianDate: '2025-08-23', gregorianTime: '09:06', sunsetTime: '18:46', hijriMonthAfter: 'ربيع الأول 1447' },
+            { gregorianDate: '2025-09-21', gregorianTime: '22:54', sunsetTime: '18:19', hijriMonthAfter: 'ربيع الثاني 1447' },
+            { gregorianDate: '2025-10-21', gregorianTime: '15:25', sunsetTime: '17:53', hijriMonthAfter: 'جمادى الأولى 1447' },
+            { gregorianDate: '2025-11-20', gregorianTime: '09:47', sunsetTime: '17:39', hijriMonthAfter: 'جمادى الآخرة 1447' },
+            { gregorianDate: '2025-12-20', gregorianTime: '04:43', sunsetTime: '17:45', hijriMonthAfter: 'رجب 1447' },
+            { gregorianDate: '2026-01-18', gregorianTime: '22:52', sunsetTime: '18:03', hijriMonthAfter: 'شعبان 1447' },
+            { gregorianDate: '2026-02-17', gregorianTime: '15:01', sunsetTime: '18:21', hijriMonthAfter: 'رمضان 1447' },
+            { gregorianDate: '2026-03-19', gregorianTime: '04:23', sunsetTime: '18:33', hijriMonthAfter: 'شوال 1447' },
+            { gregorianDate: '2026-04-17', gregorianTime: '14:52', sunsetTime: '18:42', hijriMonthAfter: 'ذو القعدة 1447' },
+            { gregorianDate: '2026-05-16', gregorianTime: '23:01', sunsetTime: '18:54', hijriMonthAfter: 'ذو الحجة 1447' },
+            { gregorianDate: '2026-06-15', gregorianTime: '05:54', sunsetTime: '19:05', hijriMonthAfter: 'المحرم 1448' },
+            { gregorianDate: '2026-07-14', gregorianTime: '12:43', sunsetTime: '19:08', hijriMonthAfter: 'صفر 1448' },
+            { gregorianDate: '2026-08-12', gregorianTime: '20:37', sunsetTime: '18:55', hijriMonthAfter: 'ربيع الأول 1448' },
+            { gregorianDate: '2026-09-11', gregorianTime: '06:27', sunsetTime: '18:29', hijriMonthAfter: 'ربيع الثاني 1448' },
+            { gregorianDate: '2026-10-10', gregorianTime: '18:50', sunsetTime: '18:02', hijriMonthAfter: 'جمادى الأولى 1448' },
+            { gregorianDate: '2026-11-09', gregorianTime: '10:02', sunsetTime: '17:42', hijriMonthAfter: 'جمادى الآخرة 1448' },
+            { gregorianDate: '2026-12-09', gregorianTime: '03:52', sunsetTime: '17:40', hijriMonthAfter: 'رجب 1448' },
+            { gregorianDate: '2027-01-07', gregorianTime: '23:24', sunsetTime: '17:55', hijriMonthAfter: 'شعبان 1448' },
+            { gregorianDate: '2027-02-06', gregorianTime: '18:56', sunsetTime: '18:15', hijriMonthAfter: 'رمضان 1448' },
+            { gregorianDate: '2027-03-08', gregorianTime: '12:29', sunsetTime: '18:29', hijriMonthAfter: 'شوال 1448' },
+            { gregorianDate: '2027-04-07', gregorianTime: '02:51', sunsetTime: '18:39', hijriMonthAfter: 'ذو القعدة 1448' },
+            { gregorianDate: '2027-05-06', gregorianTime: '13:59', sunsetTime: '18:49', hijriMonthAfter: 'ذو الحجة 1448' },
+            { gregorianDate: '2027-06-04', gregorianTime: '22:40', sunsetTime: '19:02', hijriMonthAfter: 'المحرم 1449' },
+            { gregorianDate: '2027-07-04', gregorianTime: '06:02', sunsetTime: '19:08', hijriMonthAfter: 'صفر 1449' },
+            { gregorianDate: '2027-08-02', gregorianTime: '13:05', sunsetTime: '19:01', hijriMonthAfter: 'ربيع الأول 1449' },
+            { gregorianDate: '2027-08-31', gregorianTime: '20:41', sunsetTime: '18:39', hijriMonthAfter: 'ربيع الثاني 1449' },
+            { gregorianDate: '2027-09-30', gregorianTime: '05:36', sunsetTime: '18:11', hijriMonthAfter: 'جمادى الأولى 1449' },
+            { gregorianDate: '2027-10-29', gregorianTime: '16:36', sunsetTime: '17:48', hijriMonthAfter: 'جمادى الآخرة 1449' },
+            { gregorianDate: '2027-11-28', gregorianTime: '06:24', sunsetTime: '17:39', hijriMonthAfter: 'رجب 1449' },
+            { gregorianDate: '2027-12-27', gregorianTime: '23:12', sunsetTime: '17:48', hijriMonthAfter: 'شعبان 1449' },
+            { gregorianDate: '2028-01-26', gregorianTime: '18:12', sunsetTime: '18:08', hijriMonthAfter: 'رمضان 1449' },
+            { gregorianDate: '2028-02-25', gregorianTime: '13:37', sunsetTime: '18:24', hijriMonthAfter: 'شوال 1449' },
+            { gregorianDate: '2028-03-26', gregorianTime: '07:31', sunsetTime: '18:35', hijriMonthAfter: 'ذو القعدة 1449' },
+            { gregorianDate: '2028-04-24', gregorianTime: '22:47', sunsetTime: '18:45', hijriMonthAfter: 'ذو الحجة 1449' },
+            { gregorianDate: '2028-05-24', gregorianTime: '11:16', sunsetTime: '18:57', hijriMonthAfter: 'المحرم 1450' },
+            { gregorianDate: '2028-06-22', gregorianTime: '21:27', sunsetTime: '19:07', hijriMonthAfter: 'صفر 1450' },
+            { gregorianDate: '2028-07-22', gregorianTime: '06:02', sunsetTime: '19:05', hijriMonthAfter: 'ربيع الأول 1450' },
+            { gregorianDate: '2028-08-20', gregorianTime: '13:44', sunsetTime: '18:48', hijriMonthAfter: 'ربيع الثاني 1450' },
+            { gregorianDate: '2028-09-18', gregorianTime: '21:24', sunsetTime: '18:22', hijriMonthAfter: 'جمادى الأولى 1450' },
+            { gregorianDate: '2028-10-18', gregorianTime: '05:57', sunsetTime: '17:55', hijriMonthAfter: 'جمادى الآخرة 1450' },
+            { gregorianDate: '2028-11-16', gregorianTime: '16:18', sunsetTime: '17:40', hijriMonthAfter: 'رجب 1450' },
+            { gregorianDate: '2028-12-16', gregorianTime: '05:06', sunsetTime: '17:43', hijriMonthAfter: 'شعبان 1450' },
+            { gregorianDate: '2029-01-14', gregorianTime: '20:24', sunsetTime: '18:00', hijriMonthAfter: 'رمضان 1450' },
+            { gregorianDate: '2029-02-13', gregorianTime: '13:31', sunsetTime: '18:19', hijriMonthAfter: 'شوال 1450' },
+            { gregorianDate: '2029-03-15', gregorianTime: '07:19', sunsetTime: '18:31', hijriMonthAfter: 'ذو القعدة 1450' },
+            { gregorianDate: '2029-04-14', gregorianTime: '00:40', sunsetTime: '18:41', hijriMonthAfter: 'ذو الحجة 1450' },
+            { gregorianDate: '2029-05-13', gregorianTime: '16:42', sunsetTime: '18:52', hijriMonthAfter: 'المحرم 1451' },
+            { gregorianDate: '2029-06-12', gregorianTime: '06:50', sunsetTime: '19:05', hijriMonthAfter: 'صفر 1451' },
+            { gregorianDate: '2029-07-11', gregorianTime: '18:51', sunsetTime: '19:08', hijriMonthAfter: 'ربيع الأول 1451' },
+            { gregorianDate: '2029-08-10', gregorianTime: '04:56', sunsetTime: '18:56', hijriMonthAfter: 'ربيع الثاني 1451' },
+            { gregorianDate: '2029-09-08', gregorianTime: '13:44', sunsetTime: '18:32', hijriMonthAfter: 'جمادى الأولى 1451' },
+            { gregorianDate: '2029-10-07', gregorianTime: '22:14', sunsetTime: '18:04', hijriMonthAfter: 'جمادى الآخرة 1451' },
+            { gregorianDate: '2029-11-06', gregorianTime: '07:24', sunsetTime: '17:43', hijriMonthAfter: 'رجب 1451' },
+            { gregorianDate: '2029-12-05', gregorianTime: '17:52', sunsetTime: '17:39', hijriMonthAfter: 'شعبان 1451' },
+            { gregorianDate: '2030-01-04', gregorianTime: '05:49', sunsetTime: '17:53', hijriMonthAfter: 'رمضان 1451' },
+            { gregorianDate: '2030-02-02', gregorianTime: '19:08', sunsetTime: '18:12', hijriMonthAfter: 'شوال 1451' },
+            { gregorianDate: '2030-03-04', gregorianTime: '09:35', sunsetTime: '18:27', hijriMonthAfter: 'ذو القعدة 1451' },
+            { gregorianDate: '2030-04-03', gregorianTime: '01:02', sunsetTime: '18:37', hijriMonthAfter: 'ذو الحجة 1451' },
+            { gregorianDate: '2030-05-02', gregorianTime: '17:12', sunsetTime: '18:48', hijriMonthAfter: 'المحرم 1452' },
+            { gregorianDate: '2030-06-01', gregorianTime: '09:21', sunsetTime: '19:00', hijriMonthAfter: 'صفر 1452' },
+            { gregorianDate: '2030-07-01', gregorianTime: '00:34', sunsetTime: '19:08', hijriMonthAfter: 'ربيع الأول 1452' },
+            { gregorianDate: '2030-07-30', gregorianTime: '14:11', sunsetTime: '19:02', hijriMonthAfter: 'ربيع الثاني 1452' },
+            { gregorianDate: '2030-08-29', gregorianTime: '02:07', sunsetTime: '18:41', hijriMonthAfter: 'جمادى الأولى 1452' },
+            { gregorianDate: '2030-09-27', gregorianTime: '12:55', sunsetTime: '18:14', hijriMonthAfter: 'جمادى الآخرة 1452' },
+            { gregorianDate: '2030-10-26', gregorianTime: '23:17', sunsetTime: '17:49', hijriMonthAfter: 'رجب 1452' },
+            { gregorianDate: '2030-11-25', gregorianTime: '09:46', sunsetTime: '17:39', hijriMonthAfter: 'شعبان 1452' },
+            { gregorianDate: '2030-12-24', gregorianTime: '20:32', sunsetTime: '17:46', hijriMonthAfter: 'رمضان 1452' },
+            { gregorianDate: '2031-01-23', gregorianTime: '07:31', sunsetTime: '18:06', hijriMonthAfter: 'شوال 1452' },
+            { gregorianDate: '2031-02-21', gregorianTime: '18:49', sunsetTime: '18:22', hijriMonthAfter: 'ذو القعدة 1452' },
+            { gregorianDate: '2031-03-23', gregorianTime: '06:49', sunsetTime: '18:34', hijriMonthAfter: 'ذو الحجة 1452' },
+            { gregorianDate: '2031-04-21', gregorianTime: '19:57', sunsetTime: '18:43', hijriMonthAfter: 'المحرم 1453' },
+            { gregorianDate: '2031-05-21', gregorianTime: '10:17', sunsetTime: '18:56', hijriMonthAfter: 'صفر 1453' },
+            { gregorianDate: '2031-06-20', gregorianTime: '01:25', sunsetTime: '19:07', hijriMonthAfter: 'ربيع الأول 1453' },
+            { gregorianDate: '2031-07-19', gregorianTime: '16:40', sunsetTime: '19:06', hijriMonthAfter: 'ربيع الثاني 1453' },
+            { gregorianDate: '2031-08-18', gregorianTime: '07:32', sunsetTime: '18:50', hijriMonthAfter: 'جمادى الأولى 1453' },
+            { gregorianDate: '2031-09-16', gregorianTime: '21:47', sunsetTime: '18:24', hijriMonthAfter: 'جمادى الآخرة 1453' },
+            { gregorianDate: '2031-10-16', gregorianTime: '11:21', sunsetTime: '17:57', hijriMonthAfter: 'رجب 1453' },
+            { gregorianDate: '2031-11-15', gregorianTime: '00:09', sunsetTime: '17:40', hijriMonthAfter: 'شعبان 1453' },
+            { gregorianDate: '2031-12-14', gregorianTime: '12:06', sunsetTime: '17:42', hijriMonthAfter: 'رمضان 1453' },
+            { gregorianDate: '2032-01-12', gregorianTime: '23:07', sunsetTime: '17:58', hijriMonthAfter: 'شوال 1453' },
+            { gregorianDate: '2032-02-11', gregorianTime: '09:24', sunsetTime: '18:17', hijriMonthAfter: 'ذو القعدة 1453' },
+            { gregorianDate: '2032-03-11', gregorianTime: '19:25', sunsetTime: '18:30', hijriMonthAfter: 'ذو الحجة 1453' },
+            { gregorianDate: '2032-04-10', gregorianTime: '05:39', sunsetTime: '18:40', hijriMonthAfter: 'المحرم 1454' },
+            { gregorianDate: '2032-05-09', gregorianTime: '16:36', sunsetTime: '18:51', hijriMonthAfter: 'صفر 1454' },
+            { gregorianDate: '2032-06-08', gregorianTime: '04:32', sunsetTime: '19:03', hijriMonthAfter: 'ربيع الأول 1454' },
+            { gregorianDate: '2032-07-07', gregorianTime: '17:41', sunsetTime: '19:08', hijriMonthAfter: 'ربيع الثاني 1454' },
+            { gregorianDate: '2032-08-06', gregorianTime: '08:12', sunsetTime: '18:58', hijriMonthAfter: 'جمادى الأولى 1454' },
+            { gregorianDate: '2032-09-04', gregorianTime: '23:57', sunsetTime: '18:35', hijriMonthAfter: 'جمادى الآخرة 1454' },
+            { gregorianDate: '2032-10-04', gregorianTime: '16:27', sunsetTime: '18:07', hijriMonthAfter: 'رجب 1454' },
+            { gregorianDate: '2032-11-03', gregorianTime: '08:45', sunsetTime: '17:44', hijriMonthAfter: 'شعبان 1454' },
+            { gregorianDate: '2032-12-02', gregorianTime: '23:53', sunsetTime: '17:39', hijriMonthAfter: 'رمضان 1454' },
+            { gregorianDate: '2033-01-01', gregorianTime: '13:17', sunsetTime: '17:51', hijriMonthAfter: 'شوال 1454' },
+            { gregorianDate: '2033-01-31', gregorianTime: '01:00', sunsetTime: '18:11', hijriMonthAfter: 'ذو القعدة 1454' },
+            { gregorianDate: '2033-03-01', gregorianTime: '11:23', sunsetTime: '18:26', hijriMonthAfter: 'ذو الحجة 1454' },
+            { gregorianDate: '2033-03-30', gregorianTime: '20:51', sunsetTime: '18:36', hijriMonthAfter: 'المحرم 1455' },
+            { gregorianDate: '2033-04-29', gregorianTime: '05:46', sunsetTime: '18:47', hijriMonthAfter: 'صفر 1455' },
+            { gregorianDate: '2033-05-28', gregorianTime: '14:36', sunsetTime: '18:59', hijriMonthAfter: 'ربيع الأول 1455' },
+            { gregorianDate: '2033-06-27', gregorianTime: '00:07', sunsetTime: '19:08', hijriMonthAfter: 'ربيع الثاني 1455' },
+            { gregorianDate: '2033-07-26', gregorianTime: '11:12', sunsetTime: '19:04', hijriMonthAfter: 'جمادى الأولى 1455' },
+            { gregorianDate: '2033-08-25', gregorianTime: '00:40', sunsetTime: '18:44', hijriMonthAfter: 'جمادى الآخرة 1455' },
+            { gregorianDate: '2033-09-23', gregorianTime: '16:40', sunsetTime: '18:17', hijriMonthAfter: 'رجب 1455' },
+            { gregorianDate: '2033-10-23', gregorianTime: '10:28', sunsetTime: '17:51', hijriMonthAfter: 'شعبان 1455' },
+            { gregorianDate: '2033-11-22', gregorianTime: '04:39', sunsetTime: '17:39', hijriMonthAfter: 'رمضان 1455' },
+            { gregorianDate: '2033-12-21', gregorianTime: '21:47', sunsetTime: '17:45', hijriMonthAfter: 'شوال 1455' },
+            { gregorianDate: '2034-01-20', gregorianTime: '13:02', sunsetTime: '18:04', hijriMonthAfter: 'ذو القعدة 1455' },
+            { gregorianDate: '2034-02-19', gregorianTime: '02:10', sunsetTime: '18:22', hijriMonthAfter: 'ذو الحجة 1455' },
+            { gregorianDate: '2034-03-20', gregorianTime: '13:14', sunsetTime: '18:33', hijriMonthAfter: 'المحرم 1456' },
+            { gregorianDate: '2034-04-18', gregorianTime: '22:26', sunsetTime: '18:42', hijriMonthAfter: 'صفر 1456' },
+            { gregorianDate: '2034-05-18', gregorianTime: '06:12', sunsetTime: '18:54', hijriMonthAfter: 'ربيع الأول 1456' },
+            { gregorianDate: '2034-06-16', gregorianTime: '13:26', sunsetTime: '19:06', hijriMonthAfter: 'ربيع الثاني 1456' },
+            { gregorianDate: '2034-07-15', gregorianTime: '21:15', sunsetTime: '19:07', hijriMonthAfter: 'جمادى الأولى 1456' },
+            { gregorianDate: '2034-08-14', gregorianTime: '06:53', sunsetTime: '18:53', hijriMonthAfter: 'جمادى الآخرة 1456' },
+            { gregorianDate: '2034-09-12', gregorianTime: '19:14', sunsetTime: '18:28', hijriMonthAfter: 'رجب 1456' },
+            { gregorianDate: '2034-10-12', gregorianTime: '10:32', sunsetTime: '18:00', hijriMonthAfter: 'شعبان 1456' },
+            { gregorianDate: '2034-11-11', gregorianTime: '04:16', sunsetTime: '17:41', hijriMonthAfter: 'رمضان 1456' },
+            { gregorianDate: '2034-12-10', gregorianTime: '23:14', sunsetTime: '17:41', hijriMonthAfter: 'شوال 1456' },
+            { gregorianDate: '2035-01-09', gregorianTime: '18:03', sunsetTime: '17:56', hijriMonthAfter: 'ذو القعدة 1456' },
+            { gregorianDate: '2035-02-08', gregorianTime: '11:22', sunsetTime: '18:16', hijriMonthAfter: 'ذو الحجة 1456' },
+            { gregorianDate: '2035-03-10', gregorianTime: '02:09', sunsetTime: '18:29', hijriMonthAfter: 'المحرم 1457' },
+            { gregorianDate: '2035-04-08', gregorianTime: '13:58', sunsetTime: '18:39', hijriMonthAfter: 'صفر 1457' },
+            { gregorianDate: '2035-05-07', gregorianTime: '23:04', sunsetTime: '18:50', hijriMonthAfter: 'ربيع الأول 1457' },
+            { gregorianDate: '2035-06-06', gregorianTime: '06:21', sunsetTime: '19:02', hijriMonthAfter: 'ربيع الثاني 1457' },
+            { gregorianDate: '2035-07-05', gregorianTime: '12:59', sunsetTime: '19:08', hijriMonthAfter: 'جمادى الأولى 1457' },
+            { gregorianDate: '2035-08-03', gregorianTime: '20:12', sunsetTime: '19:00', hijriMonthAfter: 'جمادى الآخرة 1457' },
+            { gregorianDate: '2035-09-02', gregorianTime: '04:59', sunsetTime: '18:38', hijriMonthAfter: 'رجب 1457' },
+            { gregorianDate: '2035-10-01', gregorianTime: '16:07', sunsetTime: '18:10', hijriMonthAfter: 'شعبان 1457' },
+            { gregorianDate: '2035-10-31', gregorianTime: '05:59', sunsetTime: '17:46', hijriMonthAfter: 'رمضان 1457' },
+            { gregorianDate: '2035-11-29', gregorianTime: '22:37', sunsetTime: '17:39', hijriMonthAfter: 'شوال 1457' },
+            { gregorianDate: '2035-12-29', gregorianTime: '17:31', sunsetTime: '17:49', hijriMonthAfter: 'ذو القعدة 1457' },
+            { gregorianDate: '2036-01-28', gregorianTime: '13:17', sunsetTime: '18:09', hijriMonthAfter: 'ذو الحجة 1457' },
+            { gregorianDate: '2036-02-27', gregorianTime: '19:59', sunsetTime: '18:25', hijriMonthAfter: 'المحرم 1458' },
+            { gregorianDate: '2036-03-27', gregorianTime: '23:57', sunsetTime: '18:35', hijriMonthAfter: 'صفر 1458' },
+            { gregorianDate: '2036-04-26', gregorianTime: '12:33', sunsetTime: '18:45', hijriMonthAfter: 'ربيع الأول 1458' },
+            { gregorianDate: '2036-05-25', gregorianTime: '22:17', sunsetTime: '18:58', hijriMonthAfter: 'ربيع الثاني 1458' },
+            { gregorianDate: '2036-06-24', gregorianTime: '06:10', sunsetTime: '19:08', hijriMonthAfter: 'جمادى الأولى 1458' },
+            { gregorianDate: '2036-07-23', gregorianTime: '13:17', sunsetTime: '19:05', hijriMonthAfter: 'جمادى الآخرة 1458' },
+            { gregorianDate: '2036-08-21', gregorianTime: '20:35', sunsetTime: '18:47', hijriMonthAfter: 'رجب 1458' },
+            { gregorianDate: '2036-09-20', gregorianTime: '04:51', sunsetTime: '18:20', hijriMonthAfter: 'شعبان 1458' },
+            { gregorianDate: '2036-10-19', gregorianTime: '14:50', sunsetTime: '17:54', hijriMonthAfter: 'رمضان 1458' },
+            { gregorianDate: '2036-11-18', gregorianTime: '03:14', sunsetTime: '17:39', hijriMonthAfter: 'شوال 1458' },
+            { gregorianDate: '2036-12-17', gregorianTime: '18:34', sunsetTime: '17:43', hijriMonthAfter: 'ذو القعدة 1458' },
+            { gregorianDate: '2037-01-16', gregorianTime: '12:34', sunsetTime: '18:01', hijriMonthAfter: 'ذو الحجة 1458' },
+            { gregorianDate: '2037-02-15', gregorianTime: '07:54', sunsetTime: '18:20', hijriMonthAfter: 'المحرم 1459' },
+            { gregorianDate: '2037-03-17', gregorianTime: '02:36', sunsetTime: '18:32', hijriMonthAfter: 'صفر 1459' },
+            { gregorianDate: '2037-04-15', gregorianTime: '19:08', sunsetTime: '18:41', hijriMonthAfter: 'ربيع الأول 1459' },
+            { gregorianDate: '2037-05-15', gregorianTime: '08:54', sunsetTime: '18:53', hijriMonthAfter: 'ربيع الثاني 1459' },
+            { gregorianDate: '2037-06-13', gregorianTime: '20:10', sunsetTime: '19:05', hijriMonthAfter: 'جمادى الأولى 1459' },
+            { gregorianDate: '2037-07-13', gregorianTime: '05:32', sunsetTime: '19:08', hijriMonthAfter: 'جمادى الآخرة 1459' },
+            { gregorianDate: '2037-08-11', gregorianTime: '13:41', sunsetTime: '18:55', hijriMonthAfter: 'رجب 1459' },
+            { gregorianDate: '2037-09-09', gregorianTime: '21:25', sunsetTime: '18:31', hijriMonthAfter: 'شعبان 1459' },
+            { gregorianDate: '2037-10-09', gregorianTime: '05:34', sunsetTime: '18:02', hijriMonthAfter: 'رمضان 1459' },
+            { gregorianDate: '2037-11-07', gregorianTime: '15:03', sunsetTime: '17:43', hijriMonthAfter: 'شوال 1459' },
+            { gregorianDate: '2037-12-07', gregorianTime: '02:38', sunsetTime: '17:40', hijriMonthAfter: 'ذو القعدة 1459' },
+            { gregorianDate: '2038-01-05', gregorianTime: '16:41', sunsetTime: '17:54', hijriMonthAfter: 'ذو الحجة 1459' },
+            { gregorianDate: '2038-02-04', gregorianTime: '08:52', sunsetTime: '18:14', hijriMonthAfter: 'المحرم 1460' },
+            { gregorianDate: '2038-03-06', gregorianTime: '02:15', sunsetTime: '18:28', hijriMonthAfter: 'صفر 1460' },
+            { gregorianDate: '2038-04-04', gregorianTime: '19:43', sunsetTime: '18:38', hijriMonthAfter: 'ربيع الأول 1460' },
+            { gregorianDate: '2038-05-04', gregorianTime: '12:19', sunsetTime: '18:48', hijriMonthAfter: 'ربيع الثاني 1460' },
+            { gregorianDate: '2038-06-03', gregorianTime: '03:24', sunsetTime: '19:01', hijriMonthAfter: 'جمادى الأولى 1460' },
+            { gregorianDate: '2038-07-02', gregorianTime: '16:32', sunsetTime: '19:08', hijriMonthAfter: 'جمادى الآخرة 1460' },
+            { gregorianDate: '2038-08-01', gregorianTime: '03:40', sunsetTime: '19:01', hijriMonthAfter: 'رجب 1460' },
+            { gregorianDate: '2038-08-30', gregorianTime: '13:13', sunsetTime: '18:40', hijriMonthAfter: 'شعبان 1460' },
+            { gregorianDate: '2038-09-28', gregorianTime: '21:57', sunsetTime: '18:13', hijriMonthAfter: 'رمضان 1460' },
+            { gregorianDate: '2038-10-28', gregorianTime: '06:53', sunsetTime: '17:48', hijriMonthAfter: 'شوال 1460' },
+            { gregorianDate: '2038-11-26', gregorianTime: '16:47', sunsetTime: '17:38', hijriMonthAfter: 'ذو القعدة 1460' },
+            { gregorianDate: '2038-12-26', gregorianTime: '04:02', sunsetTime: '17:48', hijriMonthAfter: 'ذو الحجة 1460' },
+            { gregorianDate: '2039-01-24', gregorianTime: '16:36', sunsetTime: '18:06', hijriMonthAfter: 'المحرم 1461' },
+            { gregorianDate: '2039-02-23', gregorianTime: '16:17', sunsetTime: '18:23', hijriMonthAfter: 'صفر 1461' },
+            { gregorianDate: '2039-03-24', gregorianTime: '20:59', sunsetTime: '18:34', hijriMonthAfter: 'ربيع الأول 1461' },
+            { gregorianDate: '2039-04-23', gregorianTime: '12:35', sunsetTime: '18:44', hijriMonthAfter: 'ربيع الثاني 1461' },
+            { gregorianDate: '2039-05-23', gregorianTime: '04:38', sunsetTime: '18:57', hijriMonthAfter: 'جمادى الأولى 1461' },
+            { gregorianDate: '2039-06-21', gregorianTime: '20:21', sunsetTime: '19:07', hijriMonthAfter: 'جمادى الآخرة 1461' },
+            { gregorianDate: '2039-07-21', gregorianTime: '10:54', sunsetTime: '19:06', hijriMonthAfter: 'رجب 1461' },
+            { gregorianDate: '2039-08-19', gregorianTime: '23:50', sunsetTime: '18:49', hijriMonthAfter: 'شعبان 1461' },
+            { gregorianDate: '2039-09-18', gregorianTime: '11:23', sunsetTime: '18:22', hijriMonthAfter: 'رمضان 1461' },
+            { gregorianDate: '2039-10-17', gregorianTime: '22:09', sunsetTime: '17:56', hijriMonthAfter: 'شوال 1461' },
+            { gregorianDate: '2039-11-16', gregorianTime: '08:46', sunsetTime: '17:40', hijriMonthAfter: 'ذو القعدة 1461' },
+            { gregorianDate: '2039-12-15', gregorianTime: '19:32', sunsetTime: '17:42', hijriMonthAfter: 'ذو الحجة 1461' },
+            { gregorianDate: '2040-01-14', gregorianTime: '06:25', sunsetTime: '18:00', hijriMonthAfter: 'المحرم 1462' },
+            { gregorianDate: '2040-02-12', gregorianTime: '17:24', sunsetTime: '18:18', hijriMonthAfter: 'صفر 1462' },
+            { gregorianDate: '2040-03-13', gregorianTime: '04:46', sunsetTime: '18:31', hijriMonthAfter: 'ربيع الأول 1462' },
+            { gregorianDate: '2040-04-11', gregorianTime: '17:00', sunsetTime: '18:40', hijriMonthAfter: 'ربيع الثاني 1462' },
+            { gregorianDate: '2040-05-11', gregorianTime: '06:28', sunsetTime: '18:52', hijriMonthAfter: 'جمادى الأولى 1462' },
+            { gregorianDate: '2040-06-09', gregorianTime: '21:03', sunsetTime: '19:04', hijriMonthAfter: 'جمادى الآخرة 1462' },
+            { gregorianDate: '2040-07-09', gregorianTime: '12:15', sunsetTime: '19:08', hijriMonthAfter: 'رجب 1462' },
+            { gregorianDate: '2040-08-08', gregorianTime: '03:26', sunsetTime: '18:57', hijriMonthAfter: 'شعبان 1462' },
+            { gregorianDate: '2040-09-06', gregorianTime: '18:13', sunsetTime: '18:33', hijriMonthAfter: 'رمضان 1462' },
+            { gregorianDate: '2040-10-06', gregorianTime: '08:26', sunsetTime: '18:05', hijriMonthAfter: 'شوال 1462' },
+            { gregorianDate: '2040-11-04', gregorianTime: '21:56', sunsetTime: '17:44', hijriMonthAfter: 'ذو القعدة 1462' },
+            { gregorianDate: '2040-12-04', gregorianTime: '10:33', sunsetTime: '17:39', hijriMonthAfter: 'ذو الحجة 1462' },
+            { gregorianDate: '2041-01-02', gregorianTime: '22:08', sunsetTime: '17:52', hijriMonthAfter: 'المحرم 1463' },
+            { gregorianDate: '2041-02-01', gregorianTime: '08:43', sunsetTime: '18:12', hijriMonthAfter: 'صفر 1463' },
+            { gregorianDate: '2041-03-02', gregorianTime: '18:39', sunsetTime: '18:27', hijriMonthAfter: 'ربيع الأول 1463' },
+            { gregorianDate: '2041-04-01', gregorianTime: '04:29', sunsetTime: '18:37', hijriMonthAfter: 'ربيع الثاني 1463' },
+            { gregorianDate: '2041-04-30', gregorianTime: '14:46', sunsetTime: '18:47', hijriMonthAfter: 'جمادى الأولى 1463' },
+            { gregorianDate: '2041-05-30', gregorianTime: '01:56', sunsetTime: '19:00', hijriMonthAfter: 'جمادى الآخرة 1463' },
+            { gregorianDate: '2041-06-28', gregorianTime: '14:17', sunsetTime: '19:08', hijriMonthAfter: 'رجب 1463' },
+            { gregorianDate: '2041-07-28', gregorianTime: '04:02', sunsetTime: '19:03', hijriMonthAfter: 'شعبان 1463' },
+            { gregorianDate: '2041-08-26', gregorianTime: '19:16', sunsetTime: '18:43', hijriMonthAfter: 'رمضان 1463' },
+            { gregorianDate: '2041-09-25', gregorianTime: '11:41', sunsetTime: '18:15', hijriMonthAfter: 'شوال 1463' },
+            { gregorianDate: '2041-10-25', gregorianTime: '04:30', sunsetTime: '17:50', hijriMonthAfter: 'ذو القعدة 1463' },
+            { gregorianDate: '2041-11-23', gregorianTime: '20:36', sunsetTime: '17:39', hijriMonthAfter: 'ذو الحجة 1463' },
+            { gregorianDate: '2041-12-23', gregorianTime: '11:06', sunsetTime: '17:46', hijriMonthAfter: 'المحرم 1464' },
+            { gregorianDate: '2042-01-21', gregorianTime: '23:42', sunsetTime: '18:05', hijriMonthAfter: 'صفر 1464' },
+            { gregorianDate: '2042-02-20', gregorianTime: '10:39', sunsetTime: '18:22', hijriMonthAfter: 'ربيع الأول 1464' },
+            { gregorianDate: '2042-03-21', gregorianTime: '20:23', sunsetTime: '18:33', hijriMonthAfter: 'ربيع الثاني 1464' },
+            { gregorianDate: '2042-04-20', gregorianTime: '05:19', sunsetTime: '18:43', hijriMonthAfter: 'جمادى الأولى 1464' },
+            { gregorianDate: '2042-05-19', gregorianTime: '13:55', sunsetTime: '18:55', hijriMonthAfter: 'جمادى الآخرة 1464' },
+            { gregorianDate: '2042-06-17', gregorianTime: '22:48', sunsetTime: '19:06', hijriMonthAfter: 'رجب 1464' },
+            { gregorianDate: '2042-07-17', gregorianTime: '08:52', sunsetTime: '19:07', hijriMonthAfter: 'شعبان 1464' },
+            { gregorianDate: '2042-08-15', gregorianTime: '21:01', sunsetTime: '18:52', hijriMonthAfter: 'رمضان 1464' },
+            { gregorianDate: '2042-09-14', gregorianTime: '11:50', sunsetTime: '18:26', hijriMonthAfter: 'شوال 1464' },
+            { gregorianDate: '2042-10-14', gregorianTime: '05:03', sunsetTime: '17:58', hijriMonthAfter: 'ذو القعدة 1464' },
+            { gregorianDate: '2042-11-12', gregorianTime: '23:28', sunsetTime: '17:41', hijriMonthAfter: 'ذو الحجة 1464' },
+            { gregorianDate: '2042-12-12', gregorianTime: '17:29', sunsetTime: '17:41', hijriMonthAfter: 'المحرم 1465' },
+            { gregorianDate: '2043-01-11', gregorianTime: '09:53', sunsetTime: '17:58', hijriMonthAfter: 'صفر 1465' },
+            { gregorianDate: '2043-02-10', gregorianTime: '00:07', sunsetTime: '18:17', hijriMonthAfter: 'ربيع الأول 1465' },
+            { gregorianDate: '2043-03-11', gregorianTime: '12:09', sunsetTime: '18:30', hijriMonthAfter: 'ربيع الثاني 1465' },
+            { gregorianDate: '2043-04-09', gregorianTime: '22:06', sunsetTime: '18:39', hijriMonthAfter: 'جمادى الأولى 1465' },
+            { gregorianDate: '2043-05-09', gregorianTime: '06:21', sunsetTime: '18:51', hijriMonthAfter: 'جمادى الآخرة 1465' },
+            { gregorianDate: '2043-06-07', gregorianTime: '13:35', sunsetTime: '19:03', hijriMonthAfter: 'رجب 1465' },
+            { gregorianDate: '2043-07-06', gregorianTime: '20:51', sunsetTime: '19:08', hijriMonthAfter: 'شعبان 1465' },
+            { gregorianDate: '2043-08-05', gregorianTime: '05:22', sunsetTime: '18:59', hijriMonthAfter: 'رمضان 1465' },
+            { gregorianDate: '2043-09-03', gregorianTime: '16:17', sunsetTime: '18:37', hijriMonthAfter: 'شوال 1465' },
+            { gregorianDate: '2043-10-03', gregorianTime: '06:12', sunsetTime: '18:08', hijriMonthAfter: 'ذو القعدة 1465' },
+            { gregorianDate: '2043-11-01', gregorianTime: '22:57', sunsetTime: '17:46', hijriMonthAfter: 'ذو الحجة 1465' },
+            { gregorianDate: '2043-12-01', gregorianTime: '17:37', sunsetTime: '17:39', hijriMonthAfter: 'المحرم 1466' },
+            { gregorianDate: '2043-12-31', gregorianTime: '12:48', sunsetTime: '17:50', hijriMonthAfter: 'صفر 1466' },
+            { gregorianDate: '2044-01-30', gregorianTime: '07:04', sunsetTime: '18:10', hijriMonthAfter: 'ربيع الأول 1466' },
+            { gregorianDate: '2044-02-28', gregorianTime: '23:12', sunsetTime: '18:25', hijriMonthAfter: 'ربيع الثاني 1466' },
+            { gregorianDate: '2044-03-29', gregorianTime: '12:26', sunsetTime: '18:36', hijriMonthAfter: 'جمادى الأولى 1466' },
+            { gregorianDate: '2044-04-27', gregorianTime: '22:42', sunsetTime: '18:46', hijriMonthAfter: 'جمادى الآخرة 1466' },
+            { gregorianDate: '2044-05-27', gregorianTime: '06:39', sunsetTime: '18:59', hijriMonthAfter: 'رجب 1466' },
+            { gregorianDate: '2044-06-25', gregorianTime: '13:24', sunsetTime: '19:08', hijriMonthAfter: 'شعبان 1466' },
+            { gregorianDate: '2044-07-24', gregorianTime: '20:10', sunsetTime: '19:05', hijriMonthAfter: 'رمضان 1466' },
+            { gregorianDate: '2044-08-23', gregorianTime: '04:06', sunsetTime: '18:46', hijriMonthAfter: 'شوال 1466' },
+            { gregorianDate: '2044-09-21', gregorianTime: '14:03', sunsetTime: '18:19', hijriMonthAfter: 'ذو القعدة 1466' },
+            { gregorianDate: '2044-10-21', gregorianTime: '02:36', sunsetTime: '17:52', hijriMonthAfter: 'ذو الحجة 1466' },
+            { gregorianDate: '2044-11-19', gregorianTime: '17:58', sunsetTime: '17:39', hijriMonthAfter: 'المحرم 1467' },
+            { gregorianDate: '2044-12-19', gregorianTime: '11:53', sunsetTime: '17:44', hijriMonthAfter: 'صفر 1467' },
+            { gregorianDate: '2045-01-18', gregorianTime: '07:25', sunsetTime: '18:03', hijriMonthAfter: 'ربيع الأول 1467' },
+            { gregorianDate: '2045-02-17', gregorianTime: '02:51', sunsetTime: '18:21', hijriMonthAfter: 'ربيع الثاني 1467' },
+            { gregorianDate: '2045-03-18', gregorianTime: '20:15', sunsetTime: '18:32', hijriMonthAfter: 'جمادى الأولى 1467' },
+            { gregorianDate: '2045-04-17', gregorianTime: '10:26', sunsetTime: '18:42', hijriMonthAfter: 'جمادى الآخرة 1467' },
+            { gregorianDate: '2045-05-16', gregorianTime: '21:26', sunsetTime: '18:54', hijriMonthAfter: 'رجب 1467' },
+            { gregorianDate: '2045-06-15', gregorianTime: '06:05', sunsetTime: '19:06', hijriMonthAfter: 'شعبان 1467' },
+            { gregorianDate: '2045-07-14', gregorianTime: '13:28', sunsetTime: '19:07', hijriMonthAfter: 'رمضان 1467' },
+            { gregorianDate: '2045-08-12', gregorianTime: '20:39', sunsetTime: '18:54', hijriMonthAfter: 'شوال 1467' },
+            { gregorianDate: '2045-09-11', gregorianTime: '04:27', sunsetTime: '18:29', hijriMonthAfter: 'ذو القعدة 1467' },
+            { gregorianDate: '2045-10-10', gregorianTime: '13:37', sunsetTime: '18:01', hijriMonthAfter: 'ذو الحجة 1467' },
+            { gregorianDate: '2045-11-09', gregorianTime: '00:49', sunsetTime: '17:42', hijriMonthAfter: 'المحرم 1468' },
+            { gregorianDate: '2045-12-08', gregorianTime: '14:41', sunsetTime: '17:40', hijriMonthAfter: 'صفر 1468' },
+            { gregorianDate: '2046-01-07', gregorianTime: '07:24', sunsetTime: '17:55', hijriMonthAfter: 'ربيع الأول 1468' },
+            { gregorianDate: '2046-02-06', gregorianTime: '02:09', sunsetTime: '18:15', hijriMonthAfter: 'ربيع الثاني 1468' },
+            { gregorianDate: '2046-03-07', gregorianTime: '21:15', sunsetTime: '18:28', hijriMonthAfter: 'جمادى الأولى 1468' },
+            { gregorianDate: '2046-04-06', gregorianTime: '14:51', sunsetTime: '18:38', hijriMonthAfter: 'جمادى الآخرة 1468' },
+            { gregorianDate: '2046-05-06', gregorianTime: '05:56', sunsetTime: '18:49', hijriMonthAfter: 'رجب 1468' },
+            { gregorianDate: '2046-06-04', gregorianTime: '18:22', sunsetTime: '19:02', hijriMonthAfter: 'شعبان 1468' },
+            { gregorianDate: '2046-07-04', gregorianTime: '04:39', sunsetTime: '19:08', hijriMonthAfter: 'رمضان 1468' },
+            { gregorianDate: '2046-08-02', gregorianTime: '13:25', sunsetTime: '19:01', hijriMonthAfter: 'شوال 1468' },
+            { gregorianDate: '2046-08-31', gregorianTime: '21:25', sunsetTime: '18:39', hijriMonthAfter: 'ذو القعدة 1468' },
+            { gregorianDate: '2046-09-30', gregorianTime: '05:25', sunsetTime: '18:11', hijriMonthAfter: 'ذو الحجة 1468' },
+            { gregorianDate: '2046-10-29', gregorianTime: '14:17', sunsetTime: '17:47', hijriMonthAfter: 'المحرم 1469' },
+            { gregorianDate: '2046-11-28', gregorianTime: '00:50', sunsetTime: '17:38', hijriMonthAfter: 'صفر 1469' },
+            { gregorianDate: '2046-12-27', gregorianTime: '13:39', sunsetTime: '17:48', hijriMonthAfter: 'ربيع الأول 1469' },
+            { gregorianDate: '2047-01-26', gregorianTime: '04:43', sunsetTime: '18:08', hijriMonthAfter: 'ربيع الثاني 1469' },
+            { gregorianDate: '2047-02-24', gregorianTime: '21:26', sunsetTime: '18:24', hijriMonthAfter: 'جمادى الأولى 1469' },
+            { gregorianDate: '2047-03-26', gregorianTime: '14:44', sunsetTime: '18:35', hijriMonthAfter: 'جمادى الآخرة 1469' },
+            { gregorianDate: '2047-04-25', gregorianTime: '07:40', sunsetTime: '18:45', hijriMonthAfter: 'رجب 1469' },
+            { gregorianDate: '2047-05-24', gregorianTime: '23:27', sunsetTime: '18:57', hijriMonthAfter: 'شعبان 1469' },
+            { gregorianDate: '2047-06-23', gregorianTime: '13:36', sunsetTime: '19:07', hijriMonthAfter: 'رمضان 1469' },
+            { gregorianDate: '2047-07-23', gregorianTime: '01:49', sunsetTime: '19:05', hijriMonthAfter: 'شوال 1469' },
+            { gregorianDate: '2047-08-21', gregorianTime: '12:16', sunsetTime: '18:48', hijriMonthAfter: 'ذو القعدة 1469' },
+            { gregorianDate: '2047-09-19', gregorianTime: '21:31', sunsetTime: '18:21', hijriMonthAfter: 'ذو الحجة 1469' },
+            { gregorianDate: '2047-10-19', gregorianTime: '06:28', sunsetTime: '17:54', hijriMonthAfter: 'المحرم 1470' },
+            { gregorianDate: '2047-11-17', gregorianTime: '15:59', sunsetTime: '17:40', hijriMonthAfter: 'صفر 1470' },
+            { gregorianDate: '2047-12-17', gregorianTime: '02:38', sunsetTime: '17:43', hijriMonthAfter: 'ربيع الأول 1470' },
+            { gregorianDate: '2048-01-15', gregorianTime: '14:32', sunsetTime: '18:00', hijriMonthAfter: 'ربيع الثاني 1470' },
+            { gregorianDate: '2048-02-14', gregorianTime: '03:31', sunsetTime: '18:19', hijriMonthAfter: 'جمادى الأولى 1470' },
+            { gregorianDate: '2048-03-14', gregorianTime: '17:27', sunsetTime: '18:31', hijriMonthAfter: 'جمادى الآخرة 1470' },
+            { gregorianDate: '2048-04-13', gregorianTime: '08:19', sunsetTime: '18:41', hijriMonthAfter: 'رجب 1470' },
+            { gregorianDate: '2048-05-12', gregorianTime: '23:58', sunsetTime: '18:52', hijriMonthAfter: 'شعبان 1470' },
+            { gregorianDate: '2048-06-11', gregorianTime: '15:50', sunsetTime: '19:04', hijriMonthAfter: 'رمضان 1470' },
+            { gregorianDate: '2048-07-11', gregorianTime: '07:04', sunsetTime: '19:08', hijriMonthAfter: 'شوال 1470' },
+            { gregorianDate: '2048-08-09', gregorianTime: '20:59', sunsetTime: '18:56', hijriMonthAfter: 'ذو القعدة 1470' },
+            { gregorianDate: '2048-09-08', gregorianTime: '09:24', sunsetTime: '18:31', hijriMonthAfter: 'ذو الحجة 1470' },
+            { gregorianDate: '2048-10-07', gregorianTime: '20:45', sunsetTime: '18:04', hijriMonthAfter: 'المحرم 1471' },
+            { gregorianDate: '2048-11-06', gregorianTime: '07:38', sunsetTime: '17:43', hijriMonthAfter: 'صفر 1471' },
+            { gregorianDate: '2048-12-05', gregorianTime: '18:30', sunsetTime: '17:39', hijriMonthAfter: 'ربيع الأول 1471' },
+            { gregorianDate: '2049-01-04', gregorianTime: '05:24', sunsetTime: '17:53', hijriMonthAfter: 'ربيع الثاني 1471' },
+            { gregorianDate: '2049-02-02', gregorianTime: '16:16', sunsetTime: '18:13', hijriMonthAfter: 'جمادى الأولى 1471' },
+            { gregorianDate: '2049-03-04', gregorianTime: '03:11', sunsetTime: '18:27', hijriMonthAfter: 'جمادى الآخرة 1471' },
+            { gregorianDate: '2049-04-02', gregorianTime: '14:39', sunsetTime: '18:37', hijriMonthAfter: 'رجب 1471' },
+            { gregorianDate: '2049-05-02', gregorianTime: '03:11', sunsetTime: '18:48', hijriMonthAfter: 'شعبان 1471' },
+            { gregorianDate: '2049-05-31', gregorianTime: '17:00', sunsetTime: '19:00', hijriMonthAfter: 'رمضان 1471' },
+            { gregorianDate: '2049-06-30', gregorianTime: '07:50', sunsetTime: '19:08', hijriMonthAfter: 'شوال 1471' },
+            { gregorianDate: '2049-07-29', gregorianTime: '23:07', sunsetTime: '19:02', hijriMonthAfter: 'ذو القعدة 1471' },
+            { gregorianDate: '2049-08-28', gregorianTime: '14:18', sunsetTime: '18:41', hijriMonthAfter: 'ذو الحجة 1471' },
+            { gregorianDate: '2049-09-27', gregorianTime: '05:05', sunsetTime: '18:13', hijriMonthAfter: 'المحرم 1472' },
+            { gregorianDate: '2049-10-26', gregorianTime: '19:15', sunsetTime: '17:49', hijriMonthAfter: 'صفر 1472' },
+            { gregorianDate: '2049-11-25', gregorianTime: '08:35', sunsetTime: '17:38', hijriMonthAfter: 'ربيع الأول 1472' },
+            { gregorianDate: '2049-12-24', gregorianTime: '20:51', sunsetTime: '17:46', hijriMonthAfter: 'ربيع الثاني 1472' },
+            { gregorianDate: '2050-01-23', gregorianTime: '07:57', sunsetTime: '18:06', hijriMonthAfter: 'جمادى الأولى 1472' },
+            { gregorianDate: '2050-02-21', gregorianTime: '18:03', sunsetTime: '18:23', hijriMonthAfter: 'جمادى الآخرة 1472' },
+{ gregorianDate: '2050-03-23', gregorianTime: '03:41', sunsetTime: '18:34', hijriMonthAfter: 'رجب 1472' },
+{ gregorianDate: '2050-04-21', gregorianTime: '13:25', sunsetTime: '18:43', hijriMonthAfter: 'شعبان 1472' },
+{ gregorianDate: '2050-05-20', gregorianTime: '23:51', sunsetTime: '18:55', hijriMonthAfter: 'رمضان 1472' },
+{ gregorianDate: '2050-06-19', gregorianTime: '11:21', sunsetTime: '19:07', hijriMonthAfter: 'شوال 1472' },
+{ gregorianDate: '2050-07-19', gregorianTime: '00:16', sunsetTime: '19:06', hijriMonthAfter: 'ذو القعدة 1472' },
+{ gregorianDate: '2050-08-17', gregorianTime: '14:47', sunsetTime: '18:51', hijriMonthAfter: 'ذو الحجة 1472' },
+{ gregorianDate: '2050-09-16', gregorianTime: '06:49', sunsetTime: '18:24', hijriMonthAfter: 'المحرم 1473' },
+{ gregorianDate: '2050-10-15', gregorianTime: '23:48', sunsetTime: '17:57', hijriMonthAfter: 'صفر 1473' },
+{ gregorianDate: '2050-11-14', gregorianTime: '16:41', sunsetTime: '17:40', hijriMonthAfter: 'ربيع الأول 1473' },
+{ gregorianDate: '2050-12-14', gregorianTime: '08:18', sunsetTime: '17:42', hijriMonthAfter: 'ربيع الثاني 1473' },
+{ gregorianDate: '2051-01-12', gregorianTime: '21:58', sunsetTime: '17:58', hijriMonthAfter: 'جمادى الأولى 1473' },
+{ gregorianDate: '2051-02-11', gregorianTime: '09:41', sunsetTime: '18:17', hijriMonthAfter: 'جمادى الآخرة 1473' },
+{ gregorianDate: '2051-03-12', gregorianTime: '19:52', sunsetTime: '18:30', hijriMonthAfter: 'رجب 1473' },
+{ gregorianDate: '2051-04-11', gregorianTime: '04:59', sunsetTime: '18:40', hijriMonthAfter: 'شعبان 1473' },
+{ gregorianDate: '2051-05-10', gregorianTime: '13:29', sunsetTime: '18:51', hijriMonthAfter: 'رمضان 1473' },
+{ gregorianDate: '2051-06-08', gregorianTime: '21:56', sunsetTime: '19:02', hijriMonthAfter: 'شوال 1473' },
+{ gregorianDate: '2051-07-08', gregorianTime: '07:09', sunsetTime: '19:09', hijriMonthAfter: 'ذو القعدة 1473' },
+{ gregorianDate: '2051-08-06', gregorianTime: '18:05', sunsetTime: '19:00', hijriMonthAfter: 'ذو الحجة 1473' },
+{ gregorianDate: '2051-09-5', gregorianTime: '07:33', sunsetTime: '18:35', hijriMonthAfter: 'المحرم 1474' },
+{ gregorianDate: '2051-10-04', gregorianTime: '23:46', sunsetTime: '18:07', hijriMonthAfter: 'صفر 1474' },
+{ gregorianDate: '2051-11-03', gregorianTime: '17:59', sunsetTime: '17:45', hijriMonthAfter: 'ربيع الأول 1474' },
+{ gregorianDate: '2051-12-03', gregorianTime: '12:37', sunsetTime: '17:39', hijriMonthAfter: 'ربيع الثاني 1474' },
+{ gregorianDate: '2052-01-02', gregorianTime: '06:05', sunsetTime: '17:52', hijriMonthAfter: 'جمادى الأولى 1474' },
+{ gregorianDate: '2052-01-31', gregorianTime: '21:30', sunsetTime: '18:11', hijriMonthAfter: 'جمادى الآخرة 1474' },
+{ gregorianDate: '2052-03-01', gregorianTime: '10:36', sunsetTime: '18:26', hijriMonthAfter: 'رجب 1474' },
+{ gregorianDate: '2052-03-30', gregorianTime: '21:27', sunsetTime: '18:36', hijriMonthAfter: 'شعبان 1474' },
+{ gregorianDate: '2052-04-29', gregorianTime: '06:21', sunsetTime: '18:47', hijriMonthAfter: 'رمضان 1474' },
+{ gregorianDate: '2052-05-28', gregorianTime: '13:50', sunsetTime: '18:59', hijriMonthAfter: 'شوال 1474' },
+{ gregorianDate: '2052-06-26', gregorianTime: '20:50', sunsetTime: '19:08', hijriMonthAfter: 'ذو القعدة 1474' },
+{ gregorianDate: '2052-07-26', gregorianTime: '04:31', sunsetTime: '19:04', hijriMonthAfter: 'ذو الحجة 1474' },
+{ gregorianDate: '2052-08-24', gregorianTime: '14:07', sunsetTime: '18:45', hijriMonthAfter: 'المحرم 1475' },
+{ gregorianDate: '2052-09-23', gregorianTime: '02:32', sunsetTime: '18:17', hijriMonthAfter: 'صفر 1475' },
+{ gregorianDate: '2052-10-22', gregorianTime: '18:03', sunsetTime: '17:52', hijriMonthAfter: 'ربيع الأول 1475' },
+{ gregorianDate: '2052-11-21', gregorianTime: '12:02', sunsetTime: '17:39', hijriMonthAfter: 'ربيع الثاني 1475' },
+{ gregorianDate: '2052-12-21', gregorianTime: '07:15', sunsetTime: '17:45', hijriMonthAfter: 'جمادى الأولى 1475' },
+{ gregorianDate: '2053-01-20', gregorianTime: '02:12', sunsetTime: '18:04', hijriMonthAfter: 'جمادى الآخرة 1475' },
+{ gregorianDate: '2053-02-18', gregorianTime: '19:31', sunsetTime: '18:21', hijriMonthAfter: 'رجب 1475' },
+{ gregorianDate: '2053-03-20', gregorianTime: '10:11', sunsetTime: '18:33', hijriMonthAfter: 'شعبان 1475' },
+{ gregorianDate: '2053-04-18', gregorianTime: '21:48', sunsetTime: '18:42', hijriMonthAfter: 'رمضان 1475' },
+{ gregorianDate: '2053-05-18', gregorianTime: '06:43', sunsetTime: '18:55', hijriMonthAfter: 'شوال 1475' },
+{ gregorianDate: '2053-06-16', gregorianTime: '13:51', sunsetTime: '19:06', hijriMonthAfter: 'ذو القعدة 1475' },
+{ gregorianDate: '2053-07-15', gregorianTime: '20:26', sunsetTime: '19:07', hijriMonthAfter: 'ذو الحجة 1475' },
+{ gregorianDate: '2053-08-14', gregorianTime: '03:41', sunsetTime: '18:53', hijriMonthAfter: 'المحرم 1476' },
+{ gregorianDate: '2053-09-12', gregorianTime: '12:36', sunsetTime: '18:28', hijriMonthAfter: 'صفر 1476' },
+{ gregorianDate: '2053-10-11', gregorianTime: '23:53', sunsetTime: '18:00', hijriMonthAfter: 'ربيع الأول 1476' },
+{ gregorianDate: '2053-11-10', gregorianTime: '13:55', sunsetTime: '17:41', hijriMonthAfter: 'ربيع الثاني 1476' },
+{ gregorianDate: '2053-12-10', gregorianTime: '06:40', sunsetTime: '17:41', hijriMonthAfter: 'جمادى الأولى 1476' },
+{ gregorianDate: '2054-01-09', gregorianTime: '01:34', sunsetTime: '17:57', hijriMonthAfter: 'جمادى الآخرة 1476' },
+{ gregorianDate: '2054-02-07', gregorianTime: '21:14', sunsetTime: '18:15', hijriMonthAfter: 'رجب 1476' },
+{ gregorianDate: '2054-03-09', gregorianTime: '15:45', sunsetTime: '18:29', hijriMonthAfter: 'شعبان 1476' },
+{ gregorianDate: '2054-04-08', gregorianTime: '07:32', sunsetTime: '18:39', hijriMonthAfter: 'رمضان 1476' },
+{ gregorianDate: '2054-05-07', gregorianTime: '20:00', sunsetTime: '18:50', hijriMonthAfter: 'شوال 1476' },
+{ gregorianDate: '2054-06-06', gregorianTime: '05:40', sunsetTime: '19:03', hijriMonthAfter: 'ذو القعدة 1476' },
+{ gregorianDate: '2054-07-05', gregorianTime: '13:34', sunsetTime: '19:08', hijriMonthAfter: 'ذو الحجة 1476' },
+{ gregorianDate: '2054-08-03', gregorianTime: '20:48', sunsetTime: '19:00', hijriMonthAfter: 'المحرم 1477' },
+{ gregorianDate: '2054-09-02', gregorianTime: '04:18', sunsetTime: '18:37', hijriMonthAfter: 'صفر 1477' },
+{ gregorianDate: '2054-10-01', gregorianTime: '12:49', sunsetTime: '18:10', hijriMonthAfter: 'ربيع الأول 1477' },
+{ gregorianDate: '2054-10-30', gregorianTime: '23:01', sunsetTime: '17:47', hijriMonthAfter: 'ربيع الثاني 1477' },
+{ gregorianDate: '2054-11-29', gregorianTime: '11:33', sunsetTime: '17:39', hijriMonthAfter: 'جمادى الأولى 1477' },
+{ gregorianDate: '2054-12-29', gregorianTime: '02:52', sunsetTime: '17:49', hijriMonthAfter: 'جمادى الآخرة 1477' },
+{ gregorianDate: '2055-01-27', gregorianTime: '20:39', sunsetTime: '18:09', hijriMonthAfter: 'رجب 1477' },
+{ gregorianDate: '2055-02-26', gregorianTime: '15:39', sunsetTime: '18:25', hijriMonthAfter: 'شعبان 1477' },
+{ gregorianDate: '2055-03-28', gregorianTime: '10:00', sunsetTime: '18:35', hijriMonthAfter: 'رمضان 1477' },
+{ gregorianDate: '2055-04-27', gregorianTime: '02:17', sunsetTime: '18:46', hijriMonthAfter: 'شوال 1477' },
+{ gregorianDate: '2055-05-26', gregorianTime: '15:57', sunsetTime: '18:58', hijriMonthAfter: 'ذو القعدة 1477' },
+{ gregorianDate: '2055-06-25', gregorianTime: '03:15', sunsetTime: '19:08', hijriMonthAfter: 'ذو الحجة 1477' },
+{ gregorianDate: '2055-07-24', gregorianTime: '12:48', sunsetTime: '19:05', hijriMonthAfter: 'المحرم 1478' },
+{ gregorianDate: '2055-08-22', gregorianTime: '21:15', sunsetTime: '18:47', hijriMonthAfter: 'صفر 1478' },
+{ gregorianDate: '2055-09-21', gregorianTime: '05:19', sunsetTime: '18:19', hijriMonthAfter: 'ربيع الأول 1478' },
+{ gregorianDate: '2055-10-20', gregorianTime: '13:49', sunsetTime: '17:54', hijriMonthAfter: 'ربيع الثاني 1478' },
+{ gregorianDate: '2055-11-18', gregorianTime: '23:34', sunsetTime: '17:39', hijriMonthAfter: 'جمادى الأولى 1478' },
+{ gregorianDate: '2055-12-18', gregorianTime: '11:15', sunsetTime: '17:43', hijriMonthAfter: 'جمادى الآخرة 1478' },
+{ gregorianDate: '2056-01-17', gregorianTime: '01:10', sunsetTime: '18:02', hijriMonthAfter: 'رجب 1478' },
+{ gregorianDate: '2056-02-15', gregorianTime: '16:59', sunsetTime: '18:19', hijriMonthAfter: 'شعبان 1478' },
+{ gregorianDate: '2056-03-16', gregorianTime: '09:52', sunsetTime: '18:32', hijriMonthAfter: 'رمضان 1478' },
+{ gregorianDate: '2056-04-15', gregorianTime: '02:50', sunsetTime: '18:42', hijriMonthAfter: 'شوال 1478' },
+{ gregorianDate: '2056-05-14', gregorianTime: '19:06', sunsetTime: '18:53', hijriMonthAfter: 'ذو القعدة 1478' },
+{ gregorianDate: '2056-06-13', gregorianTime: '10:04', sunsetTime: '19:05', hijriMonthAfter: 'ذو الحجة 1478' },
+{ gregorianDate: '2056-07-12', gregorianTime: '23:20', sunsetTime: '19:08', hijriMonthAfter: 'المحرم 1479' },
+{ gregorianDate: '2056-08-11', gregorianTime: '10:48', sunsetTime: '18:55', hijriMonthAfter: 'صفر 1479' },
+{ gregorianDate: '2056-09-09', gregorianTime: '20:47', sunsetTime: '18:30', hijriMonthAfter: 'ربيع الأول 1479' },
+{ gregorianDate: '2056-10-09', gregorianTime: '06:00', sunsetTime: '18:02', hijriMonthAfter: 'ربيع الثاني 1479' },
+{ gregorianDate: '2056-11-07', gregorianTime: '15:20', sunsetTime: '17:43', hijriMonthAfter: 'جمادى الأولى 1479' },
+{ gregorianDate: '2056-12-07', gregorianTime: '01:31', sunsetTime: '17:40', hijriMonthAfter: 'جمادى الآخرة 1479' },
+{ gregorianDate: '2057-01-05', gregorianTime: '12:49', sunsetTime: '17:54', hijriMonthAfter: 'رجب 1479' },
+{ gregorianDate: '2057-02-04', gregorianTime: '01:10', sunsetTime: '18:14', hijriMonthAfter: 'شعبان 1479' },
+{ gregorianDate: '2057-03-05', gregorianTime: '14:24', sunsetTime: '18:28', hijriMonthAfter: 'رمضان 1479' },
+{ gregorianDate: '2057-04-04', gregorianTime: '04:31', sunsetTime: '18:38', hijriMonthAfter: 'شوال 1479' },
+{ gregorianDate: '2057-05-03', gregorianTime: '19:32', sunsetTime: '18:48', hijriMonthAfter: 'ذو القعدة 1479' },
+{ gregorianDate: '2057-06-02', gregorianTime: '11:11', sunsetTime: '19:01', hijriMonthAfter: 'ذو الحجة 1479' },
+{ gregorianDate: '2057-07-02', gregorianTime: '02:47', sunsetTime: '19:08', hijriMonthAfter: 'المحرم 1480' },
+{ gregorianDate: '2057-07-31', gregorianTime: '17:32', sunsetTime: '19:01', hijriMonthAfter: 'صفر 1480' },
+{ gregorianDate: '2057-08-30', gregorianTime: '06:54', sunsetTime: '18:40', hijriMonthAfter: 'ربيع الأول 1480' },
+{ gregorianDate: '2057-09-28', gregorianTime: '19:00', sunsetTime: '18:12', hijriMonthAfter: 'ربيع الثاني 1480' },
+{ gregorianDate: '2057-10-28', gregorianTime: '06:19', sunsetTime: '17:48', hijriMonthAfter: 'جمادى الأولى 1480' },
+{ gregorianDate: '2057-11-26', gregorianTime: '17:22', sunsetTime: '17:38', hijriMonthAfter: 'جمادى الآخرة 1480' },
+{ gregorianDate: '2057-12-26', gregorianTime: '04:22', sunsetTime: '17:48', hijriMonthAfter: 'رجب 1480' },
+{ gregorianDate: '2058-01-24', gregorianTime: '15:14', sunsetTime: '18:07', hijriMonthAfter: 'شعبان 1480' },
+{ gregorianDate: '2058-02-23', gregorianTime: '01:56', sunsetTime: '18:24', hijriMonthAfter: 'رمضان 1480' },
+{ gregorianDate: '2058-03-24', gregorianTime: '12:50', sunsetTime: '18:34', hijriMonthAfter: 'شوال 1480' },
+{ gregorianDate: '2058-04-23', gregorianTime: '00:29', sunsetTime: '18:44', hijriMonthAfter: 'ذو القعدة 1480' },
+{ gregorianDate: '2058-05-22', gregorianTime: '13:23', sunsetTime: '18:56', hijriMonthAfter: 'ذو الحجة 1480' },
+ ]
+ 
+        // Helper function to convert HH:MM time string to minutes since midnight
+        function timeToMinutes(timeStr) {
+            const [hours, minutes] = timeStr.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+
+        // Helper function to format a Date object as DD/MM/YYYY
+        function formatDate(date) {
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        // Helper function to get day name based on current language
+        function getDayName(date) {
+            const currentLang = document.documentElement.lang || 'ar';
+            const days = {
+                ar: ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+                en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                tr: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
+            };
+            return days[currentLang][date.getDay()];
+        }
+
+        // Populate dropdowns with unique Hijri Years and Months from data
+        function populateDropdowns() {
+            const yearSelect = document.getElementById('hijri-year');
+            const monthSelect = document.getElementById('hijri-month');
+            
+            // Save current selections
+            const selectedYear = yearSelect.value;
+            const selectedMonth = monthSelect.value;
+
+            const years = new Set();
+            const months = new Set();
+
+            moonData.forEach(item => {
+                if (item.hijriMonthAfter) {
+                    const parts = item.hijriMonthAfter.split(' ');
+                    if (parts.length === 2) {
+                        months.add(parts[0]);
+                        years.add(parts[1]);
+                    }
+                }
+            });
+
+            // Clear and populate Year dropdown
+            yearSelect.innerHTML = '<option value="" data-translate="select-year">اختر السنة</option>';
+            Array.from(years).sort().forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            });
+
+            // Define Hijri months in multiple languages
+            const hijriMonths = {
+                ar: ["المحرم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"],
+                en: ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"],
+                tr: ["Muharrem", "Safer", "Rebiülevvel", "Rebiülahir", "Cemaziyelevvel", "Cemaziyelahir", "Recep", "Şaban", "Ramazan", "Şevval", "Zilkade", "Zilhicce"]
+            };
+            
+            const currentLang = document.documentElement.lang || 'ar';
+            const orderedMonths = hijriMonths.ar; // Always use Arabic for values
+            const displayMonths = hijriMonths[currentLang]; // Use current language for display
+
+            // Clear and populate Month dropdown with all ordered months
+            monthSelect.innerHTML = '<option value="" data-translate="select-month">اختر الشهر</option>';
+            orderedMonths.forEach((month, index) => {
+                const option = document.createElement('option');
+                option.value = month;
+                option.textContent = displayMonths[index];
+                monthSelect.appendChild(option);
+            });
+            
+            // Restore previous selections
+            if (selectedYear) yearSelect.value = selectedYear;
+            if (selectedMonth) monthSelect.value = selectedMonth;
+            
+            // Update placeholder text translations
+            const selectYearOption = yearSelect.querySelector('[data-translate="select-year"]');
+            const selectMonthOption = monthSelect.querySelector('[data-translate="select-month"]');
+            if (selectYearOption && translations[currentLang] && translations[currentLang]['select-year']) {
+                selectYearOption.textContent = translations[currentLang]['select-year'];
+            }
+            if (selectMonthOption && translations[currentLang] && translations[currentLang]['select-month']) {
+                selectMonthOption.textContent = translations[currentLang]['select-month'];
+            }
+        }
+
+        // Main calculation function
+        function calculateHijriStart() {
+            const selectedYear = document.getElementById('hijri-year').value;
+            const selectedMonth = document.getElementById('hijri-month').value;
+            const targetHijriString = `${selectedMonth} ${selectedYear}`;
+
+            const resultsDiv = document.getElementById('results');
+            const currentMoonDetailsSpan = document.getElementById('current-moon-details');
+            const nextMoonDetailsSpan = document.getElementById('next-moon-details');
+            const sunsetDetailsSpan = document.getElementById('sunset-details');
+            const datePlus29DetailsSpan = document.getElementById('date-plus-29-details');
+            const differenceDetailsSpan = document.getElementById('difference-details');
+            const daysToAddDetailsSpan = document.getElementById('days-to-add-details');
+            const finalDateDetailsSpan = document.getElementById('final-date-details');
+
+            // Find the index of the current New Moon event (which potentially starts the target month)
+            const currentMoonIndex = moonData.findIndex(item => item.hijriMonthAfter === targetHijriString);
+
+            if (currentMoonIndex === -1) {
+                const currentLang = document.documentElement.lang || 'ar';
+                currentMoonDetailsSpan.textContent = translations[currentLang]['no-data'];
+                nextMoonDetailsSpan.textContent = '...';
+                sunsetDetailsSpan.textContent = '...';
+                datePlus29DetailsSpan.textContent = '...';
+                differenceDetailsSpan.textContent = '...';
+                daysToAddDetailsSpan.textContent = '...';
+                finalDateDetailsSpan.textContent = '...';
+                return;
+            }
+
+            const currentMoon = moonData[currentMoonIndex];
+
+            // The next New Moon event is needed for the calculation rules
+            const nextMoonIndex = currentMoonIndex + 1;
+
+            if (nextMoonIndex >= moonData.length) {
+                const currentLang = document.documentElement.lang || 'ar';
+                currentMoonDetailsSpan.textContent = `${currentMoon.gregorianDate} ${currentMoon.gregorianTime} (${currentMoon.hijriMonthAfter})`;
+                nextMoonDetailsSpan.textContent = translations[currentLang]['insufficient-data'];
+                sunsetDetailsSpan.textContent = '...';
+                datePlus29DetailsSpan.textContent = '...';
+                differenceDetailsSpan.textContent = '...';
+                daysToAddDetailsSpan.textContent = '...';
+                finalDateDetailsSpan.textContent = '...';
+                return;
+            }
+
+            const nextMoon = moonData[nextMoonIndex];
+
+            // --- Display Initial Data ---
+            const currentLang = document.documentElement.lang || 'ar';
+            const atTimeText = translations[currentLang]['at-time'];
+            currentMoonDetailsSpan.textContent = `${currentMoon.gregorianDate} ${atTimeText} ${currentMoon.gregorianTime} (${currentMoon.hijriMonthAfter})`;
+            nextMoonDetailsSpan.textContent = `${nextMoon.gregorianDate} ${atTimeText} ${nextMoon.gregorianTime} (${nextMoon.hijriMonthAfter})`;
+            sunsetDetailsSpan.textContent = nextMoon.sunsetTime;
+
+            // --- Calculation Steps ---
+            // 1. تاريخ القمر الجديد الحالي + 29 يوم
+            const currentMoonDate = new Date(currentMoon.gregorianDate + 'T00:00:00Z');
+            const datePlus29 = new Date(currentMoonDate);
+            datePlus29.setUTCDate(currentMoonDate.getUTCDate() + 29);
+
+            datePlus29DetailsSpan.textContent = formatDate(datePlus29);
+
+            // 2. الفرق بين التاريخ المحسوب والقمر الجديد التالي
+            const nextMoonDate = new Date(nextMoon.gregorianDate + 'T00:00:00Z');
+            const oneDay = 1000 * 60 * 60 * 24;
+            const differenceInTime = nextMoonDate.getTime() - datePlus29.getTime();
+            const differenceInDays = Math.round(differenceInTime / oneDay);
+
+            const dayUnit = translations[currentLang]['day-unit'] || 'يوم';
+            differenceDetailsSpan.textContent = `${differenceInDays} ${dayUnit}`;
+
+            // 3. تطبيق الشروط لحساب عدد الأيام التي ستضاف
+            let daysToAdd = 0;
+            const nextMoonMinutes = timeToMinutes(nextMoon.gregorianTime);
+            const sunsetMinutes = timeToMinutes(nextMoon.sunsetTime);
+
+            if (differenceInDays === 1) {
+                daysToAdd = 2;
+            } else if (differenceInDays === 0) {
+                if (nextMoonMinutes > sunsetMinutes) {
+                    daysToAdd = 2;
+                } else {
+                    daysToAdd = 1;
+                }
+            } else {
+                daysToAdd = 1;
+            }
+
+            const daysUnit = translations[currentLang]['days-unit'];
+            daysToAddDetailsSpan.textContent = `${daysToAdd} ${daysUnit}`;
+
+            // 4. حساب تاريخ أول الشهر الجديد
+            const startOfMonthDate = new Date(currentMoonDate);
+            startOfMonthDate.setUTCDate(currentMoonDate.getUTCDate() + daysToAdd);
+
+            finalDateDetailsSpan.textContent = `${getDayName(startOfMonthDate)} ${formatDate(startOfMonthDate)}`;
+        }
+
+        // Event listener for the button
+        document.getElementById('calculate-btn').addEventListener('click', calculateHijriStart);
+
+        // Populate dropdowns when the page loads - removed from here as it's called in DOMContentLoaded
+
+        // Translation system
         const translations = {
             ar: {
-                'title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي',
-                'main-title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي',
-                'subtitle': 'إعداد الباحث الأستاذ ظافر حلاق',
-                'launch-calculator': '🌙 تشغيل الحاسبة',
-                'gift-button': '🎁 الإهداء',
-
-                'copyright': 'جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي',
-                'preparation': 'إعداد وابتكار: الباحث الأستاذ ظافر حلاق',
-                'development': 'برمجة وتطوير الموقع: المبرمج يامن حلاق',
+                'title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق',
+                'main-title': 'حاسبة فلكية شرعية للتقويم الهجري العالمي إعداد الباحث الأستاذ ظافر حلاق',
+                'select-year': 'اختر السنة',
+                'select-month': 'اختر الشهر',
+                'calculate-btn': 'احسب بداية الشهر',
+                'results-title': 'النتائج:',
+                'current-moon': 'القمر الجديد الحالي:',
+                'next-moon': 'القمر الجديد التالي:',
+                'sunset-time': 'وقت غروب الشمس للقمر التالي:',
+                'date-plus-29': 'تاريخ القمر الجديد الحالي + 29 يوم:',
+                'difference': 'الفرق بين التاريخ المحسوب والقمر الجديد التالي:',
+                'days-to-add': 'عدد الأيام التي ستضاف لحساب بداية الشهر:',
+                'final-date': 'أول يوم في الشهر الهجري المحدد:',
+                'months': ['المحرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'],
+                'days': ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+                'no-data': 'البيانات غير موجودة لهذا الشهر والسنة.',
+                'insufficient-data': 'لا توجد بيانات كافية للقمر الجديد التالي في قاعدة البيانات.',
+                'at-time': 'الساعة',
+                'days-unit': 'أيام',
+                'day-unit': 'يوم',
+                'home-btn': 'الصفحة الرئيسية',
                 'nav-welcome': 'شاشة الترحيب',
                 'nav-about': 'حول التطبيق',
                 'nav-goal': 'هدفنا',
                 'nav-overview': 'لمحة عامة',
                 'nav-dedication': 'إهداء',
                 'nav-contact': 'التواصل',
-                'contact-title': 'تواصل معنا',
                 'contact-email-title': 'البريد الإلكتروني',
                 'contact-social-title': 'وسائل التواصل الاجتماعي',
                 'contact-note': 'نرحب بجميع الاستفسارات والاقتراحات',
-                'welcome-title': 'شاشة الترحيب',
-                'welcome-verse': 'يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ',
-                'welcome-desc': 'حاسبة فلكية شرعية لأوائل الأشهر الهجرية للتقويم الهجري العالمي',
-                'welcome-point1': 'تعتمد مرجعية توقيت مكة المكرمة لاقتران القمر وغروب شمسها لأنها قبلة المسلمين في العالم.',
-                'welcome-point2': 'أسلوب علمي موثوق، مبتكر من قِبل الباحث الأستاذ ظافر حلاق.',
-                'welcome-point3': 'لا تسمح بوقوع ليالي التحري للهلال قبل الاقتران لجميع الأشهر لتجمع الأمة الإسلامية على هلال وتقويم واحد.',
-                'welcome-point4': 'إن وقوع ليلة التحري قبل الاقتران يكون كمن يبحث عن جنين في بطن امرأة لم تحمل بعد وهذا غير معقول !!!',
-                'welcome-point5': 'خطوة نحو توحيد التقويم الهجري عالميًا.',
-                'welcome-author': 'إعداد وابتكار: الباحث الأستاذ ظافر حلاق',
-                'about-title': 'حول التطبيق',
-                'about-intro': 'تطبيق مبتكر يُقدِّم تقويمًا هجريًا دقيقًا ترتكز حساباته على الاقتران الفلكي للقمر وفق توقيت مكة المكرمة وغروب شمسها كمرجعية مركزية لأنها قبلة المسلمين في العالم.',
-                'about-point1': 'يدور القمر حول الأرض كل شهر ويصل إلى لحظة الاقتران (أي القمر الجديد) ولا أسمّي هذه اللحظة أو التي تليها مباشرة "ولادة الهلال" لأن هذا التعبير غير دقيق بل فترة حمل الهلال الذي يحتاج إلى ساعات طويلة حتى تتم ولادته)',
-                'about-point2': 'هذا التطبيق لا يسمح بوقوع ليالي التحري للهلال قبل بدء دورة القمر الجديدة وفق توقيت مكة المكرمة.',
-                'about-point3': 'هذا التطبيق لا يسمح بدخول الشهر إن كان توقيت الاقتران بعد غروب شمس مكة المكرمة ليلة الشك التي هي مساء يوم 29 ليلة الثلاثين.',
-                'about-point4': 'هذا التطبيق يضبط وقوع ليالي التحري للهلال بعد حصول الاقتران لأجل الرؤية الشرعية العملية لأنه يتوافق معها.',
-                'about-point5': 'تحدد حساباته أوائل الشهور الهجرية بدقة فلكية وشرعية.',
-                'about-point6': 'أسلوب علمي موثوق ومبتكر من قِبل الباحث الأستاذ ظافر حلاق.',
-                'about-point7': 'لا يسمح بدخول الشهر قبل يوم من موعده ويرفض كل رؤية تؤدي إلى خلل في منظومة الأشهر الهجرية التي وضعها النبي ﷺ',
-                'about-point8': 'يعد خطوة نحو توحيد التقويم الهجري عالميًا راجيا" من الله تعالى أن يتم اعتماده من الجميع.',
-                'about-point9': 'هذا التطبيق يعطينا الحد الأدنى لدخول الشهر الهجري عملا" بقول الجمهور بعدم اعتبار اختلاف المطالع.',
-                'about-point10': 'واجهة بسيطة وسهلة الاستخدام تناسب المهتمين والباحثين والمؤسسات الدينية.',
-                'goal-title': 'هدفنا',
-                'goal-main': 'خطوة نحو توحيد التقويم الهجري عالميًا.',
-                'goal-desc': 'جمع كلمة المسلمين على هلال واحد، ووقت عبادة دقيق، يجمع بين الحساب الفلكي والضابط الشرعي، انطلاقًا من مرجعية مكة المكرمة ليكون التقويم الهجري المعتمد في العالم بإذن المولى عز وجل.',
-                'goal-request': 'نرجو نشره على أوسع نطاق ومشاركته والسعي لاعتماده من قبل الجميع',
-                'goal-author': 'الباحث الأستاذ ظافر حلاق',
-                'goal-subtitle': 'المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق',
-                'overview-title': 'لمحة عامة',
-                'overview-intro': 'عند النظر إلى أهم التقاويم الهجرية في العالم التي تعتمد على الحساب، نجد:',
-                'overview-umm-alqura': '1- تقويم أم القرى: لا يشترط في حساباته رؤية الهلال وفي ذلك إشكال شرعي !!! (إذ يقول إخوتنا في المملكة العربية السعودية الحبيبة إنه تقويم مدني وأن العبرة بتحري الهلال ولكننا نسأل ما المانع من اعتماد تقويم آخر يحقق الهدف المدني والشرعي بآن واحد)',
-                'overview-umm-alqura2': 'كما أن تقويم أم القرى لا يشترط وقوع ليالي التحري بعد حصول الاقتران فكيف يمكن تحري الهلال عمليا إذا كانت ليلة التحري قبل الاقتران !!!',
-                'overview-turkish': '2- التقويم التركي: تؤدي طريقة حسابه في بعض الأشهر إلى حرمان العالم الإسلامي بأكمله من رؤية الهلال !!!',
-                'overview-turkish2': 'كما لا يشترط وقوع ليالي التحري بعد حصول الاقتران فكيف يمكن تحري الهلال عمليا عندما تكون ليلة التحري قبل الاقتران !!!',
-                'overview-vision': 'رؤيتنا:',
-                'overview-point1': 'عند إضافة شرط وقوع ليالي التحري بعد حدوث الاقتران في مكة المكرمة على تقويم أم القرى والتقويم التركي نجد أن النتائج تصبح متطابقة ومنضبطة.',
-                'overview-point2': 'يجب أن يكون الحساب مطابقا" للواقع الذي سيحدث فعليا" في أي تقويم هجري وهذا ما ركزت عليه في هذه الحاسبة الفلكية الشرعية للتقويم العالمي.',
-                'overview-point3': 'يجب أن يكون الحساب منضبطا" شرعا" وعقلا".',
-                'overview-point4': 'لا ينبغي إدخال الشهر دون رؤية محققة للهلال من عدد من الدول ..',
-                'overview-point5': 'لا يمكن تحري الهلال قبل وصول القمر إلى الاقتران المركزي في مكة المكرمة لأن ذلك كمن يبحث عن جنين في بطن امرأة لم تحمل بعد !!!',
-                'overview-conclusion': 'نرجو من جميع الدول في العالم إعتماد هذا التقويم الهجري ليكون التاريخ الهجري موحد في جميع الكرة الأرضية.',
-                'overview-prayer': 'اللهم هيء لهذه الأمة علماء فلك وشرعيين ينصحون الدول باعتماد هذا التقويم الهجري واجعل له القبول بين الناس لتتحقق وحدة التقويم الهجري في العالم الذي أصبح كقرية صغيرة',
-                'overview-ending': 'وآخر دعوانا أن الحمد لله رب العالمين.',
-                'dedication-title': '🌙 إهداء',
-                'dedication-verse': 'يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ',
-                'dedication-saudi': 'إلى المملكة العربية السعودية:',
-                'dedication-saudi-desc': 'أرض الوحي، ومركز الحرمين الشريفين، وقد اعتمد هذا التطبيق مكة المكرمة مرجعاً للتقويم الهجري في العالم',
-                'dedication-turkey': 'وإلى الجمهورية التركية:',
-                'dedication-turkey-desc': 'جسر الحضارة ونصرة المظلوم، ومركز الإسهامات لجمع كلمة الأمة الإسلامية.',
-                'dedication-syria': 'وإلى بلدي الحبيب سورية:',
-                'dedication-syria-desc': 'وطن القلب والفرح بنصر الله تعالى، وموطن العراقة والعلم والعلماء..',
-                'dedication-egypt': 'وإلى جمهورية مصر الحبيبة:',
-                'dedication-egypt-desc': 'موطن الأزهر الشريف، ومنارة العلم والاعتدال.',
-                'dedication-islamic-world': 'وإلى جميع دول العالم الإسلامي الساعية إلى وحدة التقويم الهجري وإلى مشايخي وأحبابي أُهدي هذا التطبيق:',
-                'dedication-method': 'الذي أعد وفق طريقة حسابية مبتكرة وفريدة مطابقة لما سيكون عليه الواقع ومنضبطة بالمعيار النبوي أعددتُها بعناية فائقة، لتكون خطوة عملية نحو تقويم هجري موحد في العالم أجمع ينطلق من مكة المكرمة، قبلة المسلمين، ويحافظ على ليلة الشك واحتمالَيْ رؤية الهلال من عدمه الذي كانت عليه الأمة منذ عهد النبي ﷺ ويرفض كل رؤية تؤدي إلى دخول الشهر قبل يوم من موعده.. ليصل إلى كل دول العالم كتقويم هجري موحد راجياً منهم اعتماده.',
-                'dedication-author': 'الباحث الأستاذ ظافر حلاق',
-                'dedication-subtitle': 'المعد والمبتكر لطريقة الحساب الفلكي المعتمدة في هذا التطبيق',
-                'dedication-prayer': 'اللهم اجعل فيه النفع والقبول، واجعله سبباً لتوحيد الأمة في هلالها وتاريخها الهجري.'
+                'copyright': 'جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي',
+                'preparation': 'إعداد وابتكار: الباحث الأستاذ ظافر حلاق',
+                'development': 'برمجة وتطوير الموقع: المبرمج يامن حلاق'
             },
             en: {
-                'title': 'Islamic Astronomical Hijri Calendar Calculator',
-                'main-title': 'Islamic Astronomical Hijri Calendar Calculator',
-                'subtitle': 'Prepared by Researcher Mr. Zafer Hallak',
-                'launch-calculator': '🌙 Launch Calculator',
-                'gift-button': '🎁 Dedication',
-
-                'copyright': 'All Rights Reserved © 2025 - Sharia-Compliant Astronomical Calculator for the Global Hijri Calendar',
-                'preparation': 'Preparation and Innovation: Researcher Mr. Zafer Hallak',
-                'development': 'Website Programming and Development: Developer Yamen Hallak',
+                'title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Mr. Zafer Hallak',
+                'main-title': 'Islamic Astronomical Hijri Calendar Calculator - Prepared by Researcher Mr. Zafer Hallak',
+                'select-year': 'Select Year',
+                'select-month': 'Select Month',
+                'calculate-btn': 'Calculate Month Start',
+                'results-title': 'Results:',
+                'current-moon': 'Current New Moon:',
+                'next-moon': 'Next New Moon:',
+                'sunset-time': 'Sunset Time for Next Moon:',
+                'date-plus-29': 'Current New Moon Date + 29 Days:',
+                'difference': 'Difference Between Calculated Date and Next New Moon:',
+                'days-to-add': 'Number of Days to Add for Month Start Calculation:',
+                'final-date': 'First Day of the Selected Hijri Month:',
+                'months': ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Shaban', 'Ramadan', 'Shawwal', 'Dhul Qadah', 'Dhul Hijjah'],
+                'days': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                'no-data': 'Data not available for this month and year.',
+                'insufficient-data': 'Insufficient data for the next new moon in the database.',
+                'at-time': 'at',
+                'days-unit': 'days',
+                'day-unit': 'day',
+                'home-btn': 'Home Page',
                 'nav-welcome': 'Welcome Screen',
-                'nav-about': 'About the Application',
+                'nav-about': 'About the App',
                 'nav-goal': 'Our Goal',
                 'nav-overview': 'Overview',
                 'nav-dedication': 'Dedication',
                 'nav-contact': 'Contact Us',
-                'contact-title': 'Contact Us',
                 'contact-email-title': 'Email',
                 'contact-social-title': 'Social Media',
                 'contact-note': 'We welcome all inquiries and suggestions',
-                'welcome-title': 'Welcome Screen',
-                'welcome-verse': 'They ask you about the new moons. Say: They are signs to mark fixed periods of time for mankind and for the pilgrimage.',
-                'welcome-desc': 'Astronomical Sharia calculator for the beginnings of Hijri months for the global Hijri calendar',
-                'welcome-point1': 'Adopts Mecca time reference for lunar conjunction and sunset as it is the Qibla of Muslims worldwide.',
-                'welcome-point2': 'A reliable scientific method, innovated by researcher Mr. Zafer Hallak.',
-                'welcome-point3': 'Does not allow crescent sighting nights to occur before conjunction for all months to unite the Islamic Ummah on one crescent and one calendar.',
-                'welcome-point4': 'Having a sighting night before conjunction is like searching for a fetus in the womb of a woman who has not yet conceived, which is unreasonable!!!',
-                'welcome-point5': 'A step towards unifying the Hijri calendar globally.',
-                'welcome-author': 'Prepared and innovated by: Researcher Mr. Zafer Hallak',
-                'about-title': 'About the Application',
-                'about-intro': 'An innovative application that provides an accurate Hijri calendar based on lunar conjunction calculations according to Mecca time and its sunset as a central reference because it is the Qibla of Muslims worldwide.',
-                'about-point1': 'The moon orbits the Earth every month and reaches the moment of conjunction (i.e., the new moon). I do not call this moment or the one immediately following it "crescent birth" because this expression is inaccurate, but rather the crescent pregnancy period that needs long hours until its birth is completed.',
-                'about-point2': 'This application does not allow crescent sighting nights to occur before the start of the new moon cycle according to Mecca time.',
-                'about-point3': 'This application does not allow the month to begin if the conjunction time is after sunset in Mecca on the night of doubt, which is the evening of the 29th, the night of the 30th.',
-                'about-point4': 'This application regulates the occurrence of crescent sighting nights after conjunction for practical Sharia sighting because it aligns with it.',
-                'about-point5': 'Its calculations determine the beginnings of Hijri months with astronomical and Sharia precision.',
-                'about-point6': 'A reliable and innovative scientific method by researcher Mr. Zafer Hallak.',
-                'about-point7': 'Does not allow the month to begin a day early and rejects any sighting that leads to disruption in the Hijri month system established by Prophet Muhammad ﷺ',
-                'about-point8': 'It is a step towards unifying the Hijri calendar globally, hoping that Allah will make it adopted by everyone.',
-                'about-point9': 'This application gives us the minimum for entering the Hijri month, working with the majority opinion of not considering differences in horizons.',
-                'about-point10': 'Simple and easy-to-use interface suitable for enthusiasts, researchers, and religious institutions.',
-                'goal-title': 'Our Goal',
-                'goal-main': 'A step towards unifying the Hijri calendar globally.',
-                'goal-desc': 'Uniting Muslims on one crescent and precise worship time, combining astronomical calculation with Sharia control, starting from Mecca reference to be the adopted Hijri calendar worldwide, by Allah\'s permission.',
-                'goal-request': 'We hope to spread it widely, share it, and strive for its adoption by everyone',
-                'goal-author': 'Researcher Mr. Zafer Hallak',
-                'goal-subtitle': 'The preparer and innovator of the astronomical calculation method adopted in this application',
-                'overview-title': 'Overview',
-                'overview-intro': 'When looking at the most important Hijri calendars in the world that rely on calculation, we find:',
-                'overview-umm-alqura': '1- Umm al-Qura Calendar: Does not require crescent sighting in its calculations, which is a Sharia problem!!! (Our beloved brothers in Saudi Arabia say it is a civil calendar and that the consideration is for crescent sighting, but we ask what prevents adopting another calendar that achieves both civil and Sharia goals simultaneously)',
-                'overview-umm-alqura2': 'Also, Umm al-Qura calendar does not require sighting nights to occur after conjunction, so how can the crescent be practically sighted if the sighting night is before conjunction!!!',
-                'overview-turkish': '2- Turkish Calendar: Its calculation method in some months deprives the entire Islamic world of crescent sighting!!!',
-                'overview-turkish2': 'It also does not require sighting nights to occur after conjunction, so how can the crescent be practically sighted when the sighting night is before conjunction!!!',
-                'overview-vision': 'Our Vision:',
-                'overview-point1': 'When adding the condition of sighting nights occurring after conjunction in Mecca to both Umm al-Qura and Turkish calendars, we find that the results become identical and regulated.',
-                'overview-point2': 'The calculation must match the reality that will actually happen in any Hijri calendar, and this is what I focused on in this astronomical Sharia calculator for the global calendar.',
-                'overview-point3': 'The calculation must be regulated according to Sharia and reason.',
-                'overview-point4': 'The month should not be entered without confirmed crescent sighting from several countries..',
-                'overview-point5': 'The crescent cannot be sighted before the moon reaches central conjunction in Mecca because that is like searching for a fetus in the womb of a woman who has not yet conceived!!!',
-                'overview-conclusion': 'We hope all countries in the world adopt this Hijri calendar so that the Hijri date is unified throughout the Earth.',
-                'overview-prayer': 'O Allah, prepare for this Ummah astronomical and Sharia scholars who advise countries to adopt this Hijri calendar and grant it acceptance among people to achieve Hijri calendar unity in the world that has become like a small village',
-                'overview-ending': 'And our final prayer is that praise be to Allah, Lord of the worlds.',
-                'dedication-title': '🌙 Dedication',
-                'dedication-verse': 'They ask you about the new moons. Say: They are signs to mark fixed periods of time for mankind and for the pilgrimage.',
-                'dedication-saudi': 'To the Kingdom of Saudi Arabia:',
-                'dedication-saudi-desc': 'The land of revelation and the center of the Two Holy Mosques, and this application has adopted Mecca as a reference for the Hijri calendar in the world',
-                'dedication-turkey': 'And to the Republic of Turkey:',
-                'dedication-turkey-desc': 'The bridge of civilization and support for the oppressed, and the center of contributions to unite the word of the Islamic Ummah.',
-                'dedication-syria': 'And to my beloved country Syria:',
-                'dedication-syria-desc': 'The homeland of the heart and joy in Allah\'s victory, and the homeland of authenticity, knowledge and scholars..',
-                'dedication-egypt': 'And to the beloved Arab Republic of Egypt:',
-                'dedication-egypt-desc': 'The homeland of Al-Azhar Al-Sharif, and the beacon of knowledge and moderation.',
-                'dedication-islamic-world': 'And to all countries of the Islamic world seeking Hijri calendar unity and to my sheikhs and beloved ones, I dedicate this application:',
-                'dedication-method': 'Which was prepared according to an innovative and unique calculation method that matches what the reality will be and is regulated by the Prophetic standard. I prepared it with utmost care to be a practical step towards a unified Hijri calendar in the entire world, starting from Mecca, the Qibla of Muslims, and preserving the night of doubt and the two possibilities of crescent sighting or not, which the Ummah has been upon since the time of the Prophet ﷺ, and rejects any sighting that leads to entering the month a day before its time.. to reach all countries of the world as a unified Hijri calendar, hoping they will adopt it.',
-                'dedication-author': 'Researcher Mr. Zafer Hallak',
-                'dedication-subtitle': 'The preparer and innovator of the astronomical calculation method adopted in this application',
-                'dedication-prayer': 'O Allah, make it beneficial and accepted, and make it a cause for uniting the Ummah in its crescent and Hijri calendar.'
+                'copyright': 'All Rights Reserved © 2025 - Sharia-Compliant Astronomical Calculator for the Global Hijri Calendar',
+                'preparation': 'Preparation and Innovation: Researcher Mr. Zafer Hallak',
+                'development': 'Website Programming and Development: Developer Yamen Hallak'
             },
             tr: {
-                'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı',
-                'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı',
-                'subtitle': 'Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
-                'launch-calculator': '🌙 Hesaplayıcıyı Başlat',
-                'gift-button': '🎁 İthaf',
-
-                'copyright': 'Tüm Hakları Saklıdır © 2025 - Küresel Hicri Takvim için Şer\'i Astronomik Hesaplayıcı',
-                'preparation': 'Hazırlık ve İnovasyon: Araştırmacı Sayın Zafer Hallak',
-                'development': 'Web sitesinin programlama ve geliştirmesi: Yazılımcı Yamen Hallak',
+                'title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
+                'main-title': 'İslami Astronomik Hicri Takvim Hesaplayıcısı - Araştırmacı Sayın Zafer Hallak tarafından hazırlanmıştır',
+                'select-year': 'Yıl Seçin',
+                'select-month': 'Ay Seçin',
+                'calculate-btn': 'Ay Başlangıcını Hesapla',
+                'results-title': 'SONUÇLAR:',
+                'current-moon': 'Mevcut Yeni Ay:',
+                'next-moon': 'Sonraki Yeni Ay:',
+                'sunset-time': 'Sonraki Ay için Gün Batımı Zamanı:',
+                'date-plus-29': 'Mevcut Yeni Ay Tarihi + 29 Gün:',
+                'difference': 'Hesaplanan Tarih ile Sonraki Yeni Ay Arasındaki Fark:',
+                'days-to-add': 'Ay Başlangıcı Hesaplaması için Eklenecek Gün Sayısı:',
+                'final-date': 'Seçilen Hicri Ayın İlk Günü:',
+                'months': ['Muharrem', 'Safer', 'Rebiülevvel', 'Rebiülahir', 'Cemaziyelevvel', 'Cemaziyelahir', 'Recep', 'Şaban', 'Ramazan', 'Şevval', 'Zilkade', 'Zilhicce'],
+                'days': ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+                'no-data': 'Bu ay ve yıl için veri mevcut değil.',
+                'insufficient-data': 'Veritabanında sonraki yeni ay için yeterli veri yok.',
+                'at-time': 'saat',
+                'days-unit': 'gün',
+                'day-unit': 'gün',
+                'home-btn': 'Ana Sayfa',
                 'nav-welcome': 'Hoş Geldiniz Ekranı',
                 'nav-about': 'Uygulama Hakkında',
-                'nav-goal': 'Hedefimiz',
+                'nav-goal': 'Amacımız',
                 'nav-overview': 'Genel Bakış',
                 'nav-dedication': 'İthaf',
                 'nav-contact': 'İletişim',
-                'contact-title': 'Bizimle İletişime Geçin',
                 'contact-email-title': 'E-posta',
                 'contact-social-title': 'Sosyal Medya',
                 'contact-note': 'Tüm sorularınızı ve önerilerinizi memnuniyetle karşılıyoruz',
-                'welcome-title': 'HOŞ GELDİNİZ EKRANI',
-                'welcome-verse': 'Sana hilaller hakkında soruyorlar. De ki: Onlar insanlar ve hac için vakit belirleyici işaretlerdir.',
-                'welcome-desc': 'Küresel Hicri takvim için Hicri ayların başlangıçları için astronomik şer\'i hesaplayıcı',
-                'welcome-point1': 'Dünya çapında Müslümanların kıblesi olduğu için ay kavuşumu ve gün batımı için Mekke zaman referansını benimser.',
-                'welcome-point2': 'Araştırmacı Sayın Zafer Hallak tarafından yenilik getirilen güvenilir bilimsel yöntem.',
-                'welcome-point3': 'İslam Ümmetini tek hilal ve tek takvimde birleştirmek için tüm aylar için hilal görme gecelerinin kavuşumdan önce gerçekleşmesine izin vermez.',
-                'welcome-point4': 'Kavuşumdan önce görme gecesinin olması, henüz hamile kalmamış bir kadının karnında cenin aramak gibidir, bu mantıksızdır!!!',
-                'welcome-point5': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adım.',
-                'welcome-author': 'Hazırlayan ve yenilik getiren: Araştırmacı Sayın Zafer Hallak',
-                'about-title': 'UYGULAMA HAKKINDA',
-                'about-intro': 'Dünya çapında Müslümanların kıblesi olduğu için Mekke zamanı ve gün batımına göre ay kavuşumu hesaplamalarına dayanan doğru bir Hicri takvim sunan yenilikçi uygulama.',
-                'about-point1': 'Ay her ay Dünya\'nın etrafında döner ve kavuşum anına (yani yeni ay) ulaşır. Bu anı veya hemen sonrasını "hilal doğumu" olarak adlandırmıyorum çünkü bu ifade doğru değil, aksine doğumu tamamlanana kadar uzun saatlere ihtiyaç duyan hilal hamilelik dönemi.',
-                'about-point2': 'Bu uygulama, Mekke zamanına göre yeni ay döngüsünün başlamasından önce hilal görme gecelerinin gerçekleşmesine izin vermez.',
-                'about-point3': 'Bu uygulama, kavuşum zamanı 29. günün akşamı olan şüphe gecesinde Mekke\'de gün batımından sonra ise ayın başlamasına izin vermez.',
-                'about-point4': 'Bu uygulama, pratik şer\'i görme için kavuşumdan sonra hilal görme gecelerinin gerçekleşmesini düzenler çünkü bununla uyumludur.',
-                'about-point5': 'Hesaplamaları Hicri ayların başlangıçlarını astronomik ve şer\'i hassasiyetle belirler.',
-                'about-point6': 'Araştırmacı Sayın Zafer Hallak tarafından güvenilir ve yenilikçi bilimsel yöntem.',
-                'about-point7': 'Ayın bir gün erken başlamasına izin vermez ve Hz. Muhammed ﷺ tarafından kurulan Hicri ay sisteminde bozulmaya yol açan herhangi bir görmeyi reddeder',
-                'about-point8': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adımdır, Allah\'ın herkes tarafından benimsenmesini sağlamasını umarak.',
-                'about-point9': 'Bu uygulama bize ufuk farklılıklarını dikkate almama konusundaki çoğunluk görüşüyle çalışarak Hicri aya girişin minimumunu verir.',
-                'about-point10': 'Meraklılar, araştırmacılar ve dini kurumlar için uygun basit ve kullanımı kolay arayüz.',
-                'goal-title': 'HEDEFİMİZ',
-                'goal-main': 'Hicri takvimi küresel olarak birleştirmeye yönelik bir adım.',
-                'goal-desc': 'Müslümanları tek hilal ve hassas ibadet zamanında birleştirmek, astronomik hesaplama ile şer\'i kontrolü birleştirerek, Allah\'ın izniyle dünya çapında benimsenecek Hicri takvim olmak için Mekke referansından başlayarak.',
-                'goal-request': 'Geniş çapta yayılmasını, paylaşılmasını ve herkes tarafından benimsenmesi için çaba gösterilmesini umuyoruz',
-                'goal-author': 'Araştırmacı Sayın Zafer Hallak',
-                'goal-subtitle': 'Bu uygulamada benimsenen astronomik hesaplama yönteminin hazırlayıcısı ve yenilikçisi',
-                'overview-title': 'GENEL BAKIŞ',
-                'overview-intro': 'Hesaplamaya dayanan dünyadaki en önemli Hicri takvimlere baktığımızda şunu görüyoruz:',
-                'overview-umm-alqura': '1- Ümmü\'l-Kura Takvimi: Hesaplamalarında hilal görmeyi gerektirmez, bu şer\'i bir sorundur!!! (Sevgili Suudi Arabistan kardeşlerimiz bunun sivil bir takvim olduğunu ve dikkate alınacak olanın hilal görme olduğunu söylüyorlar, ancak hem sivil hem de şer\'i hedefleri aynı anda gerçekleştiren başka bir takvim benimsemenin önündeki engelin ne olduğunu soruyoruz)',
-                'overview-umm-alqura2': 'Ayrıca Ümmü\'l-Kura takvimi görme gecelerinin kavuşumdan sonra gerçekleşmesini gerektirmez, peki görme gecesi kavuşumdan önce ise hilal pratik olarak nasıl görülebilir!!!',
-                'overview-turkish': '2- Türk Takvimi: Bazı aylardaki hesaplama yöntemi tüm İslam dünyasını hilal görmekten mahrum bırakır!!!',
-                'overview-turkish2': 'Ayrıca görme gecelerinin kavuşumdan sonra gerçekleşmesini gerektirmez, peki görme gecesi kavuşumdan önce olduğunda hilal pratik olarak nasıl görülebilir!!!',
-                'overview-vision': 'Vizyonumuz:',
-                'overview-point1': 'Hem Ümmü\'l-Kura hem de Türk takvimlerine Mekke\'de kavuşumdan sonra görme gecelerinin gerçekleşmesi şartını eklediğimizde, sonuçların özdeş ve düzenli hale geldiğini görüyoruz.',
-                'overview-point2': 'Hesaplama, herhangi bir Hicri takvimde gerçekten olacak gerçeklikle eşleşmeli ve bu küresel takvim için bu astronomik şer\'i hesaplayıcıda odaklandığım şeydir.',
-                'overview-point3': 'Hesaplama şer\'i ve akli olarak düzenli olmalıdır.',
-                'overview-point4': 'Birkaç ülkeden doğrulanmış hilal görme olmadan aya girilmemelidir..',
-                'overview-point5': 'Ay Mekke\'de merkezi kavuşuma ulaşmadan önce hilal görülemez çünkü bu henüz hamile kalmamış bir kadının karnında cenin aramak gibidir!!!',
-                'overview-conclusion': 'Dünyadaki tüm ülkelerin bu Hicri takvimi benimsemesini umuyoruz ki Hicri tarih tüm Dünya\'da birleşik olsun.',
-                'overview-prayer': 'Allah\'ım, bu Ümmete ülkelere bu Hicri takvimi benimsemelerini tavsiye eden astronomi ve şeriat alimleri hazırla ve küçük bir köy haline gelen dünyada Hicri takvim birliğini gerçekleştirmek için insanlar arasında kabul görmesini sağla',
-                'overview-ending': 'Ve son duamız Alemlerin Rabbi Allah\'a hamd olsun.',
-                'dedication-title': '🌙 İTHAF',
-                'dedication-verse': 'Sana hilaller hakkında soruyorlar. De ki: Onlar insanlar ve hac için vakit belirleyici işaretlerdir.',
-                'dedication-saudi': 'Suudi Arabistan Krallığı\'na:',
-                'dedication-saudi-desc': 'Vahyin yurdu ve İki Kutsal Harem\'in merkezi, ve bu uygulama dünyada Hicri takvim için Mekke\'yi referans olarak benimsemiştir',
-                'dedication-turkey': 'Ve Türkiye Cumhuriyeti\'ne:',
-                'dedication-turkey-desc': 'Medeniyet köprüsü ve mazlumların destekçisi, ve İslam Ümmetinin sözünü birleştirme katkılarının merkezi.',
-                'dedication-syria': 'Ve sevgili ülkem Suriye\'ye:',
-                'dedication-syria-desc': 'Kalbin vatanı ve Allah\'ın zaferindeki sevinç, ve özgünlük, bilim ve alimler vatanı..',
-                'dedication-egypt': 'Ve sevgili Mısır Arap Cumhuriyeti\'ne:',
-                'dedication-egypt-desc': 'Ezher-i Şerif\'in vatanı, ve bilim ile ılımlılığın feneri.',
-                'dedication-islamic-world': 'Ve Hicri takvim birliği arayan tüm İslam dünyası ülkelerine ve şeyhlerime ve sevdiklerime bu uygulamayı ithaf ediyorum:',
-                'dedication-method': 'Gerçekliğin olacağıyla eşleşen ve Peygamber standardıyla düzenlenen yenilikçi ve eşsiz hesaplama yöntemine göre hazırlandı. Müslümanların kıblesi Mekke\'den başlayarak tüm dünyada birleşik Hicri takvime yönelik pratik bir adım olması için büyük özenle hazırladım, şüphe gecesini ve Peygamber ﷺ zamanından beri Ümmetin üzerinde olduğu hilal görme veya görmeme iki ihtimalini koruyarak, ve ayın vaktinden bir gün önce girmesine yol açan herhangi bir görmeyi reddederek.. tüm dünya ülkelerine birleşik Hicri takvim olarak ulaşmak için, benimsemelerini umarak.',
-                'dedication-author': 'Araştırmacı Sayın Zafer Hallak',
-                'dedication-subtitle': 'Bu uygulamada benimsenen astronomik hesaplama yönteminin hazırlayıcısı ve yenilikçisi',
-                'dedication-prayer': 'Allah\'ım, faydalı ve makbul kıl, ve Ümmeti hilalinde ve Hicri takviminde birleştirmenin bir sebebi kıl.'
+                'copyright': 'Tüm Hakları Saklıdır © 2025 - Küresel Hicri Takvim için Şer\'i Astronomik Hesaplayıcı',
+                'preparation': 'Hazırlık ve İnovasyon: Araştırmacı Sayın Zafer Hallak',
+                'development': 'Web sitesinin programlama ve geliştirmesi: Yazılımcı Yamen Hallak'
             }
         };
         
@@ -1381,6 +1536,9 @@
                 }
             });
             
+            // Re-populate dropdowns with translated month names
+            populateDropdowns();
+            
             // Store language preference
             localStorage.setItem('preferred-language', lang);
         }
@@ -1388,86 +1546,13 @@
         // Load saved language preference
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferred-language') || 'ar';
-            changeLanguage(savedLang);
-            
-            // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Scroll to top button functionality
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.add('visible');
-                } else {
-                    scrollToTopBtn.classList.remove('visible');
-                }
-            });
-
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Navigation buttons functionality
-            document.querySelectorAll('.nav-button').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Calculator button functionality is handled by the href attribute
-
+            populateDropdowns(); // Populate dropdowns first
+            changeLanguage(savedLang); // Then apply language
         });
-    </script>
-    
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2 data-translate="contact-title">تواصل معنا</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3 data-translate="contact-email-title">البريد الإلكتروني</h3>
-                <a href="mailto:zafer.hallaq@gmail.com" class="contact-link">zafer.hallaq@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <h3 data-translate="contact-social-title">وسائل التواصل الاجتماعي</h3>
-                <a href="https://www.facebook.com/zafer.hallak" target="_blank" class="social-link">Facebook</a>
-            </div>
-        </div>
-        <p class="contact-note" data-translate="contact-note">نرحب بجميع الاستفسارات والاقتراحات</p>
-    </section>
-    
-    <!-- Footer Section -->
-    <div class="footer">
-        <p data-translate="copyright">جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي</p>
-        <p data-translate="preparation">إعداد وابتكار: الباحث الأستاذ ظافر حلاق</p>
-        <p data-translate="development">برمجة وتطوير الموقع: المبرمج يامن حلاق</p>
-    </div>
-    
-    <script>
+
+        // Optional: Run calculation for the first month/year automatically on load
+        // calculateHijriStart();
+        
         // Navigation Slider Functionality
         function toggleSlider() {
             const slider = document.getElementById('navSlider');
@@ -1475,26 +1560,32 @@
         }
         
         // Close slider when clicking on links
-        document.addEventListener('DOMContentLoaded', function() {
-            const sliderLinks = document.querySelectorAll('.slider-link');
-            sliderLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const slider = document.getElementById('navSlider');
-                    slider.classList.remove('active');
-                });
-            });
-            
-            // Close slider when clicking outside
-            document.addEventListener('click', function(event) {
+        const sliderLinks = document.querySelectorAll('.slider-link');
+        sliderLinks.forEach(link => {
+            link.addEventListener('click', function() {
                 const slider = document.getElementById('navSlider');
-                const sliderToggle = document.querySelector('.slider-toggle');
-                
-                if (!slider.contains(event.target) && !sliderToggle.contains(event.target)) {
-                    slider.classList.remove('active');
-                }
+                slider.classList.remove('active');
             });
         });
+        
+        // Close slider when clicking outside
+        document.addEventListener('click', function(event) {
+            const slider = document.getElementById('navSlider');
+            const sliderToggle = document.querySelector('.slider-toggle');
+            
+            if (!slider.contains(event.target) && !sliderToggle.contains(event.target)) {
+                slider.classList.remove('active');
+            }
+        });
     </script>
+    
+    <!-- Footer Section -->
+    <div class="footer">
+        <p data-translate="copyright">جميع الحقوق محفوظة © 2025 - حاسبة فلكية شرعية للتقويم الهجري العالمي</p>
+        <p data-translate="preparation">إعداد وابتكار: الباحث الأستاذ ظافر حلاق</p>
+        <p data-translate="development">برمجة وتطوير الموقع: المبرمج يامن حلاق</p>
+    </div>
+
 
 <div class="glasp-extension-toaster" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
       div.grammarly-desktop-integration {
